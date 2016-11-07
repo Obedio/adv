@@ -1,2 +1,3 @@
-class Status < ApplicationRecord
+class Status < ApplicationRecord 
+	has_many :lawsuits
 end
