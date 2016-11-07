@@ -10,7 +10,133 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161106190614) do
+ActiveRecord::Schema.define(version: 20161107034729) do
+
+  create_table "accounts", force: :cascade do |t|
+    t.float    "amount"
+    t.float    "amount_paid"
+    t.integer  "payday"
+    t.integer  "lawsuit_id"
+    t.integer  "client_id"
+    t.integer  "user_id"
+    t.integer  "statuspayment_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.index ["client_id"], name: "index_accounts_on_client_id"
+    t.index ["lawsuit_id"], name: "index_accounts_on_lawsuit_id"
+    t.index ["statuspayment_id"], name: "index_accounts_on_statuspayment_id"
+    t.index ["user_id"], name: "index_accounts_on_user_id"
+  end
+
+  create_table "address_types", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "addresses", force: :cascade do |t|
+    t.string   "street"
+    t.string   "district"
+    t.string   "city"
+    t.string   "state"
+    t.string   "country"
+    t.string   "zipcode"
+    t.integer  "addresstype_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.index ["addresstype_id"], name: "index_addresses_on_addresstype_id"
+  end
+
+  create_table "clients", force: :cascade do |t|
+    t.string   "name"
+    t.date     "born"
+    t.string   "sex"
+    t.string   "cpf"
+    t.string   "rg"
+    t.string   "email"
+    t.string   "telephone"
+    t.string   "celphone"
+    t.text     "bio"
+    t.integer  "address_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["address_id"], name: "index_clients_on_address_id"
+    t.index ["user_id"], name: "index_clients_on_user_id"
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.text     "description"
+    t.integer  "lawsuit_id"
+    t.integer  "user_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["lawsuit_id"], name: "index_comments_on_lawsuit_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "data_users", force: :cascade do |t|
+    t.string   "name"
+    t.date     "born"
+    t.string   "sex"
+    t.integer  "office_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["office_id"], name: "index_data_users_on_office_id"
+    t.index ["user_id"], name: "index_data_users_on_user_id"
+  end
+
+  create_table "kinds", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "lawsuits", force: :cascade do |t|
+    t.string   "number"
+    t.date     "assessment"
+    t.text     "description"
+    t.float    "amount"
+    t.integer  "user_id"
+    t.integer  "client_id"
+    t.integer  "venue_id"
+    t.integer  "kind_id"
+    t.integer  "status_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["client_id"], name: "index_lawsuits_on_client_id"
+    t.index ["kind_id"], name: "index_lawsuits_on_kind_id"
+    t.index ["status_id"], name: "index_lawsuits_on_status_id"
+    t.index ["user_id"], name: "index_lawsuits_on_user_id"
+    t.index ["venue_id"], name: "index_lawsuits_on_venue_id"
+  end
+
+  create_table "offices", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "payments", force: :cascade do |t|
+    t.float    "amount"
+    t.integer  "account_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["account_id"], name: "index_payments_on_account_id"
+  end
+
+  create_table "status_payments", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "statuses", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -27,6 +153,13 @@ ActiveRecord::Schema.define(version: 20161106190614) do
     t.datetime "updated_at",                          null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "venues", force: :cascade do |t|
+    t.string   "name"
+    t.string   "city"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

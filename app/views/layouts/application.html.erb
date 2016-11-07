@@ -1,14 +1,35 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Adv</title>
+    <title>OrbTech - Sistema de Advocacia</title>
     <%= csrf_meta_tags %>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Sistema para Gerenciar escritório de Advocacia.">
+    <meta name="keywords" content="Advocacia, Sistema, OrbTech">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Obedio Albuquerque">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <meta rel="stylesheet" type="text/css" href="../../assets/stylesheets/application.css">
+    <!--<meta rel="stylesheet" type="text/css" href="../../assets/stylesheets/accounts.scss">
+    <meta rel="stylesheet" type="text/css" href="../../assets/stylesheets/actions.scss">
+    <meta rel="stylesheet" type="text/css" href="../../assets/stylesheets/clients.scss">
+    <meta rel="stylesheet" type="text/css" href="../../assets/stylesheets/people.scss">
+    <meta rel="stylesheet" type="text/css" href="../../assets/stylesheets/users.scss">-->
+    <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+ 	<header class="barra-super bg-gradiente">
+  		
+  	</header>
     <%= yield %>
+    <footer class="bg-gradiente">
+    	<p>Copyright @ OrbTech 2016. Todos direitos reservados</p>	
+    </footer>
   </body>
 </html>

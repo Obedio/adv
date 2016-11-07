@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  number: MyString
+  assessment: 2016-11-07
+  description: MyText
+  amount: 1.5
+  user: one
+  client: one
+  venue: one
+  kind: one
+  status: one
+
+two:
+  number: MyString
+  assessment: 2016-11-07
+  description: MyText
+  amount: 1.5
+  user: two
+  client: two
+  venue: two
+  kind: two
+  status: two

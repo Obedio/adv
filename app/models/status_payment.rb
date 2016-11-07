@@ -1,0 +1,2 @@
+class StatusPayment < ApplicationRecord
+end

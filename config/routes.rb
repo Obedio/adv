@@ -1,4 +1,17 @@
 Rails.application.routes.draw do
+  resources :payments
+  resources :accounts
+  resources :status_payments
+  resources :comments
+  resources :lawsuits
+  resources :kinds
+  resources :venues
+  resources :statuses
+  resources :clients
+  resources :addresses
+  resources :address_types
+  resources :data_users
+  resources :offices
 	root 'welcome#index'
   get 'welcome/index'
 

@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  amount: 1.5
+  amount_paid: 1.5
+  payday: 1
+  lawsuit: one
+  client: one
+  user: one
+  statuspayment: one
+
+two:
+  amount: 1.5
+  amount_paid: 1.5
+  payday: 1
+  lawsuit: two
+  client: two
+  user: two
+  statuspayment: two
