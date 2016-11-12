@@ -25,7 +25,7 @@ class DataUsersController < ApplicationController
   # POST /data_users.json
   def create
     @data_user = DataUser.new(data_user_params)
-
+    @data_user.user_id = current_user.id
     respond_to do |format|
       if @data_user.save
         format.html { redirect_to @data_user, notice: 'Data user was successfully created.' }
@@ -69,6 +69,6 @@ class DataUsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def data_user_params
-      params.require(:data_user).permit(:name, :born, :sex, :office_id, :user_id)
+      params.require(:data_user).permit(:name, :born, :sex, :office_id)
     end
 end

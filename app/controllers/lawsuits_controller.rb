@@ -1,6 +1,7 @@
 class LawsuitsController < ApplicationController
   before_action :set_lawsuit, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
+  before_filter :set_client_id, only: [:new, :create]
   # GET /lawsuits
   # GET /lawsuits.json
   def index
@@ -25,7 +26,8 @@ class LawsuitsController < ApplicationController
   # POST /lawsuits.json
   def create
     @lawsuit = Lawsuit.new(lawsuit_params)
-
+    @lawsuit.user_id = current_user.id
+    @lawsuit.client_id = $ID_CLIENT
     respond_to do |format|
       if @lawsuit.save
         format.html { redirect_to @lawsuit, notice: 'Lawsuit was successfully created.' }
@@ -70,6 +72,6 @@ class LawsuitsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def lawsuit_params
       params.require(:lawsuit).permit(:number, :assessment, :description, 
-        :amount, :user_id, :client_id, :venue_id, :kind_id, :status_id)
+        :amount, :venue_id, :kind_id, :status_id)
     end
 end

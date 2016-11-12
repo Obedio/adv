@@ -6,12 +6,7 @@
   <thead>
     <tr>
       <th>Number</th>
-      <th>Assessment</th>
-      <th>Description</th>
-      <th>Amount</th>
-      <th>User</th>
       <th>Client</th>
-      <th>Venue</th>
       <th>Kind</th>
       <th>Status</th>
       <th colspan="3"></th>
@@ -22,12 +17,7 @@
     <% @lawsuits.each do |lawsuit| %>
       <tr>
         <td><%= lawsuit.number %></td>
-        <td><%= lawsuit.assessment %></td>
-        <td><%= lawsuit.description %></td>
-        <td><%= lawsuit.amount %></td>
-        <td><%= lawsuit.user %></td>
-        <td><%= lawsuit.client %></td>
-        <td><%= lawsuit.venue %></td>
+        <td><%= lawsuit.client.name %></td>
         <td><%= lawsuit.kind.name %></td>
         <td><%= lawsuit.status.name %></td>
         <td><%= link_to 'Show', lawsuit %></td>

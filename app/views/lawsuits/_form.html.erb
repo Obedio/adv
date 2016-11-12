@@ -16,6 +16,8 @@
     <%= f.text_field :number %>
   </div>
 
+  <strong><%= $ID_CLIENT %></strong>
+
   <div class="field">
     <%= f.label :assessment %>
     <%= f.date_select :assessment %>
@@ -32,28 +34,18 @@
   </div>
 
   <div class="field">
-    <%= f.label :user_id %>
-    <%= f.text_field :user_id %>
-  </div>
-
-  <div class="field">
-    <%= f.label :client_id %>
-    <%= f.text_field :client_id %>
-  </div>
-
-  <div class="field">
     <%= f.label :venue_id %>
-    <%= f.text_field :venue_id %>
+    <%= f.collection_select(:venue_id, Venue.all, :id, :name, {include_blank: true})%>
   </div>
 
   <div class="field">
     <%= f.label :kind_id %>
-    <%= f.collection_select(:kind_id, Kind.all, :id, :name, prompt: true)%>
+    <%= f.collection_select(:kind_id, Kind.all, :id, :name, {include_blank: true})%>
   </div>
 
   <div class="field">
     <%= f.label :status_id %>
-    <%= f.collection_select(:status_id, Status.all, :id, :name, prompt: true)%>
+    <%= f.collection_select(:status_id, Status.all, :id, :name, {include_blank: true})%>
   </div>
 
   <div class="actions">

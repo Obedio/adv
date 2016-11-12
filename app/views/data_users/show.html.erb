@@ -17,12 +17,12 @@
 
 <p>
   <strong>Office:</strong>
-  <%= @data_user.office %>
+  <%= @data_user.office.name %>
 </p>
 
 <p>
   <strong>User:</strong>
-  <%= @data_user.user %>
+  <%= @data_user.user.email %>
 </p>
 
 <%= link_to 'Edit', edit_data_user_path(@data_user) %> |
