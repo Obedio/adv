@@ -37,12 +37,12 @@
 
 <p>
   <strong>Kind:</strong>
-  <%= @lawsuit.kind %>
+  <%= @lawsuit.kind.name %>
 </p>
 
 <p>
   <strong>Status:</strong>
-  <%= @lawsuit.status %>
+  <%= @lawsuit.status.name %>
 </p>
 
 <%= link_to 'Edit', edit_lawsuit_path(@lawsuit) %> |

@@ -28,8 +28,8 @@
         <td><%= lawsuit.user %></td>
         <td><%= lawsuit.client %></td>
         <td><%= lawsuit.venue %></td>
-        <td><%= lawsuit.kind %></td>
-        <td><%= lawsuit.status %></td>
+        <td><%= lawsuit.kind.name %></td>
+        <td><%= lawsuit.status.name %></td>
         <td><%= link_to 'Show', lawsuit %></td>
         <td><%= link_to 'Edit', edit_lawsuit_path(lawsuit) %></td>
         <td><%= link_to 'Destroy', lawsuit, method: :delete, data: { confirm: 'Are you sure?' } %></td>

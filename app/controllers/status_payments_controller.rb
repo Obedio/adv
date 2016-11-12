@@ -1,6 +1,6 @@
 class StatusPaymentsController < ApplicationController
   before_action :set_status_payment, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
   # GET /status_payments
   # GET /status_payments.json
   def index

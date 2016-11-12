@@ -1,2 +1,8 @@
 <h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
+	<%= link_to 'Sair', destroy_user_session_path, method: :delete %>
+	<ul>
+		<li><%= link_to 'Processos', lawsuits_path %></li>
+		<li><%= link_to 'Clientes', clients_path %></li>
+		<li><%= link_to 'Financeiro', accounts_path %></li>
+		<li><%= link_to 'Meus dados', data_users_path %></li>
+	</ul>

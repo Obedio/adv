@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161107034729) do
+ActiveRecord::Schema.define(version: 20161112140939) do
 
   create_table "accounts", force: :cascade do |t|
     t.float    "amount"
@@ -41,10 +41,11 @@ ActiveRecord::Schema.define(version: 20161107034729) do
     t.string   "state"
     t.string   "country"
     t.string   "zipcode"
-    t.integer  "addresstype_id"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-    t.index ["addresstype_id"], name: "index_addresses_on_addresstype_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "client_id"
+    t.string   "addresstype"
+    t.index ["client_id"], name: "index_addresses_on_client_id"
   end
 
   create_table "clients", force: :cascade do |t|
@@ -57,10 +58,10 @@ ActiveRecord::Schema.define(version: 20161107034729) do
     t.string   "telephone"
     t.string   "celphone"
     t.text     "bio"
-    t.integer  "address_id"
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "address_id"
     t.index ["address_id"], name: "index_clients_on_address_id"
     t.index ["user_id"], name: "index_clients_on_user_id"
   end
@@ -124,6 +125,12 @@ ActiveRecord::Schema.define(version: 20161107034729) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["account_id"], name: "index_payments_on_account_id"
+  end
+
+  create_table "status", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "status_payments", force: :cascade do |t|

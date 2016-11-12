@@ -9,7 +9,6 @@ Rails.application.routes.draw do
   resources :statuses
   resources :clients
   resources :addresses
-  resources :address_types
   resources :data_users
   resources :offices
 	root 'welcome#index'

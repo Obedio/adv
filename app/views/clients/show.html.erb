@@ -46,13 +46,45 @@
 </p>
 
 <p>
-  <strong>Address:</strong>
-  <%= @client.address %>
+ <p>
+  <strong>Street:</strong>
+  <%= @client.address.street %>
+</p>
+
+<p>
+  <strong>District:</strong>
+  <%= @client.address.district %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @client.address.city %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @client.address.state %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @client.address.country %>
+</p>
+
+<p>
+  <strong>Zipcode:</strong>
+  <%= @client.address.zipcode %>
+</p>
+
+<p>
+  <strong>Addresstype:</strong>
+  <%= @client.address.addresstype %>
+</p>
 </p>
 
 <p>
   <strong>User:</strong>
-  <%= @client.user %>
+  <%= @client.user.email %>
 </p>
 
 <%= link_to 'Edit', edit_client_path(@client) %> |

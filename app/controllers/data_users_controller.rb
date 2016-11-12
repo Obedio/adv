@@ -1,6 +1,6 @@
 class DataUsersController < ApplicationController
   before_action :set_data_user, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
   # GET /data_users
   # GET /data_users.json
   def index

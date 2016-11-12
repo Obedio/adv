@@ -48,12 +48,12 @@
 
   <div class="field">
     <%= f.label :kind_id %>
-    <%= f.text_field :kind_id %>
+    <%= f.collection_select(:kind_id, Kind.all, :id, :name, prompt: true)%>
   </div>
 
   <div class="field">
     <%= f.label :status_id %>
-    <%= f.text_field :status_id %>
+    <%= f.collection_select(:status_id, Status.all, :id, :name, prompt: true)%>
   </div>
 
   <div class="actions">
