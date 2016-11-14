@@ -1,4 +1,4 @@
-<%= form_for(lawsuit) do |f| %>
+<%= form_for([@client, @client.lawsuits.new]) do |f| %>
   <% if lawsuit.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(lawsuit.errors.count, "error") %> prohibited this lawsuit from being saved:</h2>
@@ -16,8 +16,6 @@
     <%= f.text_field :number %>
   </div>
 
-  <strong><%= $ID_CLIENT %></strong>
-
   <div class="field">
     <%= f.label :assessment %>
     <%= f.date_select :assessment %>
@@ -31,6 +29,11 @@
   <div class="field">
     <%= f.label :amount %>
     <%= f.text_field :amount %>
+  </div>
+
+    <div class="field">
+    <%= f.label :amount_paid %>
+    <%= f.text_field :amount_paid %>
   </div>
 
   <div class="field">

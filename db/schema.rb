@@ -10,21 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161112140939) do
+ActiveRecord::Schema.define(version: 20161114060341) do
 
   create_table "accounts", force: :cascade do |t|
     t.float    "amount"
     t.float    "amount_paid"
-    t.integer  "payday"
-    t.integer  "lawsuit_id"
-    t.integer  "client_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.integer  "user_id"
-    t.integer  "statuspayment_id"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
-    t.index ["client_id"], name: "index_accounts_on_client_id"
+    t.integer  "lawsuit_id"
     t.index ["lawsuit_id"], name: "index_accounts_on_lawsuit_id"
-    t.index ["statuspayment_id"], name: "index_accounts_on_statuspayment_id"
     t.index ["user_id"], name: "index_accounts_on_user_id"
   end
 
@@ -98,7 +93,6 @@ ActiveRecord::Schema.define(version: 20161112140939) do
     t.string   "number"
     t.date     "assessment"
     t.text     "description"
-    t.float    "amount"
     t.integer  "user_id"
     t.integer  "client_id"
     t.integer  "venue_id"
@@ -106,6 +100,8 @@ ActiveRecord::Schema.define(version: 20161112140939) do
     t.integer  "status_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.float    "amount"
+    t.float    "amount_paid"
     t.index ["client_id"], name: "index_lawsuits_on_client_id"
     t.index ["kind_id"], name: "index_lawsuits_on_kind_id"
     t.index ["status_id"], name: "index_lawsuits_on_status_id"

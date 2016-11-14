@@ -55,7 +55,7 @@
     <%= f.label :bio %>
     <%= f.text_area :bio %>
   </div>    
-
+<!-- Address FIELDS -->
   <%= f.fields_for :address do |ff| %>
     <div class="field">
       <%= ff.label :addresstype %>
@@ -93,6 +93,7 @@
   </div>
 
   <% end %>
+<!-- Address FIELDS -->
 
   <div class="actions">
     <%= f.submit %>

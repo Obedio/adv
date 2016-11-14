@@ -3,7 +3,6 @@
 <p>
   <strong>Name:</strong>
   <%= @client.name %>
-  <%= $ID_CLIENT %>
 </p>
 
 <p>
@@ -91,4 +90,4 @@
 <%= link_to 'Edit', edit_client_path(@client) %> |
 <%= link_to 'Back', clients_path %>
 
-<strong><%= link_to 'Novo Processo', new_lawsuit_path %></strong>
+<strong><%= link_to 'Novo Processo', new_client_lawsuit_path(client_id: @client.id) %></strong>

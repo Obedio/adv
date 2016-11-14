@@ -1,7 +1,7 @@
 class LawsuitsController < ApplicationController
   before_action :set_lawsuit, only: [:show, :edit, :update, :destroy]
+  before_action :load_client, only: [:new, :create]
   before_action :authenticate_user!
-  before_filter :set_client_id, only: [:new, :create]
   # GET /lawsuits
   # GET /lawsuits.json
   def index
@@ -25,9 +25,8 @@ class LawsuitsController < ApplicationController
   # POST /lawsuits
   # POST /lawsuits.json
   def create
-    @lawsuit = Lawsuit.new(lawsuit_params)
+    @lawsuit = @client.lawsuits.new(lawsuit_params)
     @lawsuit.user_id = current_user.id
-    @lawsuit.client_id = $ID_CLIENT
     respond_to do |format|
       if @lawsuit.save
         format.html { redirect_to @lawsuit, notice: 'Lawsuit was successfully created.' }
@@ -56,6 +55,7 @@ class LawsuitsController < ApplicationController
   # DELETE /lawsuits/1
   # DELETE /lawsuits/1.json
   def destroy
+    #@lawsuit = @client.lawsuits.find(params[:id])
     @lawsuit.destroy
     respond_to do |format|
       format.html { redirect_to lawsuits_url, notice: 'Lawsuit was successfully destroyed.' }
@@ -64,14 +64,15 @@ class LawsuitsController < ApplicationController
   end
 
   private
+    def load_client
+      @client = Client.find(params[:client_id])
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_lawsuit
       @lawsuit = Lawsuit.find(params[:id])
     end
-
     # Never trust parameters from the scary internet, only allow the white list through.
     def lawsuit_params
-      params.require(:lawsuit).permit(:number, :assessment, :description, 
-        :amount, :venue_id, :kind_id, :status_id)
+      params.require(:lawsuit).permit(:number, :assessment, :description, :amount, :amount_paid, :venue_id, :kind_id, :status_id)
     end
 end
