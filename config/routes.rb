@@ -2,9 +2,6 @@ Rails.application.routes.draw do
   resources :clients, shallow: true do
     resources :lawsuits
   end
-  resources :lawsuits, shallow: true do
-      resources :comments
-  end
   resources :accounts, shallow: true do
     resources :payments
   end

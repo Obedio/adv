@@ -12,23 +12,6 @@
 
 ActiveRecord::Schema.define(version: 20161114060341) do
 
-  create_table "accounts", force: :cascade do |t|
-    t.float    "amount"
-    t.float    "amount_paid"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.integer  "user_id"
-    t.integer  "lawsuit_id"
-    t.index ["lawsuit_id"], name: "index_accounts_on_lawsuit_id"
-    t.index ["user_id"], name: "index_accounts_on_user_id"
-  end
-
-  create_table "address_types", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "addresses", force: :cascade do |t|
     t.string   "street"
     t.string   "district"
@@ -59,16 +42,6 @@ ActiveRecord::Schema.define(version: 20161114060341) do
     t.integer  "address_id"
     t.index ["address_id"], name: "index_clients_on_address_id"
     t.index ["user_id"], name: "index_clients_on_user_id"
-  end
-
-  create_table "comments", force: :cascade do |t|
-    t.text     "description"
-    t.integer  "lawsuit_id"
-    t.integer  "user_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.index ["lawsuit_id"], name: "index_comments_on_lawsuit_id"
-    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "data_users", force: :cascade do |t|
@@ -124,12 +97,6 @@ ActiveRecord::Schema.define(version: 20161114060341) do
   end
 
   create_table "status", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "status_payments", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
