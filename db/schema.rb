@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161114060341) do
+ActiveRecord::Schema.define(version: 20161116135655) do
 
   create_table "addresses", force: :cascade do |t|
     t.string   "street"
@@ -82,6 +82,14 @@ ActiveRecord::Schema.define(version: 20161114060341) do
     t.index ["venue_id"], name: "index_lawsuits_on_venue_id"
   end
 
+  create_table "observations", force: :cascade do |t|
+    t.text     "description"
+    t.integer  "lawsuit_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["lawsuit_id"], name: "index_observations_on_lawsuit_id"
+  end
+
   create_table "offices", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
@@ -90,16 +98,10 @@ ActiveRecord::Schema.define(version: 20161114060341) do
 
   create_table "payments", force: :cascade do |t|
     t.float    "amount"
-    t.integer  "account_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["account_id"], name: "index_payments_on_account_id"
-  end
-
-  create_table "status", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "lawsuit_id"
+    t.index ["lawsuit_id"], name: "index_payments_on_lawsuit_id"
   end
 
   create_table "statuses", force: :cascade do |t|

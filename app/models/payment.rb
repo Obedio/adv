@@ -1,5 +1,3 @@
 class Payment < ApplicationRecord
-  belongs_to :account
-  validates :account, :amount, presence: true
-  validates :amount, numericality: true
+  belongs_to :lawsuit
 end
