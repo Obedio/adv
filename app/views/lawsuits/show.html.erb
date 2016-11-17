@@ -48,5 +48,26 @@
   <%= @lawsuit.status.name %>
 </p>
 
+<h3>Comentários</h3>
+<table>
+  <thead>
+    <tr>
+      <th>-----------</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @lawsuit.observations.each do |observation| %>
+      <tr>
+        <td><%= observation.description %></td>
+        <td><%= link_to 'Editar', edit_observation_path(observation) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
 <%= link_to 'Edit', edit_lawsuit_path(@lawsuit) %> |
 <%= link_to 'Back', lawsuits_path %>
+<strong><%= link_to 'Adicionar Observação', new_lawsuit_observation_path(lawsuit_id: @lawsuit.id) %></strong>
+<strong><%= link_to 'Realizar Pagamento', new_lawsuit_payment_path(lawsuit_id: @lawsuit.id) %></strong>

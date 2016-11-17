@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
-  resources :observations
   resources :clients, shallow: true do
     resources :lawsuits
   end
-  resources :accounts, shallow: true do
+  resources :lawsuits, shallow: true do
     resources :payments
+  end
+  resources :lawsuits, shallow: true do
+    resources :observations
   end
   resources :addresses, :data_users
 	root 'welcome#index'
