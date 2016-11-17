@@ -52,16 +52,6 @@ class ObservationsController < ApplicationController
     end
   end
 
-  # DELETE /observations/1
-  # DELETE /observations/1.json
-  def destroy
-    @observation.destroy
-    respond_to do |format|
-      format.html { redirect_to observations_url, notice: 'Observation was successfully destroyed.' }
-      format.json { head :no_content }
-    end
-  end
-
   private
     def load_lawsuit
       @lawsuit = Lawsuit.find(params[:lawsuit_id])
