@@ -5,7 +5,16 @@ class LawsuitsController < ApplicationController
   # GET /lawsuits
   # GET /lawsuits.json
   def index
+    if params[:search]
+      @lawsuits = Lawsuit.where(number: params[:search])
+      if @lawsuits == []
+        respond_to do |format|
+            format.html { redirect_to lawsuits_url, notice: 'Não foi encontrado.' }
+        end
+      end
+    else
     @lawsuits = Lawsuit.all
+    end
   end
 
   # GET /lawsuits/1

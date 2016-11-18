@@ -1,7 +1,10 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Lawsuits</h1>
-
+<%= form_tag( '/lawsuits', :method => :get) do %>
+  <%= text_field_tag 'search', nil, placeholder: 'Enter with client´s number' %>
+  <%= submit_tag 'Search' %>
+<% end %>
 <table>
   <thead>
     <tr>
@@ -31,3 +34,4 @@
 <br>
 
 <%= link_to 'New Lawsuit', new_lawsuit_path %>
+<%= link_to 'Home', root_path %>

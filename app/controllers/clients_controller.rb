@@ -4,7 +4,16 @@ class ClientsController < ApplicationController
   # GET /clients
   # GET /clients.json
   def index
+    if params[:search]
+      @clients = Client.where(cpf: params[:search])
+      if @clients == []
+        respond_to do |format|
+            format.html { redirect_to clients_url, notice: 'Não foi encontrado.' }
+        end
+      end
+    else
     @clients = Client.all
+    end
   end
 
   # GET /clients/1

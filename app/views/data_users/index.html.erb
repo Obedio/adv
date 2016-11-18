@@ -27,12 +27,11 @@
         <td><%= data_user.sex %></td>
         <td><%= data_user.office.name %></td>
         <td><%= data_user.user.email %></td>
-        <td><%= link_to 'Show', data_user %></td>
         <td><%= link_to 'Edit', edit_data_user_path(data_user) %></td>
-        <td><%= link_to 'Destroy', data_user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 
 </table>
 <% end %>
+<%= link_to 'Home', root_path %>

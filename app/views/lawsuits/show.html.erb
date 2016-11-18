@@ -87,7 +87,7 @@
     <% end %>
   </tbody>
 </table>
-
+<%= link_to 'Home', root_path %>
 <%= link_to 'Edit', edit_lawsuit_path(@lawsuit) %> |
 <%= link_to 'Back', lawsuits_path %>
 <strong><%= link_to 'Adicionar Observação', new_lawsuit_observation_path(lawsuit_id: @lawsuit.id) %></strong>
