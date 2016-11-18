@@ -1,5 +1,5 @@
 class ObservationsController < ApplicationController
-  before_action :set_observation, only: [:show, :edit, :update, :destroy]
+  before_action :set_observation, only: [:show, :edit, :update]
   before_action :authenticate_user!
   before_action :load_lawsuit, only: [:new, :create]
   # GET /observations

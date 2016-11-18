@@ -1,12 +1,13 @@
 class PaymentsController < ApplicationController
-  before_action :set_payment, only: [:show, :edit, :update, :destroy]
+  before_action :set_payment, only: [:show]
   before_action :authenticate_user!
-  before_action :load_lawsuit, only: [:new, :create, :update]
-  before_action :check_payment, only: [:new, :create]
+  before_action :load_lawsuit, only: [:new, :create]
+  
   # GET /payments
   # GET /payments.json
   def index
     @payments = Payment.all
+   # @id = Payment.first.lawsuit_id
   end
 
   # GET /payments/1
@@ -16,20 +17,24 @@ class PaymentsController < ApplicationController
 
   # GET /payments/new
   def new
+    a = @lawsuit.amount
+    b = @lawsuit.amount_paid
+    if a > b
     @payment = Payment.new
-  end
-
-  # GET /payments/1/edit
-  def edit
+    else
+      respond_to do |format|
+        format.html { redirect_to @lawsuit, notice: 'Não há mais pagamentos para realizar. Parabéns!!!' }
+      end
+    end
   end
 
   # POST /payments
   # POST /payments.json
   def create
-    @payment = Payment.new(payment_params)
-
+    @payment = @lawsuit.payments.new(payment_params)
+    value = @lawsuit.amount_paid + @payment.amount
     respond_to do |format|
-      if @payment.save
+      if @payment.save && @lawsuit.update(amount_paid: value)
         format.html { redirect_to @lawsuit, notice: 'Payment was successfully created.' }
         format.json { render :show, status: :created, location: @payment }
       else
@@ -39,35 +44,11 @@ class PaymentsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /payments/1
-  # PATCH/PUT /payments/1.json
-  def update
-    respond_to do |format|
-      if @lawsuit.update(payment_params)
-        format.html { redirect_to @lawsuit, notice: 'Payment was successfully updated.' }
-        format.json { render :show, status: :ok, location: @lawsuit }
-      else
-        format.html { render :edit }
-        format.json { render json: @lawsuit.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
   private
     #metodo para carregar o processo
     def load_lawsuit
       @lawsuit = Lawsuit.find(params[:lawsuit_id])
     end
-    #metodo para validar o pagamento.
-    def check_payment
-      respond_to do |format|
-      if (@lawsuit.amount_paid == @lawsuit.amount or @lawsuit.amount_paid == @lawsuit.amount)
-        format.html { redirect_to @lawsuit, notice: 'Não pagamentos para serem realizados!' }
-      else
-        format.html { render :new }
-      end
-    end
-
     # Use callbacks to share common setup or constraints between actions.
     def set_payment
       @payment = Payment.find(params[:id])
@@ -77,5 +58,4 @@ class PaymentsController < ApplicationController
     def payment_params
       params.require(:payment).permit(:amount)
     end
-  end
 end
