@@ -10,6 +10,8 @@
     <meta name="robots" content="index, follow">
     <meta name="author" content="Obedio Albuquerque">
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <meta rel="stylesheet" type="text/css" href="../../assets/stylesheets/application.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
@@ -19,9 +21,11 @@
   </head>
 
   <body>
- 	<header class="barra-super bg-gradiente">
-  		
-  	</header>
+ 	  <header class="bg-gradiente barra-super">
+      <% if user_signed_in? %>
+        <a rel="nofollow" data-method="delete" href="/users/sign_out"><i class="material-icons myicons">directions_run</i><h3>Sair</h3></a>
+      <% end %>
+    </header>
     <%= yield %>
     <footer class="bg-gradiente">
     	<p>Copyright @ OrbTech 2016. Todos direitos reservados</p>	

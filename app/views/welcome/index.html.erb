@@ -1,8 +1,22 @@
-<%= link_to 'Sair', destroy_user_session_path, method: :delete %>
-<ul>
-	<li><%= link_to 'Processos', lawsuits_path %></li>
-	<li><%= link_to 'Clientes', clients_path %></li>
-	<li><%= link_to 'Meus dados', data_users_path %></li>
-	<li><%= link_to 'Relatórios Financeiro', data_users_path %></li>
-	<li><%= link_to 'Relatórios de Processos', data_users_path %></li>	
+<ul class="main">
+	<li> 
+		<a href="/lawsuits"><i class="material-icons">library_books</i><h6>Processos</h6></a>
+		
+	</li>
+	<li>
+		<a href="/clients"><i class="material-icons">supervisor_account</i><h6>Clientes</h6></a>
+		
+	</li>
+	<li>
+		<a href="/data_users"><i class="material-icons">account_box</i><h6>Meus <br/>Dados</h6></a>
+		
+	</li>
+	<li>
+		<a href="/clients"><i class="material-icons">assignment</i><h6>Relatório</br>Financeiro</h6></a>
+		
+	</li>
+	<li>
+		<a href="/clients"><i class="material-icons">assignment</i><h6>Relatório de Processos</h6></a>
+		
+	</li>
 </ul>
