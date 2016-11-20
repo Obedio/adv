@@ -12,7 +12,7 @@ class ClientsController < ApplicationController
         end
       end
     else
-    @clients = Client.all
+    @clients = Client.all.paginate(page: params[:page], per_page: 3)
     end
   end
 

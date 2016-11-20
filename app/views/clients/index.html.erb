@@ -1,37 +1,41 @@
-<p id="notice"><%= notice %></p>
+<div class="client">
+  <i class="material-icons icon-client">supervisor_account</i>
+  <span class="titulo-client">Clientes</span>
 
-<h1>Clients</h1>
-<%= form_tag( '/clients', :method => :get) do %>
-  <%= text_field_tag 'search', nil, placeholder: 'Enter with client´s cpf' %>
-  <%= submit_tag 'Search' %>
-<% end %>
-<table>
+  <%= form_tag( '/clients', :method => :get) do %>
+    <%= text_field_tag 'search', nil, placeholder: 'Digite o CPF do Cliente...' %>
+     <button name="commit" type="submit">
+      <i class="material-icons icon-client">pageview</i></button>
+  <% end %>
+</div>
+<p class="notice"><%= notice %></p> 
+<table  class="client">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Cpf</th>
-      <th>Email</th>
-      <th>Telephone</th>
-      <th colspan="3"></th>
+      <th>Nome</th>
+      <th>CPF</th>
     </tr>
   </thead>
 
   <tbody>
     <% @clients.each do |client| %>
       <tr>
-        <td><%= client.name %></td>
-        <td><%= client.cpf %></td>
-        <td><%= client.email %></td>
-        <td><%= client.telephone %></td>
-        <td><%= link_to 'Show', client %></td>
-        <td><%= link_to 'Edit', edit_client_path(client) %></td>
-        <td><%= link_to 'Destroy', client, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to client.name, client %></td>
+        <td><%= client.cpf %></td> 
       </tr>
     <% end %>
   </tbody>
 </table>
-
+<%= will_paginate @clients %>
 <br>
-
-<%= link_to 'New Client', new_client_path %>
-<%= link_to 'Home', root_path %>
+<ul class="links-client">
+  <li>
+    <a href="/clients/new"><i class="material-icons icon-client">add_box</i>
+      <h3>Novo Cliente</h3>
+    </a>
+  </li>
+  <li>
+    <a href="/"><i class="material-icons icon-client">home</i>
+    <h3>Início</h3>
+  </li>
+</ul>
