@@ -4,12 +4,12 @@
 
   <%= form_tag( '/clients', :method => :get) do %>
     <%= text_field_tag 'search', nil, placeholder: 'Digite o CPF do Cliente...' %>
-     <button name="commit" type="submit">
-      <i class="material-icons icon-client">pageview</i></button>
+     <%= button_tag do %>
+      <span class="material-icons icon-client">pageview</span>
+      <% end %>
   <% end %>
 </div>
-<p class="notice"><%= notice %></p> 
-<table  class="client">
+<table  class="client-tb client">
   <thead>
     <tr>
       <th>Nome</th>
@@ -28,14 +28,17 @@
 </table>
 <%= will_paginate @clients %>
 <br>
+
 <ul class="links-client">
   <li>
-    <a href="/clients/new"><i class="material-icons icon-client">add_box</i>
-      <h3>Novo Cliente</h3>
-    </a>
+    <%= link_to new_client_path do %>
+      <span class="material-icons icon-client">person_add</span><h6>Novo Cliente</h6>
+    <% end %>
   </li>
+
   <li>
-    <a href="/"><i class="material-icons icon-client">home</i>
-    <h3>Início</h3>
+    <%= link_to root_path do %>
+      <span class="material-icons icon-client">home</span><h6>Início</h6>
+      <% end %>
   </li>
 </ul>

@@ -22,8 +22,13 @@
 
   <body>
  	  <header class="bg-gradiente barra-super">
+    <% if notice != nil %>
+      <span class="icon-notice fa fa-exclamation-triangle" aria-hidden="true"><%= notice %></span><%end%>
+    
       <% if user_signed_in? %>
-        <a rel="nofollow" data-method="delete" href="/users/sign_out"><i class="material-icons myicons">directions_run</i><h3>Sair</h3></a>
+        <%= link_to destroy_user_session_path, method: :delete do %>
+          <span class="myicons fa fa-sign-out" aria-hidden="true"></span><h6>Sair</h6>
+        <% end %>
       <% end %>
     </header>
     <%= yield %>

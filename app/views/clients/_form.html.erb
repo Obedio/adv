@@ -4,17 +4,17 @@
       <h2><%= pluralize(client.errors.count, "error") %> prohibited this client from being saved:</h2>
 
       <ul>
-      <% client.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% client.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
-  <% end %>
+<% end %>
 
-  <div class="field">
+<div class="field">
     <%= f.label :name %>
     <%= f.text_field :name %>
-  </div>
+</div>
 
   <div class="field">
     <%= f.label :born %>

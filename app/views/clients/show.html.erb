@@ -1,93 +1,63 @@
-<p id="notice"><%= notice %></p>
+<div class="show-client">
+  <h6 class="show-title-client">Dados do Cliente</h6>
+  <h6 class="show-icon-client"><i class="material-icons">supervisor_account</i><h6>
+</div>
+<ul class="show-client client-dados">
+  <li>Nome: <%= @client.name %></li>  
+  <li>Data de Nascimento: <%= @client.born %></li>  
+  <li>Sexo: <%= @client.sex %></li>  
+  <li>CPF: <%= @client.cpf %></li>  
+  <li>RG: <%= @client.rg %></li>  
+  <li>Biografia: <%= @client.bio %></li>
+</ul>
 
-<p>
-  <strong>Name:</strong>
-  <%= @client.name %>
-</p>
+<div class="show-client">
+  <h6 class="show-title-client">Contato</h6>
+  <h6 class="show-icon-client"><i class="material-icons">supervisor_account</i><h6>
+</div>
+<ul class="show-client client-dados">
+  <li>Email: <%= @client.email %></li>  
+  <li>Telefone: <%= @client.telephone %></li>
+  <li>Celular: <%= @client.celphone %></li>
+</ul>
 
-<p>
-  <strong>Born:</strong>
-  <%= @client.born %>
-</p>
+<div class="show-client">
+  <h6 class="show-title-client">Endereço</h6>
+  <h6 class="show-icon-client"><i class="material-icons">supervisor_account</i><h6>
+</div>
+<ul class="show-client client-dados">
+  <li>Tipo de Endereço: <%= @client.address.addresstype %></li>
+  <li>Rua: <%= @client.address.street %></li>
+  <li>Bairro: <%= @client.address.district %></li>  
+  <li>Cidade: <%= @client.address.city %></li>  
+  <li>Estado: <%= @client.address.state %></li>  
+  <li>País: <%= @client.address.country %></li>  
+  <li>CEP: <%= @client.address.zipcode %></li>    
+</ul>
 
-<p>
-  <strong>Sex:</strong>
-  <%= @client.sex %>
-</p>
+<ul class="links-show-client">
 
-<p>
-  <strong>Cpf:</strong>
-  <%= @client.cpf %>
-</p>
+  <li>
+    <%= link_to clients_path do %>
+      <span class="material-icons">arrow_back</span><h6>Voltar</h6>
+    <% end %>
+  </li>
+  
+  <li>
+    <%= link_to root_path do %>
+      <span class="material-icons">home</span><h6>Início</h6>
+    <% end %>
+  </li>
 
-<p>
-  <strong>Rg:</strong>
-  <%= @client.rg %>
-</p>
+  <li>
+    <%= link_to edit_client_path(@client) do %>
+      <span class="material-icons">create</span><h6>Alterar</h6>
+    <% end %>      
+  </li>
 
-<p>
-  <strong>Email:</strong>
-  <%= @client.email %>
-</p>
-
-<p>
-  <strong>Telephone:</strong>
-  <%= @client.telephone %>
-</p>
-
-<p>
-  <strong>Celphone:</strong>
-  <%= @client.celphone %>
-</p>
-
-<p>
-  <strong>Bio:</strong>
-  <%= @client.bio %>
-</p>
-
-<p>
- <p>
-  <strong>Street:</strong>
-  <%= @client.address.street %>
-</p>
-
-<p>
-  <strong>District:</strong>
-  <%= @client.address.district %>
-</p>
-
-<p>
-  <strong>City:</strong>
-  <%= @client.address.city %>
-</p>
-
-<p>
-  <strong>State:</strong>
-  <%= @client.address.state %>
-</p>
-
-<p>
-  <strong>Country:</strong>
-  <%= @client.address.country %>
-</p>
-
-<p>
-  <strong>Zipcode:</strong>
-  <%= @client.address.zipcode %>
-</p>
-
-<p>
-  <strong>Addresstype:</strong>
-  <%= @client.address.addresstype %>
-</p>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @client.user.email %>
-</p>
-<%= link_to 'Home', root_path %>
-<%= link_to 'Edit', edit_client_path(@client) %> |
-<%= link_to 'Back', clients_path %>
-
-<strong><%= link_to 'Novo Processo', new_client_lawsuit_path(client_id: @client.id) %></strong>
+  <li>
+    <%= link_to new_client_lawsuit_path(client_id: @client.id)  do %>
+      <span class="material-icons">add_box</span><h6>Novo<br>Processo</h6>
+    <% end %>
+  </li>
+</ul>
