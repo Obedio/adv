@@ -11,91 +11,93 @@
     </div>
 <% end %>
 
-<div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+<div class="new-client">
+  <h6 class="new-title-client">Cliente</h6>
+  <h6 class="new-icon-client"><i class="material-icons">supervisor_account</i><h6>
 </div>
 
-  <div class="field">
+<div class="new-client">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+
     <%= f.label :born %>
     <%= f.date_select :born %>
-  </div>
 
-  <div class="field">
     <%= f.label :sex %>
     <%= f.select(:sex, ['Masculino', 'Feminino'], {include_blank: true})%>
-  </div>
 
-  <div class="field">
     <%= f.label :cpf %>
     <%= f.text_field :cpf %>
-  </div>
-
-  <div class="field">
+ 
     <%= f.label :rg %>
     <%= f.text_field :rg %>
-  </div>
 
-  <div class="field">
-    <%= f.label :email %>
-    <%= f.text_field :email %>
-  </div>
-
-  <div class="field">
-    <%= f.label :telephone %>
-    <%= f.text_field :telephone %>
-  </div>
-
-  <div class="field">
-    <%= f.label :celphone %>
-    <%= f.text_field :celphone %>
-  </div>
-
-  <div class="field">
     <%= f.label :bio %>
     <%= f.text_area :bio %>
-  </div>    
+  </div>
+
+<div class="new-client">
+  <h6 class="new-title-client">Contato</h6>
+  <h6 class="new-icon-client"><i class="material-icons">supervisor_account</i><h6>
+</div>
+
+<div class="new-client">
+  <%= f.label :email %>
+   <%= f.text_field :email %>
+
+  <%= f.label :telephone %>
+  <%= f.text_field :telephone %>
+
+  <%= f.label :celphone %>
+  <%= f.text_field :celphone %>
+
+</div>    
 <!-- Address FIELDS -->
-  <%= f.fields_for :address do |ff| %>
-    <div class="field">
-      <%= ff.label :addresstype %>
-      <%= ff.select(:addresstype, ['Residencial', 'Comercial'], {include_blank: true})%>
-    </div>
+<%= f.fields_for :address do |ff| %>
+  <div class="new-client">
+    <h6 class="new-title-client">Endereço</h6>
+    <h6 class="new-icon-client"><i class="material-icons">supervisor_account</i><h6>
+  </div>
 
-    <div class="field">
-      <%= ff.label :street %>
-      <%= ff.text_field :street %>
-    </div>
+  <div class="new-client">
+    <%= ff.label :addresstype %>
+    <%= ff.select(:addresstype, ['Residencial', 'Comercial'], {include_blank: true})%>
 
-    <div class="field">
-      <%= ff.label :district %>
-      <%= ff.text_field :district %>
-    </div>
+    <%= ff.label :street %>
+    <%= ff.text_field :street %>
 
-    <div class="field">
-      <%= ff.label :city %>
-      <%= ff.text_field :city %>
-    </div>
+    <%= ff.label :district %>
+    <%= ff.text_field :district %>
 
-    <div class="field">
-      <%= ff.label :state %>
-      <%= ff.text_field :state %>
-    </div>
+    <%= ff.label :city %>
+    <%= ff.text_field :city %>
 
-    <div class="field">
-      <%= ff.label :country %>
-      <%= ff.text_field :country %>
-    </div>
+    <%= ff.label :state %>
+    <%= ff.text_field :state %>
 
-  <div class="field">
+    <%= ff.label :country %>
+    <%= ff.text_field :country %>
+
     <%= ff.label :zipcode %>
     <%= ff.text_field :zipcode %>
   </div>
-
-  <% end %>
+<% end %>
 <!-- Address FIELDS -->
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+<ul class="links-new-client">
+  <li>
+    <%= button_tag do %>
+      <span class="material-icons">save</span><h6>Salvar</h6>
+    <% end %>
+  </li>
+    <li>
+      <%= link_to clients_path do %>
+        <span class="material-icons">arrow_back</span><h6>Voltar</h6>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to root_path do %>
+        <span class="material-icons">home</span><h6>Início</h6>
+      <% end %>
+    </li>
+</ul>
 <% end %>
