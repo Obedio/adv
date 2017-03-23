@@ -1,3 +1,30 @@
-// Place all the styles related to the Welcome controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.main {
+	height: 100%;
+	margin: 0;
+	text-align: center; 
+	li { 
+		margin: 10% 0% 0% 17.5%;
+		float: left;
+	}
+
+	li:nth-child(1) span{color: #1E90FF;}
+ 	li:nth-child(2) span{color: #66CDAA;}
+ 	li:nth-child(3) span{color: #FF8C00;}
+ 	li:nth-child(4) span{color: #BC8F8F;}
+ 	span { font-size: 5em;	float: left;}
+ 	p {	margin:0;
+		color: gray; 
+		font-size: 0.2em;
+		text-align: center;
+	}
+}
+@media screen and (min-width: 400px){
+	.main {
+		li { 
+			margin: 3% 0% 0% 15%;
+			float: left;
+		}
+		li:nth-child(4) {margin-bottom: 10%;}
+ 		
+	}
+}

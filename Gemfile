@@ -1,5 +1,9 @@
 source 'https://rubygems.org'
 
+
+gem "paperclip", git: "https://github.com/thoughtbot/paperclip.git"
+gem 'aws-sdk', '~> 2'
+
 #paginação
 gem 'will_paginate', '~> 3.0'
 #authenticate

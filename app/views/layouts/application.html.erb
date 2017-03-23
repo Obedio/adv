@@ -21,19 +21,23 @@
   </head>
 
   <body>
- 	  <header class="bg-gradiente barra-super">
+ 	  <header class="bg-gradiente">
     <% if notice != nil %>
-      <span class="icon-notice fa fa-exclamation-triangle" aria-hidden="true"><%= notice %></span><%end%>
+      <span class="left-icon fa fa-exclamation-triangle" aria-hidden="true"><%= notice %></span>
+    <%end%>
     
       <% if user_signed_in? %>
+        <%= link_to data_users_path do %> 
+          <span class="fa fa-user bar-icon" aria-hidden="true"><strong class="bar-icon bar-words1">Eu</strong></span>
+        <% end %>
         <%= link_to destroy_user_session_path, method: :delete do %>
-          <span class="myicons fa fa-sign-out" aria-hidden="true"></span><h6>Sair</h6>
+          <span class="bar-icon fa fa-sign-out" aria-hidden="true"><strong class="bar-icon bar-words">Sair</strong></span>
         <% end %>
       <% end %>
     </header>
     <%= yield %>
     <footer class="bg-gradiente">
-    	<p>Copyright @ OrbTech 2016. Todos direitos reservados</p>	
+    	<strong class="text-footer">Copyright @ OrbTech 2016. Todos direitos reservados</strong>	
     </footer>
   </body>
 </html>

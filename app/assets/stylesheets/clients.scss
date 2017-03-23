@@ -1,3 +1,38 @@
-// Place all the styles related to the Clients controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.client {float: left; margin: 10% 3% 0 3%; padding: 0; color: black;}
+.client a{text-decoration: underline;}
+.client a:hover{color: #F5F5F5;}
+.client-tb {margin: 2% 3% 0 3%;}
+.icon-client {color: #66CDAA; font-size: 3.5em;}
+.titulo-client {float: right; color: #66CDAA; margin: 8% 20% 4% 0; font-size: 2.5em;}
+.client input {border-radius: 7px; padding: 0; margin: 0; height: 27px;}
+.client button {background-color:rgba(255,255,255,0.0); border-style: none; float: right;
+margin-top: -4%; padding: 0; }
+.client td{border-radius: 7px; background-color: #66CDAA; }
+.client td:nth-child(2){width: 40%;}
+.links-client li{text-align: center; font-size: 0.9em; margin-top: 5%; margin-bottom: 3%;}
+.links-client li:nth-child(1){float: left;margin-left: 15%;}
+.links-client li:nth-child(2){float: right; margin-right: 15%;}
+.pagination { text-align: center;}
+
+/***** CLIENTES SHOW ***********/
+.show-client {float: left; padding: 0%; margin:4% 0 0 10%; font-size: 1.7em;}
+.show-icon-client { float: left; color: #66CDAA; margin: 0;}
+.show-title-client {float: right; color: #66CDAA; margin-top: 2%;} 
+.client-dados {font-size: 1.05em; margin: 2% 0 0 8%;}
+.links-show-client a{color: #66CDAA;}
+.links-show-client li{ float: left; padding: 0; text-align: center; margin: 6% 4% 6% 0;}
+.links-show-client li:nth-child(4){margin-right: 0;}
+
+/******_FORM CLIENTE *****************/
+.new-client {float: left; padding: 0%; margin:5% 0 0 18%; }
+.new-client input {border-radius: 7px;}
+.new-client select {border-radius: 7px;}
+.new-client textarea {border-radius: 7px;}
+.new-icon-client {float: left; color: #66CDAA; margin: 0; font-size: 1.5em;}
+.new-title-client {float: right; color: #66CDAA; margin-top: 2%; font-size: 1.5em;}
+.links-new-client a{color: #66CDAA; }
+.links-new-client button {color: #66CDAA; border-radius: 10px; border-color: #66CDAA; 
+	float: left; padding: 0; text-align: center; margin: 2% 4% 6% 22%;}
+.links-new-client li {float: left; padding: 0; text-align: center; margin: 10% 4% 0% 0;}
+.links-new-client li:nth-child(2){margin:15% 5% 0 10%;}
+.links-new-client li:nth-child(3){margin: 15% 0 0 0;}
