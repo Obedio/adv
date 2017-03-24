@@ -2,25 +2,25 @@
 	<ul>
 		<li> 
 			<%= link_to lawsuits_path do %>
-				<span class="material-icons icons-main">library_books<p>Processos</p></span>
+				<span class="material-icons">library_books<p>Processos</p></span>
 			<% end %>
 		</li>
 
 		<li>
 			<%= link_to clients_path do %>
-				<span class="material-icons icons-main">supervisor_account<p>Clientes</p></span>
+				<span class="material-icons">supervisor_account<p>Clientes</p></span>
 			<% end %>
 		</li>
 
 		<li>
 			<%= link_to lawsuits_path do %> 
-				<span class="material-icons icons-main">assignment<p>Relatório<br>Financeiro</p></span>
+				<span class="material-icons">assignment<p>Relatório<br>Financeiro</p></span>
 			<% end %>
 		</li>
 
 		<li>
 			<%= link_to lawsuits_path do %> 
-				<span class="material-icons icons-main">assignment<p>Relatório<br>Processos</p></span>
+				<span class="material-icons">assignment<p>Relatório de<br>Processos</p></span>
 			<% end %>
 		</li>
 	</ul>
@@ -29,8 +29,8 @@
 		<table>
 		  <thead>
 		    <tr>
-		      <th>Nº Processo</th>
-		      <th>Cliente</th>
+		      <th class="title-tb">Nº Processo</th>
+		      <th class="title-tb">Cliente</th>
 		      <th colspan="3"></th>
 		    </tr>
 		  </thead>
@@ -38,8 +38,8 @@
 		  <tbody>
 		    <% @lawsuits.each do |lawsuit| %>
 		      <tr>
-		        <td><%= lawsuit.number %></td>
-		        <td><%= lawsuit.client.name %></td>
+		        <td class="nro-processo"><%= link_to lawsuit.number, lawsuit %></td>
+		        <td><%= link_to lawsuit.client.name, lawsuit.client %></td>
 		    <% end %>
 		  </tbody>
 		</table>

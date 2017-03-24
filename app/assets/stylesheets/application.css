@@ -24,9 +24,20 @@
 li {list-style-type: none;}
 ul {margin: 0;}
 a{text-decoration: none; }
-a:hover {background-color:rgba(255,255,255,0.0); color: black;}
-a:link {text-decoration: none; background-color:rgba(255,255,255,0.0); color: black;}
-a:visited {text-decoration: none; background-color:rgba(255,255,255,0.0); color: black;}
+a:hover {
+	background-color:rgba(255,255,255,0.0); 
+	color: black;
+}
+a:link {
+	text-decoration: none; 
+	background-color:rgba(255,255,255,0.0); 
+	color: black;
+}
+a:visited {
+	text-decoration: none; 
+	background-color:rgba(255,255,255,0.0); 
+	color: black;
+}
 body {
 	background-color:rgba(255,255,255,0.0); 
 	margin: 0; 
@@ -37,7 +48,7 @@ body {
 /******************************** BANNER ***************************/
 header {
 	text-align: right; 
-	width: 100%;
+	width: 100%; 
 }
 .bar-words {margin-left: 5%;}
 .bar-words1 {margin-left: 15%;}
@@ -118,6 +129,11 @@ header {
 	float: left;
 	margin: 0 0 5% 20%;
 }
+.link-helper{
+	float: left;
+	margin: 0% 0 10% 25%;
+}
+.link-helper a:hover{font-size: 1.1em;}
 /********************* RODAPE *********************************/
 footer { 
 	width: 100%; 
@@ -133,16 +149,22 @@ footer {
 	padding: 1px;  
 	background-color: rgba(255,255,255,0.0);
 }
-/*****************************RESPONSIVIDADE*************************/
+/*****************************RESPONSIVIDADE MIN-WIDTH*************************/
 @media screen and (min-width: 420px){
 	.login {
 		margin: 0 10%;
 		width: 80%;
 	}
+	.login form {
+		float: left; 
+		margin-top: 3%;
+	}
+	.login h2 {margin:5% 0 0 0%;}
 	#check label { 
 		width: 40%; 
 		margin: 1% 0 0 6%;
 	}
+
 }
 
 @media screen and (min-width: 520px){

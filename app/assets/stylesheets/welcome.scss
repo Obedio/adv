@@ -1,29 +1,77 @@
 .main {
-	height: 100%;
 	margin: 0;
 	text-align: center; 
-	li { 
-		margin: 2% 0% 0% 3%;
+	float: left;
+	width: 100%;
+	li {
+		margin: 2% 0% 3% 3%;
 		float: left;
+		span {
+			color: #A52A2A;
+			float: left;
+			p {	
+				margin:0;
+				text-align: center;
+			}
+		}
 	}
-
-	li:nth-child(1) span{color: #1E90FF;}
- 	li:nth-child(2) span{color: #66CDAA;}
- 	li:nth-child(3) span{color: #FF8C00;}
- 	li:nth-child(4) span{color: #BC8F8F;}
- 	span {float: left;}
- 	p {	margin:0;
-		color: gray; 
-		text-align: center;
+	table {
+		float: left;
+		margin: 5% 3% 20% 3%;
+		.nro-processo{ a{ text-decoration: underline;	}	}
+		.title-tb{
+			border-radius: 5%;
+			color: #A52A2A;
+			background-color:  #D7D7D7;
+		}
+		a{color: #330000;}
+		a:hover{
+			color: #A52A2A;
+			font-size: 1.02em;
+		}
+		td {
+			padding: 4% 0 0 0;
+			border-bottom-color: #D7D7D7;
+			border-bottom: inset;
+			border-bottom-width: thin;
+		}
 	}
 }
 
-@media screen and (min-width: 400px){
+@media screen and (min-width: 320px){
 	.main {
-		li { 
-			margin: 3% 0% 0% 15%;
-			float: left;
+		width: 89%;
+		margin: 3% 5% 0 5%;
+	}	
+}
+
+@media screen and (min-width: 380px){
+	.main {
+		width: 76%;	
+		margin: 3% 10% 0 12%;
+	}	
+}
+
+@media screen and (min-width: 420px){
+	.main {
+		width: 76%;
+		margin: 3% 10% 0 5%;
+		ul{ margin: 0 0% 5% 15%;}
+		li {
+			margin: 2% 3% 0% 0%;
+			span { font-size: 250%; }
 		}
-		li:nth-child(4) {margin-bottom: 10%;}
+		table {
+			font-size: 1.2em;
+			margin: 5% 0 12% 5%; 
+			width: 100%;
+		}
+	}	
+}
+
+@media screen and (min-width: 550px){
+	.main {
+		ul{ margin: 0 0% 5% 25%;}
+		table {margin-left: 10%;}
 	}
 }

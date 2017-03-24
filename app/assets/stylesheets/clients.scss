@@ -1,14 +1,33 @@
-.client {float: left; margin: 10% 3% 0 3%; padding: 0; color: black;}
-.client a{text-decoration: underline;}
-.client a:hover{color: #F5F5F5;}
+.client {
+	float: left; 
+	margin: 10% 3% 0 3%; 
+	padding: 0; 
+	color: black;
+	a{text-decoration: underline;}
+	a:hover{color: #F5F5F5;}
+	input {
+		border-radius: 7px; 
+		padding: 0; 
+		margin: 0; 
+		height: 27px;
+		}
+	button {
+	background-color:rgba(255,255,255,0.0); 
+	border-style: none; 
+	float: right;
+	margin-top: -4%; 
+	padding: 0; 
+	}
+	td{
+		border-radius: 7px; 
+		background-color: #66CDAA; 
+	}
+	td:nth-child(2){width: 40%;}
+} 
 .client-tb {margin: 2% 3% 0 3%;}
 .icon-client {color: #66CDAA; font-size: 3.5em;}
 .titulo-client {float: right; color: #66CDAA; margin: 8% 20% 4% 0; font-size: 2.5em;}
-.client input {border-radius: 7px; padding: 0; margin: 0; height: 27px;}
-.client button {background-color:rgba(255,255,255,0.0); border-style: none; float: right;
-margin-top: -4%; padding: 0; }
-.client td{border-radius: 7px; background-color: #66CDAA; }
-.client td:nth-child(2){width: 40%;}
+
 .links-client li{text-align: center; font-size: 0.9em; margin-top: 5%; margin-bottom: 3%;}
 .links-client li:nth-child(1){float: left;margin-left: 15%;}
 .links-client li:nth-child(2){float: right; margin-right: 15%;}
