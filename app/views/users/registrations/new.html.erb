@@ -8,7 +8,7 @@
     <%= f.email_field :email, autofocus: true %>
 
     <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <em>(<%= @minimum_password_length %> caracteres no mínimo)</em>
     <% end %> 
     <%= f.label :password %>
     <%= f.password_field :password, autocomplete: "off" %>
@@ -16,7 +16,7 @@
     <%= f.label :password_confirmation %>
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   
-    <div><%= f.submit "Sign up" %></div>
+    <div class="btn-submit"><%= f.submit "Cadastrar" %></div>
 <% end %>
 
 <%= render "users/shared/links" %>

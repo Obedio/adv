@@ -24,4 +24,25 @@
 			<% end %>
 		</li>
 	</ul>
+
+	<div class="processos">
+		<table>
+		  <thead>
+		    <tr>
+		      <th>Nº Processo</th>
+		      <th>Cliente</th>
+		      <th colspan="3"></th>
+		    </tr>
+		  </thead>
+
+		  <tbody>
+		    <% @lawsuits.each do |lawsuit| %>
+		      <tr>
+		        <td><%= lawsuit.number %></td>
+		        <td><%= lawsuit.client.name %></td>
+		    <% end %>
+		  </tbody>
+		</table>
+		<%= will_paginate @lawsuits %>
+	</div>
 </div>

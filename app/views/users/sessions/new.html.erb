@@ -7,13 +7,13 @@
   
     <%= f.label :password %>
     <%= f.password_field :password, autocomplete: "off" %>
-  <div class="check">
+  <div id="check">
     <% if devise_mapping.rememberable? -%>
       <%= f.check_box :remember_me %>
       <%= f.label :remember_me %>
     <% end -%>
   </div>
-  <div><%= f.submit "Entrar" %></div>
+  <div class="btn-submit"><%= f.submit "Entrar" %></div>
 
   <% end %>
 
