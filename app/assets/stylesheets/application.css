@@ -21,9 +21,9 @@
    padding: 0;
 }
 
-li {list-style-type: none;}
-ul {margin: 0;}
-a{text-decoration: none; }
+li { list-style-type: none; }
+ul { margin: 0; }
+a{ text-decoration: none; }
 a:hover {
 	background-color:rgba(255,255,255,0.0); 
 	color: black;
@@ -51,14 +51,15 @@ header {
 	width: 100%; 
 	height: 30px;
 }
-.bar-words {padding-left: 4px;}
+.fa-exclamation-triangle{visibility: hidden;}
+.bar-words { padding-left: 4px; }
 .bar-icon {
 	background-color: rgba(255,255,255,0.0);
 	color: #F5F5F5;
 	margin: 6px 5px 0 0;
 	font-size: 110%;
 }
-.bg-gradiente {background: linear-gradient(to left, #A52A2A, #800000);}
+.bg-gradiente { background: linear-gradient(to left, #A52A2A, #800000); }
 
 /******************LOGIN***********************************************/
 .login { 
@@ -117,7 +118,7 @@ header {
 	background-color: #F5F5F5; 
 	color: #800000;
 }
-.login em {float: right;}
+.login em { float: right; }
 .btn-submit{
 	width: 100%;
 	float: left;
@@ -146,7 +147,7 @@ footer {
 	padding: 1px;  
 	background-color: rgba(255,255,255,0.0);
 }
-/*****************************RESPONSIVIDADE MIN-WIDTH*************************/
+/*****************************RESPONSIVIDADE MIN-WIDTH**************************************/
 @media screen and (min-width: 360px){
 	.login {
 		margin: 0 10%;
@@ -156,13 +157,15 @@ footer {
 		float: left; 
 		margin-top: 3%;
 	}
-	.login h2 {margin:5% 0 0 0%;}
-	.login label, input, a{font-size: 110%;}
+	.login h2 { margin:5% 0 0 0%; }
+	.login label, input, a{ font-size: 110%; }
 		#check label { 
 		width: 40%; 
 		margin: 1% 0 0 6%;
 	}
 	.bar-icon1 {	margin-right: 20px; }
+	#icon-bar{ font-size: 130%; }
+	#icon-bar strong{font-size: 90%;}
 }
 
 @media screen and (min-width: 520px){
@@ -177,6 +180,7 @@ footer {
 		margin: 1% 0 0 6%;
 	}
 	.bar-icon1 {	margin-right: 40px; }
+	#icon-bar{ font-size: 145%; }
 }
 
 @media screen and (min-width: 680px){
@@ -188,14 +192,18 @@ footer {
 		width: 40%; 
 		margin: 1% 0 0 6%;
 	}
-	.login label, input{font-size: 115%;}
-	.btn-submit input{font-size: 110%;}
+	.login label, input{  font-size: 115%; }
+	.btn-submit input{ font-size: 110%; }
 	.bar-icon1 {	margin-right: 50px; }
-	.bar-icon {font-size: 120%;}
-	footer {font-size: 110%;}
+	.bar-icon { font-size: 120%; }
+	footer { font-size: 110%; }
+	#icon-bar{ 
+		margin-top: 0.5%;
+		font-size: 155%; 
+	}
 }
 
-@media screen and (min-width: 780px){
+@media screen and ( min-width: 780px ){
 	.login {
 		margin: 0 30%;
 		width: 40%;
@@ -206,7 +214,7 @@ footer {
 	}
 }
 
-@media screen and (min-width: 900px){
+@media screen and ( min-width: 900px ){
 	.login {
 		margin: 0 35%;
 		width: 30%;
@@ -215,7 +223,7 @@ footer {
 		width: 40%; 
 		margin: 1% 0 0 6%;
 	}
-	.bar-icon {font-size: 130%;}
+	.bar-icon { font-size: 130%; }
 }
 
 @media screen and (min-width: 1200px){

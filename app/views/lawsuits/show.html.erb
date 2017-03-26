@@ -1,45 +1,45 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Number:</strong>
+  <strong>Número:</strong>
   <%= @lawsuit.number %>
 </p>
 
 <p>
-  <strong>Assessment:</strong>
+  <strong>Data Abertura:</strong>
   <%= @lawsuit.assessment %>
 </p>
 
 <p>
-  <strong>Description:</strong>
+  <strong>Descrição:</strong>
   <%= @lawsuit.description %>
 </p>
 
 <p>
-  <strong>Amount:</strong>
+  <strong>Valor Total:</strong>
   <%= @lawsuit.amount %>
 </p>
 <p>
-  <strong>Amount paid:</strong>
+  <strong>Valor pago:</strong>
   <%= @lawsuit.amount_paid %>
 </p>
 <p>
-  <strong>User:</strong>
+  <strong>Advogado:</strong>
   <%= @lawsuit.user.email %>
 </p>
 
 <p>
-  <strong>Client:</strong>
+  <strong>Cliente:</strong>
   <%= @lawsuit.client.name %>
 </p>
 
 <p>
-  <strong>Venue:</strong>
+  <strong>Vara:</strong>
   <%= @lawsuit.venue.name %>
 </p>
 
 <p>
-  <strong>Kind:</strong>
+  <strong>Natureza:</strong>
   <%= @lawsuit.kind.name %>
 </p>
 
@@ -67,7 +67,7 @@
   </tbody>
 </table>
 
-<h1>Payments</h1>
+<h1>Pagamentos</h1>
 
 <table>
   <thead>
@@ -87,7 +87,7 @@
     <% end %>
   </tbody>
 </table>
-<%= link_to 'Home', root_path %>
+<%= link_to 'Destroy', @lawsuit, method: :delete, data: { confirm: 'Você tem certeza?' } %>
 <%= link_to 'Edit', edit_lawsuit_path(@lawsuit) %> |
 <%= link_to 'Back', lawsuits_path %>
 <strong><%= link_to 'Adicionar Observação', new_lawsuit_observation_path(lawsuit_id: @lawsuit.id) %></strong>
