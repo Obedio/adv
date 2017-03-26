@@ -23,15 +23,15 @@
   <body>
  	  <header class="bg-gradiente">
     <% if notice != nil %>
-      <span class="left-icon fa fa-exclamation-triangle" aria-hidden="true"><%= notice %></span>
+      <span class="bar-icon fa fa-exclamation-triangle" aria-hidden="true"><%= notice %></span>
     <%end%>
     
       <% if user_signed_in? %>
         <%= link_to data_users_path do %> 
-          <span class="fa fa-user bar-icon" aria-hidden="true"><strong class="bar-icon bar-words1">Eu</strong></span>
+          <span class="fa fa-user bar-icon" aria-hidden="true"><strong class="bar-icon bar-words">Eu</strong></span>
         <% end %>
         <%= link_to destroy_user_session_path, method: :delete do %>
-          <span class="bar-icon fa fa-sign-out" aria-hidden="true"><strong class="bar-icon bar-words">Sair</strong></span>
+          <span class="bar-icon bar-icon1 fa fa-sign-out" aria-hidden="true"><strong class="bar-icon bar-words">Sair</strong></span>
         <% end %>
       <% end %>
     </header>

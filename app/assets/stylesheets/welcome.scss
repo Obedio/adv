@@ -3,31 +3,36 @@
 	text-align: center; 
 	float: left;
 	width: 100%;
-	li {
-		margin: 2% 0% 3% 3%;
-		float: left;
-		span {
-			color: #A52A2A;
+	ul{	
+		width:100%;
+		li {
+			margin: 0% 0% 0% 3%;
 			float: left;
-			p {	
-				margin:0;
-				text-align: center;
+			span {
+				color: #A52A2A;
+				float: left;
+				p {	
+					margin:0;
+					text-align: center;
+				}
 			}
 		}
 	}
+
 	table {
+		width:95%;
 		float: left;
-		margin: 5% 3% 20% 3%;
+		margin: 5% 0% 10% 3%;
 		.nro-processo{ a{ text-decoration: underline;	}	}
 		.title-tb{
 			border-radius: 5%;
 			color: #A52A2A;
 			background-color:  #D7D7D7;
+			padding-top: 1%;
 		}
 		a{color: #330000;}
 		a:hover{
 			color: #A52A2A;
-			font-size: 1.02em;
 		}
 		td {
 			padding: 4% 0 0 0;
@@ -35,43 +40,94 @@
 			border-bottom: inset;
 			border-bottom-width: thin;
 		}
+		td:hover{background-color:#D7D7D7; a{ color: #A52A2A;}}
 	}
 }
 
 @media screen and (min-width: 320px){
 	.main {
-		width: 89%;
-		margin: 3% 5% 0 5%;
+		table{
+			width: 95%;
+			margin: 3% 0% 0 2%;}
+		ul{
+			width: 95%;
+			margin: 2% 0 0 4%;}
 	}	
 }
 
-@media screen and (min-width: 380px){
+@media screen and (min-width: 360px){
 	.main {
-		width: 76%;	
-		margin: 3% 10% 0 12%;
+		ul{
+			width: 90%;
+			margin-left: 8%;}
 	}	
 }
 
 @media screen and (min-width: 420px){
 	.main {
-		width: 76%;
-		margin: 3% 10% 0 5%;
-		ul{ margin: 0 0% 5% 15%;}
-		li {
-			margin: 2% 3% 0% 0%;
-			span { font-size: 250%; }
+		ul{ 
+			width: 85%;
+			margin: 4% 0% 0% 12%;
 		}
-		table {
-			font-size: 1.2em;
-			margin: 5% 0 12% 5%; 
-			width: 100%;
+		table {	margin: 0% 0 10% 3%; }
+	}	
+}
+
+@media screen and (min-width: 480px){
+	.main {
+		ul{ 
+			width: 75%;
+			margin-left: 18%;
 		}
 	}	
 }
 
 @media screen and (min-width: 550px){
 	.main {
-		ul{ margin: 0 0% 5% 25%;}
-		table {margin-left: 10%;}
+		ul{	
+			margin-left: 20%; 
+		}
+		table {
+			width: 90%;
+			margin-left: 5%;
+			margin-top: 3%;
+		}
+	}
+}
+
+@media screen and (min-width: 620px){
+	.main {
+		ul{	
+			margin-left: 25%; 
+			li{	span{ font-size:270%;}	}
+		}
+		table{
+			th{ font-size:115%; } 
+			a{ font-size:110%; }
+		}
+	}
+}
+
+@media screen and (min-width: 768px){
+	.main {
+		ul{	
+			li{	
+				margin-left: 5%;
+				span{ font-size:290%;}	}
+		}
+	}
+}
+
+@media screen and (min-width: 920px){
+	.main {
+		ul{	
+			margin-left: 18%;
+			li{	
+				margin-left: 10%;
+				span{ font-size:400%;}	}
+		}
+		table{
+			th{ font-size:125%; }
+		}
 	}
 }

@@ -16,7 +16,7 @@
 * {
    font-family: 'Taviraj', serif;
    background-color: #F5F5F5;
-   font-size: 100%;
+   font-size: 12px;
    margin: 0;
    padding: 0;
 }
@@ -49,13 +49,13 @@ body {
 header {
 	text-align: right; 
 	width: 100%; 
+	height: 30px;
 }
-.bar-words {margin-left: 5%;}
-.bar-words1 {margin-left: 15%;}
+.bar-words {padding-left: 4px;}
 .bar-icon {
 	background-color: rgba(255,255,255,0.0);
 	color: #F5F5F5;
-	margin-right: 4%;
+	margin: 6px 5px 0 0;
 	font-size: 110%;
 }
 .bg-gradiente {background: linear-gradient(to left, #A52A2A, #800000);}
@@ -79,9 +79,7 @@ header {
 .login label { 
 	text-align: left; 
 	padding-left: 1%; 
-	width: 70%; 
 	margin: 0; 
-	font-size: 0.9em;
 }
 .login input{ 
 	width: 100%;	
@@ -133,7 +131,6 @@ header {
 	float: left;
 	margin: 0% 0 10% 25%;
 }
-.link-helper a:hover{font-size: 1.1em;}
 /********************* RODAPE *********************************/
 footer { 
 	width: 100%; 
@@ -150,7 +147,7 @@ footer {
 	background-color: rgba(255,255,255,0.0);
 }
 /*****************************RESPONSIVIDADE MIN-WIDTH*************************/
-@media screen and (min-width: 420px){
+@media screen and (min-width: 360px){
 	.login {
 		margin: 0 10%;
 		width: 80%;
@@ -160,11 +157,12 @@ footer {
 		margin-top: 3%;
 	}
 	.login h2 {margin:5% 0 0 0%;}
-	#check label { 
+	.login label, input, a{font-size: 110%;}
+		#check label { 
 		width: 40%; 
 		margin: 1% 0 0 6%;
 	}
-
+	.bar-icon1 {	margin-right: 20px; }
 }
 
 @media screen and (min-width: 520px){
@@ -173,10 +171,12 @@ footer {
 		margin: 0 20%;
 		width: 60%;
 	}
+
 	#check label { 
 		width: 40%; 
 		margin: 1% 0 0 6%;
 	}
+	.bar-icon1 {	margin-right: 40px; }
 }
 
 @media screen and (min-width: 680px){
@@ -188,6 +188,11 @@ footer {
 		width: 40%; 
 		margin: 1% 0 0 6%;
 	}
+	.login label, input{font-size: 115%;}
+	.btn-submit input{font-size: 110%;}
+	.bar-icon1 {	margin-right: 50px; }
+	.bar-icon {font-size: 120%;}
+	footer {font-size: 110%;}
 }
 
 @media screen and (min-width: 780px){
@@ -210,6 +215,7 @@ footer {
 		width: 40%; 
 		margin: 1% 0 0 6%;
 	}
+	.bar-icon {font-size: 130%;}
 }
 
 @media screen and (min-width: 1200px){
