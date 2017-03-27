@@ -1,10 +1,15 @@
 <p id="notice"><%= notice %></p>
+<div class="dv-busca">
+  <h1>Processos</h1>
+  <%= form_tag( '/lawsuits', :method => :get) do %>
+    <%= text_field_tag 'search', nil, placeholder: 'Digite o nº do processo' %>
+    <%= submit_tag 'Pesquisar' %>
+  <% end %>
+  <%= link_to clients_path do %>
+    <span class="fa fa-plus-square" aria-hidden="true"><strong>Novo Processo</strong></span>
+  <% end %>
+</div>
 
-<h1>Todos Processos</h1>
-<%= form_tag( '/lawsuits', :method => :get) do %>
-  <%= text_field_tag 'search', nil, placeholder: 'Digite o nº do processo' %>
-  <%= submit_tag 'Pesquisar' %>
-<% end %>
 <table>
   <thead>
     <tr>
@@ -18,14 +23,12 @@
   <tbody>
     <% @lawsuits.each do |lawsuit| %>
       <tr>
-        <td class="nro-processo"><%= link_to lawsuit.number, lawsuit %></td>
+        <td><%= link_to lawsuit.number, lawsuit %></td>
         <td><%= link_to lawsuit.client.name, lawsuit.client %></td>
         <td><%= lawsuit.status.name %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-    <%= will_paginate @lawsuits %>
+<div class="paginate"><%= will_paginate @lawsuits %></div>
 <br>
-
-<%= link_to 'Novo Processo', clients_path %>

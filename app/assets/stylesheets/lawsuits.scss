@@ -1,3 +1,44 @@
-// Place all the styles related to the Lawsuits controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.dv-busca{
+	float: left;
+	color: #330000;
+	margin: 1% 0 0 2%;
+	input{
+		color: #330000;
+		border-radius: 5px;
+	}
+	h1{font-size: 120%;}
+	span{ 
+	width: 80%;
+		float: left;
+		color: #330000;
+		margin: 3% 0 2% 0;
+		font-size: 105%;
+		strong{
+			font-size: 105%;
+			margin: 0 0 2% 3%;
+		}
+	}
+}
+table{
+	float:left;
+	margin: 1% 1% 1% 2%;
+	th{
+		border-radius: 5%;
+		color: #A52A2A;
+		background-color:  #D7D7D7;
+		padding-top: 1%;
+	}
+	a{color: #330000;}
+	a:hover{ color: #A52A2A; }
+	td {
+		padding: 1.5% 0 0 0;
+		border-bottom-color: #D7D7D7;
+		border-bottom: inset;
+		border-bottom-width: thin;
+	}
+	td:hover{background-color:#D7D7D7; a{ color: #A52A2A;}}
+}
+.paginate{
+	float: left;
+	margin-left:25%;
+}

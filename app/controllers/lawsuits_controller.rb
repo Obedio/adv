@@ -6,14 +6,14 @@ class LawsuitsController < ApplicationController
   # GET /lawsuits.json
   def index
     if params[:search]
-      @lawsuits = Lawsuit.where(number: params[:search])
+      @lawsuits = Lawsuit.where(number: params[:search]).paginate(page: params[:page], per_page: 1)
       if @lawsuits == []
         respond_to do |format|
             format.html { redirect_to lawsuits_url, notice: 'Não foi encontrado.' }
         end
       end
     else
-    @lawsuits = Lawsuit.all.paginate(page: params[:page], per_page: 3)
+    @lawsuits = Lawsuit.all.paginate(page: params[:page], per_page: 6)
     end
   end
 
