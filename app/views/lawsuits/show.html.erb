@@ -1,52 +1,45 @@
 <p id="notice"><%= notice %></p>
+<div class="info-processo">
+    <strong>Número:</strong>
+    <%= @lawsuit.number %>
+  </br>
 
-<p>
-  <strong>Número:</strong>
-  <%= @lawsuit.number %>
-</p>
+    <strong>Data Abertura:</strong>
+    <%= @lawsuit.assessment %>
+  </br>
 
-<p>
-  <strong>Data Abertura:</strong>
-  <%= @lawsuit.assessment %>
-</p>
+    <strong>Descrição:</strong>
+    <%= @lawsuit.description %>
+  </br>
 
-<p>
-  <strong>Descrição:</strong>
-  <%= @lawsuit.description %>
-</p>
+    <strong>Valor Total:</strong>
+    <%= @lawsuit.amount %>
+  </br>
 
-<p>
-  <strong>Valor Total:</strong>
-  <%= @lawsuit.amount %>
-</p>
-<p>
-  <strong>Valor pago:</strong>
-  <%= @lawsuit.amount_paid %>
-</p>
-<p>
-  <strong>Advogado:</strong>
-  <%= @lawsuit.user.email %>
-</p>
+    <strong>Valor pago:</strong>
+    <%= @lawsuit.amount_paid %>
+  </br>
+  
+    <strong>Advogado:</strong>
+    <%= @lawsuit.user.email %>
+  </br>
 
-<p>
-  <strong>Cliente:</strong>
-  <%= @lawsuit.client.name %>
-</p>
+    <strong>Cliente:</strong>
+    <%= @lawsuit.client.name %>
+  </br>
 
-<p>
-  <strong>Vara:</strong>
-  <%= @lawsuit.venue.name %>
-</p>
+    <strong>Vara:</strong>
+    <%= @lawsuit.venue.name %>
+  </br>
 
-<p>
-  <strong>Natureza:</strong>
-  <%= @lawsuit.kind.name %>
-</p>
+    <strong>Natureza:</strong>
+    <%= @lawsuit.kind.name %>
+  </br>
 
-<p>
-  <strong>Status:</strong>
-  <%= @lawsuit.status.name %>
-</p>
+    <strong>Status:</strong>
+    <%= @lawsuit.status.name %>
+  </br>
+</div>
 
 <h3>Comentários</h3>
 <table>
@@ -72,8 +65,8 @@
 <table>
   <thead>
     <tr>
-      <th>Amount</th>
-      <th>Date</th>
+      <th>Valor Pago</th>
+      <th>Data</th>
       <th colspan="3"></th>
     </tr>
   </thead>

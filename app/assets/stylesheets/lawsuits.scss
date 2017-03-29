@@ -1,4 +1,5 @@
 .dv-busca{
+	width: 97%;
 	float: left;
 	color: #330000;
 	margin: 1% 0 0 2%;
@@ -6,9 +7,11 @@
 		color: #330000;
 		border-radius: 5px;
 	}
-	h1{font-size: 120%;}
+	h1{
+		margin-bottom:1%;
+		font-size: 130%;}
 	span{ 
-	width: 80%;
+		width: 80%;
 		float: left;
 		color: #330000;
 		margin: 3% 0 2% 0;
@@ -19,9 +22,10 @@
 		}
 	}
 }
-table{
+table{ text-align: center;
 	float:left;
-	margin: 1% 1% 1% 2%;
+	width: 96%;
+	margin: 1% 1% 2% 2%;
 	th{
 		border-radius: 5%;
 		color: #A52A2A;
@@ -31,6 +35,7 @@ table{
 	a{color: #330000;}
 	a:hover{ color: #A52A2A; }
 	td {
+		color: #330000;
 		padding: 1.5% 0 0 0;
 		border-bottom-color: #D7D7D7;
 		border-bottom: inset;
@@ -38,7 +43,27 @@ table{
 	}
 	td:hover{background-color:#D7D7D7; a{ color: #A52A2A;}}
 }
-.paginate{
-	float: left;
-	margin-left:25%;
+@media screen and (min-width: 320px){
+	.dv-busca{margin-left: 3%;}
+	table{
+		margin-left: 3%;
+		margin-right: 3%;
+		width: 94%;
+  }
+}
+@media screen and (min-width: 580px){
+	table{th{font-size: 110%;}}
+	.dv-busca{
+		span{
+			margin-top: 1%;
+			margin-bottom: 1%;
+			strong{margin-left: 1%;}
+		}
+	}
+}
+@media screen and (min-width: 780px){
+	table{
+		td{font-size: 115%;}
+		th{font-size: 115%;}
+	}
 }

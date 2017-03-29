@@ -24,8 +24,7 @@
 	table {
 		width:95%;
 		float: left;
-		margin: 5% 0% 10% 3%;
-		.nro-processo{ a{ text-decoration: underline;	}	}
+		margin: 2% 2% 5% 2%;
 		.title-tb{
 			border-radius: 5%;
 			color: #A52A2A;
@@ -48,10 +47,7 @@
 
 @media screen and (min-width: 320px){
 	.main {
-		table{
-			width: 95%;
-			margin: 3% 0% 0 2%;
-		}
+		table{	margin-top: 3%;	}
 		ul{
 			width: 95%;
 			margin-left: 4%;
@@ -69,7 +65,7 @@
 @media screen and (min-width: 360px){
 	.main {
 		ul{
-			width: 92%;
+			width: 93%;
 			margin-left: 5%;				
 		}		
 	}	
@@ -78,10 +74,10 @@
 @media screen and (min-width: 420px){
 	.main {
 		ul{ 
-			width: 85%;
+			width: 90%;
 			margin: 2% 0% 0% 8%;
 			li{
-			margin-right: 2%;
+				margin-right: 2%;
 				span{
 					font-size: 270%;
 					p{font-size: 35%;}
@@ -89,31 +85,28 @@
 				margin-bottom: 2%;
 			}
 		}
-		table {	margin: 0% 0 10% 3%; }
+		table {	
+			margin-bottom: 3%;
+			margin-left: 2%; 
+		}
 	}	
 }
 
 @media screen and (min-width: 480px){
 	.main {
 		ul{ 
-			width: 75%;
-			margin-left: 14%;
-			li{
-				margin-right: 3%;
-			}
+			width: 85%;
+			margin-left: 13%;
+			li{	margin-right: 3%; }
 		}
 	}	
 }
 
 @media screen and (min-width: 550px){
 	.main {
-		ul{	
-			margin-left: 15%; 
-		}
-		table {
-			width: 90%;
-			margin-left: 5%;
-			margin-top: 3%;
+		table {	
+			margin: 3%;
+			margin-top: 2%;
 		}
 	}
 }
@@ -121,12 +114,13 @@
 @media screen and (min-width: 620px){
 	.main {
 		ul{	
-			margin-left: 17%; 
+			margin-left: 15%; 
 			li{	
 				margin-right: 4%;
 				span{ font-size:270%;}	}
 		}
 		table{
+			margin-top: 1%;
 			th{ font-size:115%; } 
 			a{ font-size:110%; }
 		}

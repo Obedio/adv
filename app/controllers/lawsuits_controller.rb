@@ -13,7 +13,7 @@ class LawsuitsController < ApplicationController
         end
       end
     else
-    @lawsuits = Lawsuit.all.paginate(page: params[:page], per_page: 6)
+    @lawsuits = Lawsuit.all.paginate(page: params[:page], per_page: 8)
     end
   end
 

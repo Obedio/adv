@@ -132,7 +132,14 @@ header {
 	float: left;
 	margin: 0% 0 10% 25%;
 }
-/********************* RODAPE *********************************/
+/***************************OUTROS****************************************************/
+.paginate{
+	float: left;
+	margin-left:5%;
+	margin-bottom: 10%;
+}
+.nro-processo a{ text-decoration: underline;	}
+/*************************************** RODAPE ******************************************/
 footer { 
 	width: 100%; 
 	bottom: 0; 
@@ -212,6 +219,7 @@ footer {
 		width: 40%; 
 		margin: 1% 0 0 6%;
 	}
+	.paginate a{font-size: 120%;}
 }
 
 @media screen and ( min-width: 900px ){

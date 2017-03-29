@@ -23,7 +23,7 @@
   <tbody>
     <% @lawsuits.each do |lawsuit| %>
       <tr>
-        <td><%= link_to lawsuit.number, lawsuit %></td>
+        <td class="nro-processo"><%= link_to lawsuit.number, lawsuit %></td>
         <td><%= link_to lawsuit.client.name, lawsuit.client %></td>
         <td><%= lawsuit.status.name %></td>
       </tr>
