@@ -2,6 +2,7 @@ class LawsuitsController < ApplicationController
   before_action :set_lawsuit, only: [:show, :edit, :update, :destroy]
   before_action :load_client, only: [:new, :create]
   before_action :authenticate_user!
+  before_action :load_observation, :load_payment, only: [:show, :edit, :update, :destroy]
   # GET /lawsuits
   # GET /lawsuits.json
   def index
@@ -38,7 +39,7 @@ class LawsuitsController < ApplicationController
     @lawsuit.user_id = current_user.id
     respond_to do |format|
       if @lawsuit.save
-        format.html { redirect_to @lawsuit, notice: 'Lawsuit was successfully created.' }
+        format.html { redirect_to @lawsuit, notice: 'Processo Cadastrado com Sucesso.' }
         format.json { render :show, status: :created, location: @lawsuit }
       else
         format.html { render :new }
@@ -52,7 +53,7 @@ class LawsuitsController < ApplicationController
   def update
     respond_to do |format|
       if @lawsuit.update(lawsuit_params)
-        format.html { redirect_to @lawsuit, notice: 'Lawsuit was successfully updated.' }
+        format.html { redirect_to @lawsuit, notice: 'Processo Atualizado com Sucesso.' }
         format.json { render :show, status: :ok, location: @lawsuit }
       else
         format.html { render :edit }
@@ -67,12 +68,19 @@ class LawsuitsController < ApplicationController
     #@lawsuit = @client.lawsuits.find(params[:id])
     @lawsuit.destroy
     respond_to do |format|
-      format.html { redirect_to lawsuits_url, notice: 'Lawsuit was successfully destroyed.' }
+      format.html { redirect_to lawsuits_url, notice: 'Processo Excluído com Sucesso.' }
       format.json { head :no_content }
     end
   end
 
   private
+    def load_payment
+      @payment = Payment.where(lawsuit_id: params[:id]).paginate(page: params[:page], per_page: 1)
+    end
+    def load_observation
+      @observation = Observation.where(lawsuit_id: params[:id]).paginate(page: params[:param_name], per_page: 2)
+    end
+
     def load_client
       @client = Client.find(params[:client_id])
     end

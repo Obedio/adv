@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+gem "pundit"
 gem "paperclip", git: "https://github.com/thoughtbot/paperclip.git"
 gem 'aws-sdk', '~> 2'
 

@@ -139,6 +139,11 @@ header {
 	margin-bottom: 10%;
 }
 .nro-processo a{ text-decoration: underline;	}
+#notice {
+	margin-bottom: 1%;
+	float: left;
+	width: 90%;
+}
 /*************************************** RODAPE ******************************************/
 footer { 
 	width: 100%; 

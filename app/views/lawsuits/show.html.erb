@@ -1,87 +1,96 @@
-<p id="notice"><%= notice %></p>
 <div class="info-processo">
-    <strong>Número:</strong>
-    <%= @lawsuit.number %>
+  <strong id="notice"><%= notice %></strong>
+  <strong id="processo">Processo - 
+  <%= @lawsuit.number %></strong>
   </br>
 
-    <strong>Data Abertura:</strong>
-    <%= @lawsuit.assessment %>
+  <strong>Data Abertura - </strong>
+  <%= @lawsuit.assessment %>
   </br>
 
-    <strong>Descrição:</strong>
-    <%= @lawsuit.description %>
+  <strong>Descrição - </strong>
+  <%= @lawsuit.description %>
   </br>
 
-    <strong>Valor Total:</strong>
-    <%= @lawsuit.amount %>
+  <strong>Valor Total - </strong>
+  <%= @lawsuit.amount %>
   </br>
 
-    <strong>Valor pago:</strong>
-    <%= @lawsuit.amount_paid %>
+  <strong>Valor pago - </strong>
+  <%= @lawsuit.amount_paid %>
   </br>
   
-    <strong>Advogado:</strong>
-    <%= @lawsuit.user.email %>
+  <strong>Advogado - </strong>
+  <%= @lawsuit.user.email %>
   </br>
 
-    <strong>Cliente:</strong>
-    <%= @lawsuit.client.name %>
+  <strong>Cliente - </strong>
+  <%= @lawsuit.client.name %>
   </br>
 
-    <strong>Vara:</strong>
-    <%= @lawsuit.venue.name %>
+  <strong>Vara - </strong>
+  <%= @lawsuit.venue.name %>
   </br>
 
-    <strong>Natureza:</strong>
-    <%= @lawsuit.kind.name %>
+  <strong>Natureza - </strong>
+  <%= @lawsuit.kind.name %>
   </br>
 
-    <strong>Status:</strong>
-    <%= @lawsuit.status.name %>
+  <strong>Status - </strong>
+  <%= @lawsuit.status.name %>
   </br>
+  <hr>
+  <ul>
+    <li><%= link_to 'Voltar', lawsuits_path %></li>
+    <li><%= link_to 'Editar Processo', edit_lawsuit_path(@lawsuit) %></li>
+    <li><%= link_to 'Excluir Processo', @lawsuit, method: :delete, data: { confirm: 'Você tem certeza?' } %></li>
+    <li><%= link_to 'Adicionar Observação', new_lawsuit_observation_path(lawsuit_id: @lawsuit.id) %></li>
+    <li><%= link_to 'Realizar Pagamento', new_lawsuit_payment_path(lawsuit_id: @lawsuit.id) %></li>
+  </ul>
+<hr>
+</div>
+<div class="comentario">
+<h3>Comentários</h3>
+  <table>
+    <thead>
+      <tr>
+
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @observation.each do |observation| %>
+        <tr>
+          <td><%= observation.description %></td>
+          <td><%= observation.lawsuit_id %></td>
+          <td><%= link_to 'Editar', edit_observation_path(observation) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <div class="paginate"><%= will_paginate @observation, param_name: 'observation'  %></div>
 </div>
 
-<h3>Comentários</h3>
-<table>
-  <thead>
-    <tr>
-      <th>-----------</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="pagamento">
+  <h3>Pagamentos</h3>
 
-  <tbody>
-    <% @lawsuit.observations.each do |observation| %>
+  <table>
+    <thead>
       <tr>
-        <td><%= observation.description %></td>
-        <td><%= link_to 'Editar', edit_observation_path(observation) %></td>
+        <th>Valor Pago</th>
+        <th>Data</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<h1>Pagamentos</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Valor Pago</th>
-      <th>Data</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @lawsuit.payments.each do |payment| %>
-      <tr>
-        <td><%= payment.amount %></td>
-        <td><%= payment.created_at%></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-<%= link_to 'Excluir', @lawsuit, method: :delete, data: { confirm: 'Você tem certeza?' } %>
-<%= link_to 'Editar', edit_lawsuit_path(@lawsuit) %> |
-<%= link_to 'Voltar', lawsuits_path %>
-<strong><%= link_to 'Adicionar Observação', new_lawsuit_observation_path(lawsuit_id: @lawsuit.id) %></strong>
-<strong><%= link_to 'Realizar Pagamento', new_lawsuit_payment_path(lawsuit_id: @lawsuit.id) %></strong>
+    <tbody>
+      <% @payment.each do |payment| %>
+        <tr>
+          <td><%= payment.amount %></td>
+          <td><%= payment.created_at%></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <div class="paginate"><%= will_paginate @payment %></div>
+</div>

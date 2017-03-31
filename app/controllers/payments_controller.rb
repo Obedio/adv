@@ -6,7 +6,7 @@ class PaymentsController < ApplicationController
   # GET /payments
   # GET /payments.json
   def index
-    @payments = Payment.all
+    @payments = Payment.all.paginate(page: params[:page], per_page: 2)
    # @id = Payment.first.lawsuit_id
   end
 
@@ -35,7 +35,7 @@ class PaymentsController < ApplicationController
     value = @lawsuit.amount_paid + @payment.amount
     respond_to do |format|
       if @payment.save && @lawsuit.update(amount_paid: value)
-        format.html { redirect_to @lawsuit, notice: 'Payment was successfully created.' }
+        format.html { redirect_to @lawsuit, notice: 'Pagamento Realizado.' }
         format.json { render :show, status: :created, location: @payment }
       else
         format.html { render :new }

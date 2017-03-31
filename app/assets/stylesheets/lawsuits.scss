@@ -1,8 +1,9 @@
+/****************************Index*****************************************/
 .dv-busca{
 	width: 97%;
 	float: left;
 	color: #330000;
-	margin: 1% 0 0 2%;
+	margin: 0% 0 0 2%;
 	input{
 		color: #330000;
 		border-radius: 5px;
@@ -42,6 +43,52 @@ table{ text-align: center;
 		border-bottom-width: thin;
 	}
 	td:hover{background-color:#D7D7D7; a{ color: #A52A2A;}}
+}
+/*************************Show**********************************************************/
+.info-processo{
+	float: left;
+	width: 90%;
+	margin: 3% 3% 0 2%;
+	color: #330000;
+	padding: 1.5%;
+	#processo{font-size: 150%;}
+	hr{
+		float: left; 
+		width: 100%;
+		margin:1% 0;
+		color: #A52A2A;
+	}
+	ul{
+		width: 100%;
+		li{
+			margin-bottom: 1%;
+			padding: 0 1%;
+			float: left;
+			text-align: center;
+			a{
+				text-decoration: underline;
+				color:  #A52A2A;
+			}
+		}
+		li:nth-child(1){width: 20%;}
+		li:nth-child(4){width: 49%;}
+		li:nth-child(5){width: 45%;}
+	}
+}
+.comentario{
+	float: left;
+	margin: 1% 2%;
+	width: 95%;
+	h3{padding-left: 2%;}
+	table{
+		th{background-color: rgba(255, 255, 255, 0.0);}
+	}
+}
+.pagamento{
+	float: left;
+	margin: 1% 2% 10% 2%;
+	width: 95%;
+	h3{padding-left: 2%;}
 }
 @media screen and (min-width: 320px){
 	.dv-busca{margin-left: 3%;}

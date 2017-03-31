@@ -5,7 +5,7 @@ class ObservationsController < ApplicationController
   # GET /observations
   # GET /observations.json
   def index
-    @observations = Observation.all
+    @observations = Observation.all.paginate(page: params[:page], per_page: 2)
   end
 
   # GET /observations/1
@@ -29,7 +29,7 @@ class ObservationsController < ApplicationController
 
     respond_to do |format|
       if @observation.save
-        format.html { redirect_to @lawsuit, notice: 'Observation was successfully created.' }
+        format.html { redirect_to @lawsuit, notice: 'Comentário Realizado.' }
         format.json { render :show, status: :created, location: @observation }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class ObservationsController < ApplicationController
   def update
       respond_to do |format|
       if @observation.update(observation_params)
-        format.html { redirect_to lawsuit_path(Lawsuit.find(@observation.lawsuit_id)), notice: 'Observation was successfully updated.' }
+        format.html { redirect_to lawsuit_path(Lawsuit.find(@observation.lawsuit_id)), notice: 'Comentário Atualizado.' }
         format.json { render :show, status: :ok, location: @observation }
       else
         format.html { render :edit }

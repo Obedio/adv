@@ -28,7 +28,7 @@ class DataUsersController < ApplicationController
     @data_user.user_id = current_user.id
     respond_to do |format|
       if @data_user.save
-        format.html { redirect_to @data_user, notice: 'Data user was successfully created.' }
+        format.html { redirect_to @data_user, notice: 'Perfil Criado com Sucesso.' }
         format.json { render :show, status: :created, location: @data_user }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class DataUsersController < ApplicationController
   def update
     respond_to do |format|
       if @data_user.update(data_user_params)
-        format.html { redirect_to @data_user, notice: 'Data user was successfully updated.' }
+        format.html { redirect_to @data_user, notice: 'Perfil Atualizado com Sucesso.' }
         format.json { render :show, status: :ok, location: @data_user }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class DataUsersController < ApplicationController
   def destroy
     @data_user.destroy
     respond_to do |format|
-      format.html { redirect_to data_users_url, notice: 'Data user was successfully destroyed.' }
+      format.html { redirect_to data_users_url, notice: 'Perfil Excluído com Sucesso.' }
       format.json { head :no_content }
     end
   end
