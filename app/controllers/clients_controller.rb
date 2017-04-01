@@ -5,14 +5,14 @@ class ClientsController < ApplicationController
   # GET /clients.json
   def index
     if params[:search]
-      @clients = Client.where(cpf: params[:search])
+      @clients = policy_scope(Client).where(cpf: params[:search])
       if @clients == []
         respond_to do |format|
             format.html { redirect_to clients_url, notice: 'Não foi encontrado.' }
         end
       end
     else
-    @clients = Client.all.paginate(page: params[:page], per_page: 4)
+    @clients = policy_scope(Client).paginate(page: params[:page], per_page: 4)
     end
   end
 

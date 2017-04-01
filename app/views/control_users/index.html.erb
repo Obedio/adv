@@ -1,0 +1,21 @@
+<strong id="notice"><%= notice %></strong>
+<h1>Listando Usuários</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Email</th>
+      <th>Autorização</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.email %></td>
+        <td><%= user.role %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>

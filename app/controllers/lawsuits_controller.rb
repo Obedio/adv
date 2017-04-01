@@ -1,26 +1,28 @@
 class LawsuitsController < ApplicationController
+  before_action :authenticate_user!
+  after_action 
   before_action :set_lawsuit, only: [:show, :edit, :update, :destroy]
   before_action :load_client, only: [:new, :create]
-  before_action :authenticate_user!
   before_action :load_observation, :load_payment, only: [:show, :edit, :update, :destroy]
   # GET /lawsuits
   # GET /lawsuits.json
   def index
     if params[:search]
-      @lawsuits = Lawsuit.where(number: params[:search]).paginate(page: params[:page], per_page: 1)
+      @lawsuits = policy_scope(Lawsuit).where(number: params[:search]).paginate(page: params[:page], per_page: 1)
       if @lawsuits == []
         respond_to do |format|
             format.html { redirect_to lawsuits_url, notice: 'Não foi encontrado.' }
         end
       end
     else
-    @lawsuits = Lawsuit.all.paginate(page: params[:page], per_page: 8)
+    @lawsuits = policy_scope(Lawsuit).paginate(page: params[:page], per_page: 8)
     end
   end
 
   # GET /lawsuits/1
   # GET /lawsuits/1.json
   def show
+    authorize @lawsuit
   end
 
   # GET /lawsuits/new
