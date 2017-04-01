@@ -50,13 +50,13 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
     arel (7.1.4)
-    aws-sdk (2.8.10)
-      aws-sdk-resources (= 2.8.10)
-    aws-sdk-core (2.8.10)
+    aws-sdk (2.9.1)
+      aws-sdk-resources (= 2.9.1)
+    aws-sdk-core (2.9.1)
       aws-sigv4 (~> 1.0)
       jmespath (~> 1.0)
-    aws-sdk-resources (2.8.10)
-      aws-sdk-core (= 2.8.10)
+    aws-sdk-resources (2.9.1)
+      aws-sdk-core (= 2.9.1)
     aws-sigv4 (1.0.0)
     bcrypt (3.1.11)
     builder (3.2.2)
@@ -173,7 +173,7 @@ GEM
     turbolinks (5.0.1)
       turbolinks-source (~> 5)
     turbolinks-source (5.0.0)
-    tzinfo (1.2.2)
+    tzinfo (1.2.3)
       thread_safe (~> 0.1)
     uglifier (3.0.3)
       execjs (>= 0.3.0, < 3)
@@ -215,4 +215,4 @@ DEPENDENCIES
   will_paginate (~> 3.0)
 
 BUNDLED WITH
-   1.13.2
+   1.14.4
