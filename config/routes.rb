@@ -10,6 +10,10 @@ Rails.application.routes.draw do
   resources :lawsuits, shallow: true do
     resources :observations
   end
+  #resources :lawsuits, shallow: true do
+   # resources :annexes
+  #end
+  resources :annexes
   resources :addresses, :data_users
 	root 'welcome#index'
   devise_for :users

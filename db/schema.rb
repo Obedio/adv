@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170402022045) do
+ActiveRecord::Schema.define(version: 20170402162047) do
 
   create_table "addresses", force: :cascade do |t|
     t.string   "street"
@@ -24,6 +24,24 @@ ActiveRecord::Schema.define(version: 20170402022045) do
     t.integer  "client_id"
     t.string   "addresstype"
     t.index ["client_id"], name: "index_addresses_on_client_id"
+  end
+
+  create_table "annexes", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "lawsuit_id"
+    t.text     "description"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
+    t.string   "document_file_name"
+    t.string   "document_content_type"
+    t.integer  "document_file_size"
+    t.datetime "document_updated_at"
+    t.index ["lawsuit_id"], name: "index_annexes_on_lawsuit_id"
+    t.index ["user_id"], name: "index_annexes_on_user_id"
   end
 
   create_table "clients", force: :cascade do |t|

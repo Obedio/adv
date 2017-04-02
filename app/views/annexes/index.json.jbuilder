@@ -1,0 +1,1 @@
+json.array! @annexes, partial: 'annexes/annex', as: :annex

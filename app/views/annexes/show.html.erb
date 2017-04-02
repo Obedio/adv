@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @annex.user.email %>
+</p>
+
+<p>
+  <strong>Lawsuit:</strong>
+  <%= @annex.lawsuit.number %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @annex.description %>
+</p>
+ <strong>Anexo:</strong>
+<%= image_tag @annex.document.url(:medium) %>
+
+<%= link_to 'Edit', edit_annex_path(@annex) %> |
+<%= link_to 'Back', annexes_path %>
