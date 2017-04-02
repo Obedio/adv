@@ -39,6 +39,8 @@ class LawsuitsController < ApplicationController
   def create
     @lawsuit = @client.lawsuits.new(lawsuit_params)
     @lawsuit.user_id = current_user.id
+    @lawsuit.amount_paid = 0
+    @lawsuit.amount_rest = @lawsuit.amount
     respond_to do |format|
       if @lawsuit.save
         format.html { redirect_to @lawsuit, notice: 'Processo Cadastrado com Sucesso.' }
@@ -91,6 +93,6 @@ class LawsuitsController < ApplicationController
     end
     # Never trust parameters from the scary internet, only allow the white list through.
     def lawsuit_params
-      params.require(:lawsuit).permit(:number, :assessment, :description, :amount, :amount_paid, :venue_id, :kind_id, :status_id)
+      params.require(:lawsuit).permit(:number, :assessment, :description, :amount, :venue_id, :kind_id, :status_id)
     end
 end

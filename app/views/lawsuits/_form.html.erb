@@ -31,11 +31,6 @@
     <%= f.text_field :amount %>
   </div>
 
-    <div class="field">
-    <%= f.label :amount_paid %>
-    <%= f.text_field :amount_paid %>
-  </div>
-
   <div class="field">
     <%= f.label :venue_id %>
     <%= f.collection_select(:venue_id, Venue.all, :id, :name, {include_blank: true})%>

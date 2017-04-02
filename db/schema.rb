@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170401171114) do
+ActiveRecord::Schema.define(version: 20170402022045) do
 
   create_table "addresses", force: :cascade do |t|
     t.string   "street"
@@ -76,6 +76,7 @@ ActiveRecord::Schema.define(version: 20170401171114) do
     t.datetime "updated_at",  null: false
     t.float    "amount"
     t.float    "amount_paid"
+    t.float    "amount_rest"
     t.index ["client_id"], name: "index_lawsuits_on_client_id"
     t.index ["kind_id"], name: "index_lawsuits_on_kind_id"
     t.index ["status_id"], name: "index_lawsuits_on_status_id"

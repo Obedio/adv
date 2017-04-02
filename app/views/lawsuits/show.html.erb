@@ -1,5 +1,6 @@
 <div class="info-processo">
   <strong id="notice"><%= notice %></strong>
+  <hr>
   <strong id="processo">Processo - 
   <%= @lawsuit.number %></strong>
   </br>
@@ -13,11 +14,15 @@
   </br>
 
   <strong>Valor Total - </strong>
-  <%= @lawsuit.amount %>
+  <%= "R$ #{@lawsuit.amount}" %>
   </br>
 
   <strong>Valor pago - </strong>
-  <%= @lawsuit.amount_paid %>
+  <%= "R$ #{@lawsuit.amount_paid}" %>
+  </br>
+  
+  <strong>Valor Restante - </strong>
+  <%= "R$ #{@lawsuit.amount_rest}" %>
   </br>
   
   <strong>Advogado - </strong>
@@ -72,6 +77,7 @@
 </div>
 
 <div class="pagamento">
+  <hr>
   <h3>Pagamentos</h3>
 
   <table>
