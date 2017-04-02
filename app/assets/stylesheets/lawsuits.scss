@@ -70,9 +70,6 @@ table{ text-align: center;
 				color:  #A52A2A;
 			}
 		}
-		li:nth-child(1){width: 20%;}
-		li:nth-child(4){width: 49%;}
-		li:nth-child(5){width: 45%;}
 	}
 }
 .comentario{
@@ -86,7 +83,7 @@ table{ text-align: center;
 }
 .pagamento{
 	float: left;
-	margin: 1% 2% 10% 2%;
+	margin: 1% 2% 15% 2%;
 	width: 95%;
 	h3{padding-left: 2%;}
 }

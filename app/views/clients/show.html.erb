@@ -3,7 +3,7 @@
   <h6 class="show-icon-client"><i class="material-icons">supervisor_account</i><h6>
 </div>
 <ul class="show-client client-dados">
-  <li>Nome: <%= @client.name %></li>  
+  <li>Nome: <%= "#{@client.name} " " "" #{@client.lastname}" %></li>
   <li>Data de Nascimento: <%= @client.born %></li>  
   <li>Sexo: <%= @client.sex %></li>  
   <li>CPF: <%= @client.cpf %></li>  
@@ -43,11 +43,6 @@
     <% end %>
   </li>
   
-  <li>
-    <%= link_to root_path do %>
-      <span class="material-icons">home</span><h6>Início</h6>
-    <% end %>
-  </li>
 
   <li>
     <%= link_to edit_client_path(@client) do %>

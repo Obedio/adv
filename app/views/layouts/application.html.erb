@@ -9,7 +9,6 @@
     <meta name="keywords" content="Advocacia, Sistema, OrbTech">
     <meta name="robots" content="index, follow">
     <meta name="author" content="Obedio Albuquerque">
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
@@ -22,19 +21,18 @@
 
   <body>
  	  <header class="bg-gradiente">
-    <% if notice != nil %>
-      <span class="fa fa-exclamation-triangle" aria-hidden="true"><%= notice %></span>
-    <%end%>
-    
-      <% if user_signed_in? %>
-        <%= link_to data_users_path do %> 
-          <span id="icon-bar" class="fa fa-user bar-icon" aria-hidden="true"><strong class="bar-icon bar-words">Eu</strong></span>
-        <% end %>
+ 	    <strong>Sistema de Gestão de Escritório de Advocacia</strong>
+    </header>
+    <div class="menu">
+		  <% if user_signed_in? %>
         <%= link_to destroy_user_session_path, method: :delete do %>
-          <span id="icon-bar" class="bar-icon bar-icon1 fa fa-sign-out" aria-hidden="true"><strong class="bar-icon bar-words">Sair</strong></span>
+          <span class="bar-icon bar-icon1 material-icons">exit_to_app</span>
+        <% end %>
+        <%= link_to data_users_path do %> 
+          <span class="material-icons bar-icon">account_circle</span>
         <% end %>
       <% end %>
-    </header>
+	  </div>
     <% if user_signed_in? %>
       <div class="main">
         <ul>

@@ -67,10 +67,9 @@ class LawsuitsController < ApplicationController
   # DELETE /lawsuits/1
   # DELETE /lawsuits/1.json
   def destroy
-    #@lawsuit = @client.lawsuits.find(params[:id])
-    @lawsuit.destroy
+   @lawsuit.destroy
     respond_to do |format|
-      format.html { redirect_to lawsuits_url, notice: 'Processo Excluído com Sucesso.' }
+      format.html { redirect_to lawsuits_path, notice: 'Processo Excluído com Sucesso.' }
       format.json { head :no_content }
     end
   end

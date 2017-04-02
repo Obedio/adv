@@ -1,0 +1,13 @@
+'pt-BR':
+    helpers:
+        label:
+            lawsuit:
+                assessment: "Data Abertura"
+                number: "Número"
+                description: "Descrição"
+                amount: "Valor Total"
+                amount_paid: "Valor Pago"
+                amount_rest: "Valor Restante"
+                venue_id: "Local"
+                kind_id: "Natureza"
+                status_id: "Situação"

@@ -2,7 +2,7 @@ class LawsuitPolicy < ApplicationPolicy
   
   def show?
   	user.admin? or scope.where(:id => record.id).exists?
- 	end
+  end
 
   class Scope < Scope
     def resolve

@@ -1,24 +1,21 @@
 <div class="main">
-	<div>
 	<strong id="notice"><%= notice %></strong>
-		<table>
-		  <thead>
-		    <tr>
-		      <th class="title-tb">Processo</th>
-		      <th class="title-tb">Cliente</th>
-		      <th colspan="3"></th>
+	<table>
+		<thead>
+			<tr>
+				<th class="title-tb">Processo</th>
+		    	<th class="title-tb">Cliente</th>
 		    </tr>
-		  </thead>
+		</thead>
 
-		  <tbody>
-		    <% @lawsuits.each do |lawsuit| %>
-		      <tr>
-		        <td class="nro-processo"><%= link_to lawsuit.number, lawsuit %></td>
-		        <td><%= link_to lawsuit.client.name, lawsuit.client %></td>
-		    <% end %>
-		  </tbody>
-		</table>
-		<div class="paginate"><%= will_paginate @lawsuits %></div>
-		<%= link_to 'Usuários', control_users_index_path %>
-	</div>
+		<tbody>
+		   	<% @lawsuits.each do |lawsuit| %>
+		   	<tr>
+		      	<td class="nro-processo"><%= link_to lawsuit.number, lawsuit %></td>
+		      	<td><%= link_to lawsuit.client.name, lawsuit.client %></td>
+		   	<% end %>
+		</tbody>
+	</table>
+	<div class="paginate"><%= will_paginate @lawsuits %></div>
+	<%= link_to 'Usuários', control_users_index_path %>
 </div>
