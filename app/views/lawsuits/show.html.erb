@@ -51,6 +51,8 @@
     <li><%= link_to 'Excluir Processo', @lawsuit, method: :delete, data: { confirm: 'Você tem certeza?' } %></li>
     <li><%= link_to 'Adicionar Observação', new_lawsuit_observation_path(lawsuit_id: @lawsuit.id) %></li>
     <li><%= link_to 'Realizar Pagamento', new_lawsuit_payment_path(lawsuit_id: @lawsuit.id) %></li>
+    <li><%= link_to 'Adicionar Arquivo', new_lawsuit_annex_path(lawsuit_id: @lawsuit.id) %>
+</li>
   </ul>
 <hr>
 </div>
@@ -74,6 +76,31 @@
     </tbody>
   </table>
   <div class="paginate"><%= will_paginate @observation, param_name: 'observation'  %></div>
+</div>
+
+<div class="anexo">
+<h3>Arquivos</h3>
+  <table>
+    <thead>
+      <tr>
+      <td>Descrição</td>
+      <td>Responsável</td>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @annex.each do |annex| %>
+        <tr>
+          <td><%= annex.description %></td>
+          <td><%= annex.user.email %></td>
+          <td><%= link_to 'Visualizar Arquivo', annex.document.url, :target => "_blank"%></td>
+          <td><%= link_to 'Editar Descrição', edit_annex_path(annex) %></td>
+          <td><%= link_to 'Excluir Arquivo', annex, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <div class="paginate"><%= will_paginate @annex, param_name: 'annex'  %></div>
 </div>
 
 <div class="pagamento">

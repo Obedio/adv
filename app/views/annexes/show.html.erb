@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>User:</strong>
-  <%= @annex.user.email %>
+  <strong>Description:</strong>
+  <%= @annex.description %>
 </p>
 
 <p>
@@ -11,11 +11,15 @@
 </p>
 
 <p>
-  <strong>Description:</strong>
-  <%= @annex.description %>
+  <strong>User:</strong>
+  <%= @annex.user.email %>
 </p>
- <strong>Anexo:</strong>
-<%= image_tag @annex.document.url(:medium) %>
+
+
+<p>
+ 
+  <%= link_to 'Visualizar Arquivo', @annex.document.url %>
+</p>
 
 <%= link_to 'Edit', edit_annex_path(@annex) %> |
 <%= link_to 'Back', annexes_path %>

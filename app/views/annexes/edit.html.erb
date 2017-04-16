@@ -1,6 +1,24 @@
 <h1>Editing Annex</h1>
 
-<%= render 'form', annex: @annex %>
+<%= form_for @annex do |f| %>
+  <% if @annex.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@annex.errors.count, "error") %> prohibited this annex from being saved:</h2>
 
-<%= link_to 'Show', @annex %> |
-<%= link_to 'Back', annexes_path %>
+      <ul>
+      <% @annex.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

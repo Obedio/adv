@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170402162047) do
+ActiveRecord::Schema.define(version: 20170416231728) do
 
   create_table "addresses", force: :cascade do |t|
     t.string   "street"
@@ -27,19 +27,12 @@ ActiveRecord::Schema.define(version: 20170402162047) do
   end
 
   create_table "annexes", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "lawsuit_id"
     t.text     "description"
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
-    t.string   "avatar_file_name"
-    t.string   "avatar_content_type"
-    t.integer  "avatar_file_size"
-    t.datetime "avatar_updated_at"
-    t.string   "document_file_name"
-    t.string   "document_content_type"
-    t.integer  "document_file_size"
-    t.datetime "document_updated_at"
+    t.integer  "lawsuit_id"
+    t.integer  "user_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "document"
     t.index ["lawsuit_id"], name: "index_annexes_on_lawsuit_id"
     t.index ["user_id"], name: "index_annexes_on_user_id"
   end
@@ -61,18 +54,6 @@ ActiveRecord::Schema.define(version: 20170402162047) do
     t.string   "lastname"
     t.index ["address_id"], name: "index_clients_on_address_id"
     t.index ["user_id"], name: "index_clients_on_user_id"
-  end
-
-  create_table "data_users", force: :cascade do |t|
-    t.string   "name"
-    t.date     "born"
-    t.string   "sex"
-    t.integer  "office_id"
-    t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["office_id"], name: "index_data_users_on_office_id"
-    t.index ["user_id"], name: "index_data_users_on_user_id"
   end
 
   create_table "kinds", force: :cascade do |t|
@@ -122,6 +103,19 @@ ActiveRecord::Schema.define(version: 20170402162047) do
     t.datetime "updated_at", null: false
     t.integer  "lawsuit_id"
     t.index ["lawsuit_id"], name: "index_payments_on_lawsuit_id"
+  end
+
+  create_table "profiles", force: :cascade do |t|
+    t.string   "name"
+    t.string   "last_name"
+    t.date     "birth"
+    t.string   "sex"
+    t.integer  "user_id"
+    t.integer  "office_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["office_id"], name: "index_profiles_on_office_id"
+    t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
   create_table "statuses", force: :cascade do |t|

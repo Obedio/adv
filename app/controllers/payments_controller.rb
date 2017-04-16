@@ -33,13 +33,20 @@ class PaymentsController < ApplicationController
   def create
     @payment = @lawsuit.payments.new(payment_params)
     value = @lawsuit.amount_paid + @payment.amount
-    respond_to do |format|
-      if @payment.save && @lawsuit.update(amount_paid: value)
-        format.html { redirect_to @lawsuit, notice: 'Pagamento Realizado.' }
-        format.json { render :show, status: :created, location: @payment }
-      else
-        format.html { render :new }
-        format.json { render json: @payment.errors, status: :unprocessable_entity }
+    rest = @lawsuit.amount - value
+    if value > @lawsuit.amount
+      respond_to do |format|
+        format.html { redirect_to @lawsuit, notice: 'NÃO REALIZADO. Valor de pagamento é maior do que o valor em DÉBITO.' }
+      end
+    else
+      respond_to do |format|
+        if @payment.save && @lawsuit.update(amount_paid: value, amount_rest: rest)
+          format.html { redirect_to @lawsuit, notice: 'Pagamento Realizado.' }
+          format.json { render :show, status: :created, location: @payment }
+        else
+          format.html { render :new }
+          format.json { render json: @payment.errors, status: :unprocessable_entity }
+        end
       end
     end
   end

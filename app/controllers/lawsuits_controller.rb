@@ -1,9 +1,8 @@
 class LawsuitsController < ApplicationController
   before_action :authenticate_user!
-  after_action 
   before_action :set_lawsuit, only: [:show, :edit, :update, :destroy]
   before_action :load_client, only: [:new, :create]
-  before_action :load_observation, :load_payment, only: [:show, :edit, :update, :destroy]
+  before_action :load_observation, :load_payment, :load_annex, only: [:show, :destroy]
   # GET /lawsuits
   # GET /lawsuits.json
   def index
@@ -55,6 +54,8 @@ class LawsuitsController < ApplicationController
   # PATCH/PUT /lawsuits/1
   # PATCH/PUT /lawsuits/1.json
   def update
+    authorize @lawsuit
+    @lawsuit.amount_rest = @lawsuit.amount - @lawsuit.amount_paid
     respond_to do |format|
       if @lawsuit.update(lawsuit_params)
         format.html { redirect_to @lawsuit, notice: 'Processo Atualizado com Sucesso.' }
@@ -69,7 +70,8 @@ class LawsuitsController < ApplicationController
   # DELETE /lawsuits/1
   # DELETE /lawsuits/1.json
   def destroy
-   @lawsuit.destroy
+    authorize @lawsuit
+    @lawsuit.destroy
     respond_to do |format|
       format.html { redirect_to lawsuits_path, notice: 'Processo Excluído com Sucesso.' }
       format.json { head :no_content }
@@ -78,12 +80,15 @@ class LawsuitsController < ApplicationController
 
   private
     def load_payment
-      @payment = Payment.where(lawsuit_id: params[:id]).paginate(page: params[:page], per_page: 1)
+      @payment = Payment.where(lawsuit_id: params[:id]).order("created_at DESC").paginate(page: params[:page], per_page: 1)
     end
     def load_observation
-      @observation = Observation.where(lawsuit_id: params[:id]).paginate(page: params[:param_name], per_page: 2)
+      @observation = Observation.where(lawsuit_id: params[:id]).order("created_at DESC").paginate(page: params[:param_name], per_page: 2)
     end
 
+    def load_annex
+      @annex = Annex.where(lawsuit_id: params[:id]).order("created_at DESC").paginate(page: params[:param_name], per_page: 8)
+    end
     def load_client
       @client = Client.find(params[:client_id])
     end

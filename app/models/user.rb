@@ -2,7 +2,7 @@ class User < ApplicationRecord
 	enum role: [:normal_user, :admin]
   has_many :clients
   has_many :annexes
-  has_one :datauser
+  has_one :profile
   has_many :lawsuits
   has_many :comments
   has_many :accounts

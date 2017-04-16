@@ -19,6 +19,7 @@ class ClientsController < ApplicationController
   # GET /clients/1
   # GET /clients/1.json
   def show
+    authorize @client
   end
 
   # GET /clients/new
@@ -50,6 +51,7 @@ class ClientsController < ApplicationController
   # PATCH/PUT /clients/1
   # PATCH/PUT /clients/1.json
   def update
+    authorize @client
     respond_to do |format|
       if @client.update(client_params)
         format.html { redirect_to @client, notice: 'Cliente Atualizado com Sucesso.' }
@@ -64,6 +66,7 @@ class ClientsController < ApplicationController
   # DELETE /clients/1
   # DELETE /clients/1.json
   def destroy
+    authorize @client
     @client.destroy
     respond_to do |format|
       format.html { redirect_to clients_url, notice: 'Cliente Excluído com Sucesso.' }

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  
+  resources :profiles
   get 'control_users/index'
 
   resources :clients, shallow: true do
@@ -10,10 +12,9 @@ Rails.application.routes.draw do
   resources :lawsuits, shallow: true do
     resources :observations
   end
-  #resources :lawsuits, shallow: true do
-   # resources :annexes
-  #end
-  resources :annexes
+  resources :lawsuits, shallow: true do
+    resources :annexes
+  end
   resources :addresses, :data_users
 	root 'welcome#index'
   devise_for :users

@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 gem "pundit"
 gem "paperclip", git: "https://github.com/thoughtbot/paperclip.git"
 gem 'aws-sdk', '~> 2'
-
+gem 'carrierwave', '~> 1.0'
 #paginação
 gem 'will_paginate', '~> 3.0'
 #authenticate

@@ -1,4 +1,4 @@
 class Office < ApplicationRecord
-	has_many :datausers
+	has_many :profiles
 	validates :name, uniqueness: true, presence: true
 end

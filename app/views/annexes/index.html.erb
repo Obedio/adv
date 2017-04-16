@@ -5,9 +5,9 @@
 <table>
   <thead>
     <tr>
-      <th>User</th>
-      <th>Lawsuit</th>
       <th>Description</th>
+      <th>Lawsuit</th>
+      <th>User</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -15,9 +15,9 @@
   <tbody>
     <% @annexes.each do |annex| %>
       <tr>
-        <td><%= annex.user %></td>
-        <td><%= annex.lawsuit %></td>
         <td><%= annex.description %></td>
+        <td><%= annex.lawsuit %></td>
+        <td><%= annex.user %></td>
         <td><%= link_to 'Show', annex %></td>
         <td><%= link_to 'Edit', edit_annex_path(annex) %></td>
         <td><%= link_to 'Destroy', annex, method: :delete, data: { confirm: 'Are you sure?' } %></td>

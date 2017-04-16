@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  user: one
-  lawsuit: one
   description: MyText
+  lawsuit: one
+  user: one
 
 two:
-  user: two
-  lawsuit: two
   description: MyText
+  lawsuit: two
+  user: two

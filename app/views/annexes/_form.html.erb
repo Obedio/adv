@@ -1,4 +1,4 @@
-<%= form_for @annex, url: annexes_path, html: { multipart: true } do |f| %>
+<%= form_for [@lawsuit, @lawsuit.annexes.new], html: { multipart: true } do |f| %>
   <% if annex.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(annex.errors.count, "error") %> prohibited this annex from being saved:</h2>
@@ -10,16 +10,6 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :user_id %>
-    <%= f.text_field :user_id %>
-  </div>
-
-  <div class="field">
-    <%= f.label :lawsuit_id %>
-    <%= f.text_field :lawsuit_id %>
-  </div>
 
   <div class="field">
     <%= f.label :description %>
