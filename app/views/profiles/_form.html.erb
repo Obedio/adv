@@ -23,22 +23,17 @@
 
   <div class="field">
     <%= f.label :birth %>
-    <%= f.date_select :birth %>
+    <%= f.date_select :birth, :start_year => 2000, :end_year => 1927, include_blank: true %>
   </div>
 
   <div class="field">
     <%= f.label :sex %>
-    <%= f.text_field :sex %>
-  </div>
-
-  <div class="field">
-    <%= f.label :user_id %>
-    <%= f.text_field :user_id %>
+    <%= f.select(:sex, ['Masculino', 'Feminino'], {include_blank: true}) %>
   </div>
 
   <div class="field">
     <%= f.label :office_id %>
-    <%= f.text_field :office_id %>
+    <%= f.collection_select(:office_id, Office.all, :id, :name, {include_blank: true}) %>
   </div>
 
   <div class="actions">

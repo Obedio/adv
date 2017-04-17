@@ -10,7 +10,11 @@ class AnnexPolicy < ApplicationPolicy
   end
   class Scope < Scope
     def resolve
-      scope
+      if user.admin?
+        scope.all
+      else
+        scope.where(user_id: user)
+      end
     end
   end
 end

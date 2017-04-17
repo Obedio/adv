@@ -15,7 +15,10 @@ Rails.application.routes.draw do
   resources :lawsuits, shallow: true do
     resources :annexes
   end
-  resources :addresses, :data_users
+  resources :lawsuits, shallow: true do
+    resources :shares
+  end
+  resources :addresses
 	root 'welcome#index'
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
