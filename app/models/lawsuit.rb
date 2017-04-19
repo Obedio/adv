@@ -7,4 +7,5 @@ class Lawsuit < ApplicationRecord
   has_many :annexes
   has_many :observations
   has_many :payments
+  has_many :shares
 end

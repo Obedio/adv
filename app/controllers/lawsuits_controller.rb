@@ -1,10 +1,9 @@
 class LawsuitsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, :profile_test
   before_action :set_lawsuit, only: [:show, :edit, :update, :destroy]
   before_action :load_client, only: [:new, :create]
-  before_action :load_observation, :load_payment, :load_annex, only: [:show, :destroy]
-  # GET /lawsuits
-  # GET /lawsuits.json
+  before_action :load_observation, :load_payment, :load_annex, :load_share, only: [:show, :destroy]
+
   def index
     if params[:search]
       @lawsuits = policy_scope(Lawsuit).where(number: params[:search]).paginate(page: params[:page], per_page: 1)
@@ -18,23 +17,23 @@ class LawsuitsController < ApplicationController
     end
   end
 
-  # GET /lawsuits/1
-  # GET /lawsuits/1.json
   def show
-    authorize @lawsuit
+    @define_author_a = Share.where(lawsuit_id: @lawsuit.id)
+    @define_author_b = @define_author_a.where(email: current_user.email)
+    if @define_author_b != []
+      true
+    else
+      authorize @lawsuit
+    end
   end
 
-  # GET /lawsuits/new
   def new
     @lawsuit = Lawsuit.new
   end
 
-  # GET /lawsuits/1/edit
   def edit
   end
 
-  # POST /lawsuits
-  # POST /lawsuits.json
   def create
     @lawsuit = @client.lawsuits.new(lawsuit_params)
     @lawsuit.user_id = current_user.id
@@ -51,8 +50,6 @@ class LawsuitsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /lawsuits/1
-  # PATCH/PUT /lawsuits/1.json
   def update
     authorize @lawsuit
     @lawsuit.amount_rest = @lawsuit.amount - @lawsuit.amount_paid
@@ -67,8 +64,6 @@ class LawsuitsController < ApplicationController
     end
   end
 
-  # DELETE /lawsuits/1
-  # DELETE /lawsuits/1.json
   def destroy
     authorize @lawsuit
     @lawsuit.destroy
@@ -89,6 +84,10 @@ class LawsuitsController < ApplicationController
     def load_annex
       @annex = Annex.where(lawsuit_id: params[:id]).order("created_at DESC").paginate(page: params[:param_name], per_page: 8)
     end
+    def load_share
+      @share = Share.where(lawsuit_id: params[:id]).order("created_at DESC").paginate(page: params[:param_name], per_page: 8)
+    end
+    
     def load_client
       @client = Client.find(params[:client_id])
     end

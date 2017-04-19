@@ -1,6 +1,6 @@
 class PaymentsController < ApplicationController
   before_action :set_payment, only: [:show]
-  before_action :authenticate_user!
+  before_action :authenticate_user!, :profile_test
   before_action :load_lawsuit, only: [:new, :create]
   
   # GET /payments
@@ -52,10 +52,6 @@ class PaymentsController < ApplicationController
   end
 
   private
-    #metodo para carregar o processo
-    def load_lawsuit
-      @lawsuit = Lawsuit.find(params[:lawsuit_id])
-    end
     # Use callbacks to share common setup or constraints between actions.
     def set_payment
       @payment = Payment.find(params[:id])

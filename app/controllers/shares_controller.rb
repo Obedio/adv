@@ -1,44 +1,50 @@
 class SharesController < ApplicationController
   before_action :set_share, only: [:show, :edit, :update, :destroy]
-
-  # GET /shares
-  # GET /shares.json
+  before_action :authenticate_user!, :profile_test
+  before_action :load_lawsuit, only: [:new, :create]
+ 
   def index
-    @shares = Share.all
+    @shares = Share.where(email: current_user.email)
   end
 
-  # GET /shares/1
-  # GET /shares/1.json
   def show
   end
 
-  # GET /shares/new
   def new
     @share = Share.new
   end
 
-  # GET /shares/1/edit
   def edit
   end
 
-  # POST /shares
-  # POST /shares.json
   def create
-    @share = Share.new(share_params)
-
-    respond_to do |format|
-      if @share.save
-        format.html { redirect_to @share, notice: 'Share was successfully created.' }
-        format.json { render :show, status: :created, location: @share }
-      else
-        format.html { render :new }
+    @share = @lawsuit.shares.new(share_params)
+    @find_user = User.where(email: @share.email)
+    @find_share = Share.where(lawsuit_id: @share.lawsuit_id)
+    @already = @find_share.where(email: @share.email)
+    if @find_user == []
+      respond_to do |format|
+        format.html { redirect_to new_lawsuit_share_path, notice: 'Email não encontrado, faça novamente.' }
+        format.json { render json: @share.errors, status: :unprocessable_entity }
+      end
+    elsif @already == []
+      respond_to do |format|
+        if @share.save
+          format.html { redirect_to @lawsuit, notice: 'Compartilhado com sucesso.' }
+          format.json { render :show, status: :created, location: @share }
+        else
+          format.html { render :new, notice: 'Email não encontrado, faça novamente.' }
+          format.json { render json: @share.errors, status: :unprocessable_entity }
+        end
+      end
+    else
+      respond_to do |format|
+        format.html { redirect_to lawsuit_path(@share.lawsuit_id), notice: 'Este processo já está compartilhado com o email.' }
         format.json { render json: @share.errors, status: :unprocessable_entity }
       end
     end
   end
 
-  # PATCH/PUT /shares/1
-  # PATCH/PUT /shares/1.json
   def update
     respond_to do |format|
       if @share.update(share_params)
@@ -51,24 +57,20 @@ class SharesController < ApplicationController
     end
   end
 
-  # DELETE /shares/1
-  # DELETE /shares/1.json
   def destroy
     @share.destroy
     respond_to do |format|
-      format.html { redirect_to shares_url, notice: 'Share was successfully destroyed.' }
+      format.html { redirect_to lawsuit_path(@share.lawsuit_id), notice: 'Excluído com sucesso.' }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_share
       @share = Share.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def share_params
-      params.require(:share).permit(:lawsuit_id, :user_id)
+      params.require(:share).permit(:email)
     end
 end

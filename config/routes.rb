@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   
   resources :profiles
   get 'control_users/index'
-
+  get 'shares/index'
   resources :clients, shallow: true do
     resources :lawsuits
   end

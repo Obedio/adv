@@ -1,7 +1,6 @@
 class LawsuitPolicy < ApplicationPolicy
-  
   def show?
-  	user.admin? or scope.where(:id => record.id).exists?
+  	user.admin? or scope.where(:id => record.id).exists? 
   end
   def update?
     user.admin? or scope.where(:id => record.id).exists?

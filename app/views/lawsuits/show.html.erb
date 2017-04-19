@@ -47,15 +47,38 @@
   <hr>
   <ul>
     <li><%= link_to 'Voltar', lawsuits_path %></li>
-    <li><%= link_to 'Editar Processo', edit_lawsuit_path(@lawsuit) %></li>
-    <li><%= link_to 'Excluir Processo', @lawsuit, method: :delete, data: { confirm: 'Você tem certeza?' } %></li>
-    <li><%= link_to 'Adicionar Observação', new_lawsuit_observation_path(lawsuit_id: @lawsuit.id) %></li>
-    <li><%= link_to 'Realizar Pagamento', new_lawsuit_payment_path(lawsuit_id: @lawsuit.id) %></li>
+    <li><%= link_to 'Editar', edit_lawsuit_path(@lawsuit) %></li>
+    <li><%= link_to 'Excluir', @lawsuit, method: :delete, data: { confirm: 'Você tem certeza?' } %></li>
+    <li><%= link_to 'Comentário', new_lawsuit_observation_path(lawsuit_id: @lawsuit.id) %></li>
+    <li><%= link_to 'Pagamento', new_lawsuit_payment_path(lawsuit_id: @lawsuit.id) %></li>
     <li><%= link_to 'Adicionar Arquivo', new_lawsuit_annex_path(lawsuit_id: @lawsuit.id) %>
 </li>
+    <li><%= link_to 'Compartilhar', new_lawsuit_share_path(lawsuit_id: @lawsuit.id) %></li>
   </ul>
 <hr>
 </div>
+
+<div class="comentario">
+<h3>Compartilhado com</h3>
+  <table>
+    <thead>
+      <tr>
+        <td>Email</td>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @share.each do |share| %>
+        <tr>
+          <td><%= share.email %></td>
+          <td><%= link_to 'Excluir', share, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <div class="paginate"><%= will_paginate @share, param_name: 'share'  %></div>
+</div>
+
 <div class="comentario">
 <h3>Comentários</h3>
   <table>

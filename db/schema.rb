@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170417021952) do
+ActiveRecord::Schema.define(version: 20170419181441) do
 
   create_table "addresses", force: :cascade do |t|
     t.string   "street"
@@ -120,11 +120,10 @@ ActiveRecord::Schema.define(version: 20170417021952) do
 
   create_table "shares", force: :cascade do |t|
     t.integer  "lawsuit_id"
-    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "email"
     t.index ["lawsuit_id"], name: "index_shares_on_lawsuit_id"
-    t.index ["user_id"], name: "index_shares_on_user_id"
   end
 
   create_table "statuses", force: :cascade do |t|

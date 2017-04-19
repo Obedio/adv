@@ -1,6 +1,6 @@
 class AnnexesController < ApplicationController
   before_action :set_annex, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!
+  before_action :authenticate_user!, :profile_test
   before_action :load_lawsuit, only: [:new, :create]
   # GET /annexes
   # GET /annexes.json
@@ -71,9 +71,6 @@ class AnnexesController < ApplicationController
   end
 
   private
-    def load_lawsuit
-      @lawsuit = Lawsuit.find(params[:lawsuit_id])
-    end
     # Use callbacks to share common setup or constraints between actions.
     def set_annex
       @annex = Annex.find(params[:id])
