@@ -11,10 +11,7 @@
     <meta name="author" content="Obedio Albuquerque">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-    <meta rel="stylesheet" type="text/css" href="../../assets/stylesheets/application.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -26,48 +23,25 @@
     <div class="menu">
 		  <% if user_signed_in? %>
         <%= link_to destroy_user_session_path, method: :delete do %>
-          <span class="bar-icon bar-icon1 material-icons">exit_to_app</span>
+          <span class="bar-icon material-icons">exit_to_app</span>
         <% end %>
         <%= link_to profiles_path do %> 
           <span class="material-icons bar-icon">account_circle</span>
         <% end %>
       <% end %>
 	  </div>
-    <% if user_signed_in? %>
-      <div class="main">
-        <ul>
-          <li> 
-            <%= link_to root_path do %>
-              <span class="material-icons">home<p>Início</p></span>
-            <% end %>
-          </li>
-          <li> 
-            <%= link_to lawsuits_path do %>
-              <span class="material-icons">library_books<p>Processos</p></span>
-            <% end %>
-          </li>
-
-          <li>
-            <%= link_to clients_path do %>
-              <span class="material-icons">supervisor_account<p>Clientes</p></span>
-            <% end %>
-          </li>
-
-          <li>
-            <%= link_to lawsuits_path do %> 
-              <span class="material-icons">assignment<p>Relatório<br>Financeiro</p></span>
-            <% end %>
-          </li>
-
-          <li>
-            <%= link_to lawsuits_path do %> 
-              <span class="material-icons">assignment<p>Relatório de<br>Processos</p></span>
-            <% end %>
-          </li>
-        </ul>
-      </div>
-    <% end %>
-    <%= yield %>
+	  <div id="dv-main">
+      <% if user_signed_in? %>
+        <nav id="menu">
+          <ul>
+            <li><%= link_to 'Início', root_path %></li>
+            <li><%= link_to 'Processos', lawsuits_path %></li>
+            <li><%= link_to 'Clientes', clients_path %></li>
+          </ul>
+        </nav>
+      <% end %>
+      <%= yield %>
+  </div>
     <footer class="bg-gradiente">
     	<strong class="text-footer">Copyright @ OrbTech 2017. Todos direitos reservados</strong>	
     </footer>

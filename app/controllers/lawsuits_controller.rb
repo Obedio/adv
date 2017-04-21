@@ -5,15 +5,17 @@ class LawsuitsController < ApplicationController
   before_action :load_observation, :load_payment, :load_annex, :load_share, only: [:show, :destroy]
 
   def index
-    if params[:search]
-      @lawsuits = policy_scope(Lawsuit).where(number: params[:search]).paginate(page: params[:page], per_page: 1)
+    @q = Lawsuit.ransack(params[:q])
+    if params[:q]
+      @lawsuits = @q.result
+      @lawsuits = policy_scope(@lawsuits).paginate(page: params[:page], per_page: 1)
       if @lawsuits == []
         respond_to do |format|
             format.html { redirect_to lawsuits_url, notice: 'Não foi encontrado.' }
         end
       end
     else
-    @lawsuits = policy_scope(Lawsuit).paginate(page: params[:page], per_page: 8)
+    @lawsuits = policy_scope(Lawsuit).order("status_id ASC").paginate(page: params[:page], per_page: 8)
     end
   end
 

@@ -1,6 +1,9 @@
 source 'https://rubygems.org'
-
+#autorização
 gem "pundit"
+#pesquisas
+gem 'ransack'
+#anexar arquivos
 gem "paperclip", git: "https://github.com/thoughtbot/paperclip.git"
 gem 'aws-sdk', '~> 2'
 gem 'carrierwave', '~> 1.0'

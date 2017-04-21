@@ -15,7 +15,7 @@
  */
 html{
    font-family: 'Taviraj', serif;
-   background-color: #F5F5F5;
+   background-color: rgba(242,242,242,0.5);
    font-size: 12px;
    margin: 0;
    padding: 0;
@@ -40,10 +40,16 @@ a:visited {
 	background-color:rgba(255,255,255,0.0); 
 }
 body {
+	background-color: rgba(242,242,242,0.5);
 	margin: 0; 
 	padding: 0; 
 	width: 100%; 
 	height: 100%;
+}
+#dv-main{
+	width: 96%;
+	margin-right: 2%;
+	margin-left: 2%;
 }
 /******************************** BANNER ***************************/
 header {
@@ -71,9 +77,36 @@ header strong{
 		font-size: 150%;
 		padding: 1% 0;
 		margin-right: 2%;
-	}
+}
+/********************MENU***********************************************/
+#menu{
+	width: 100%;
+	float: left;
+	margin:0 0 1% 0;
+}
+#menu ul{ 
+	width: 96%;
+	float: left;
+}
+#menu li{
+	font-size:115%;
+	float: left;
+	padding: 2% 2% 2% 2%;
+}
+#menu li:first-child{
+	padding-left: 3%;
+	padding-right: 3%;
 
-
+}
+#menu li:hover{
+	background: #cccccc;
+}
+#menu a {
+	color: #009900;
+}
+.active{
+	background: #cccccc;
+}
 /******************LOGIN***********************************************/
 .login { 
 	margin: 0 5%;
@@ -145,16 +178,35 @@ header strong{
 	margin: 0% 0 10% 25%;
 }
 /***************************OUTROS****************************************************/
+.btn{
+	float: left;
+	padding: 1%;
+	border-radius: 5px;
+	border-style: solid;
+	border-width: thin;
+	border-color: #009900;
+}
+.btn:hover{
+	color: #009900;
+}
+.btn-novo{
+	margin: 2% 2% 0 0;
+}
+.btn-search {
+	float: none;
+}
 .paginate{
 	float: left;
-	margin-left:5%;
-	margin-bottom: 18%;
+	margin-left: 3%;
+	margin-bottom: 8%;
 }
 .nro-processo a{ text-decoration: underline;	}
 #notice {
 	margin-bottom: 1%;
+	margin-top: 1%;
 	float: left;
-	width: 90%;
+	width: 100%;
+	text-align: center;
 }
 /*************************************** RODAPE ******************************************/
 footer { 
@@ -187,7 +239,14 @@ footer {
 		margin: 1% 0 0 6%;
 	}
 }
-
+@media screen and (min-width: 420px){
+	#dv-main{ 
+		width: 92%;
+		margin-left: 4%;
+		margin-right: 4%;
+	}
+	header {font-size: 95%;}
+}
 @media screen and (min-width: 520px){
 	.login {
 		font-size: 1.1em;
@@ -199,9 +258,15 @@ footer {
 		width: 40%; 
 		margin: 1% 0 0 6%;
 	}
+	#dv-main{
+		width: 90%;
+		margin:0 5% 0 5%;
+	}
+	.btn-novo{margin-bottom: 2%;}
+	footer{ font-size: 105%; }
 }
 
-@media screen and (min-width: 680px){
+@media screen and (min-width: 620px){
 	.login {
 		margin: 0 25%;
 		width: 50%;
@@ -212,10 +277,18 @@ footer {
 	}
 	.login label, input{  font-size: 115%; }
 	.btn-submit input{ font-size: 110%; }
+	header { font-size: 100%; }
 	footer { font-size: 110%; }
+	#dv-main{
+		width: 84%;
+		margin:0 8% 0 8%;
+	}
+	#menu li{
+		font-size:130%;
+	}
 }
 
-@media screen and (min-width: 780px){
+@media screen and (min-width: 720px){
 	.login {
 		margin: 0 30%;
 		width: 40%;
@@ -225,9 +298,24 @@ footer {
 		margin: 1% 0 0 6%;
 	}
 	.paginate a{font-size: 120%;}
+	#dv-main{
+		width: 80%;
+		margin:0 10% 0 10%;
+	}
+	.bar-icon{
+		padding: 0.5% 0;
+		font-size: 170%;
+	}
+	.btn-novo{
+		margin-bottom: 1%;
+	}
 }
 
-@media screen and (min-width: 900px){
+@media screen and (min-width: 820px){
+	.btn-novo{margin-top: 1%;}
+}
+
+@media screen and (min-width: 920px){
 	.login {
 		margin: 0 35%;
 		width: 30%;
@@ -236,6 +324,13 @@ footer {
 		width: 40%; 
 		margin: 1% 0 0 6%;
 	}
+	#dv-main{
+		width: 70%;
+		margin:0 15% 0 15%;
+	}
+}
+@media screen and (min-width: 1020px){
+	.btn-search {padding: 0 1%;}
 }
 
 @media screen and (min-width: 1200px){

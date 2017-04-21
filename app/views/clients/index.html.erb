@@ -1,45 +1,28 @@
-<div class="client">
-  <i class="material-icons icon-client">supervisor_account</i>
-  <span class="titulo-client">Clientes</span>
-
-  <%= form_tag( '/clients', :method => :get) do %>
-    <%= text_field_tag 'search', nil, placeholder: 'Digite o CPF do Cliente...' %>
-     <%= button_tag do %>
-      <span class="material-icons icon-client">pageview</span>
-      <% end %>
-  <% end %>
-</div>
+<div class="dv-search">
   <strong id="notice"><%= notice %></strong>
-<table  class="client-tb client">
-  <thead>
-    <tr>
-      <th>Nome</th>
-      <th>CPF</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @clients.each do |client| %>
+  <%= search_form_for @q do |f| %>
+    <%= f.search_field :cpf_cont, placeholder: 'CPF do Cliente' %>
+    <%= f.submit 'Pesquisar', class:'btn btn-search'%>
+  <% end %>
+  <%= link_to 'Novo Cliente', new_client_path, class: 'btn btn-novo' %>
+</div>
+<div class="main">
+  <table>
+    <thead>
       <tr>
-        <td><%= link_to client.name, client %></td>
-        <td><%= client.cpf %></td> 
+        <th class="title-tb">Nome</th>
+        <th class="title-tb">CPF</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
-<%= will_paginate @clients %>
-<br>
-
-<ul class="links-client">
-  <li>
-    <%= link_to new_client_path do %>
-      <span class="material-icons icon-client">person_add</span><h6>Novo Cliente</h6>
-    <% end %>
-  </li>
-
-  <li>
-    <%= link_to root_path do %>
-      <span class="material-icons icon-client">home</span><h6>Início</h6>
+    </thead>
+  
+    <tbody>
+      <% @clients.each do |client| %>
+        <tr>
+          <td><%= link_to client.name, client %></td>
+          <td><%= client.cpf %></td> 
+        </tr>
       <% end %>
-  </li>
-</ul>
+    </tbody>
+  </table>
+  <div class="paginate"><%= will_paginate @clients %></div>
+</div>

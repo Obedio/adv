@@ -1,140 +1,51 @@
+.btn-share{margin-top: 2%;}
 .main {
 	margin: 0;
 	text-align: center; 
 	float: left;
 	width: 100%;
-	ul{	
-		padding: 0;
-		width: 99%;
-		margin: 2% 0 0 1%;
-		li {
-			margin: 0% 1% 0% 0%;
-			float: left;
-			span { font-size: 130%;
-				color: #A52A2A;
-				float: left;
-				p {	
-				font-size: 60%;
-					margin:0;
-					text-align: center;
-				}
-			}
-		}
-	}
-
 	table {
-		width:95%;
+		width: 100%;
 		float: left;
-		margin: 2% 2% 5% 2%;
+		margin: 2% 0% 5% 0%;
 		.title-tb{
 			border-radius: 5%;
-			color: #A52A2A;
-			background-color:  #D7D7D7;
+			color: #009900;
+			background-color:  #cccccc;
 			padding-top: 1%;
 		}
 		a{color: #330000;}
 		a:hover{
-			color: #A52A2A;
+			color: #009900;
 		}
 		td {
 			padding: 1.5% 0 0 0;
-			border-bottom-color: #D7D7D7;
+			border-bottom-color: #cccccc;
 			border-bottom: inset;
 			border-bottom-width: thin;
 		}
-		td:hover{background-color:#D7D7D7; a{ color: #A52A2A;}}
+		td:hover{background-color:#cccccc; a{ color: #009900;}}
 	}
 }
 
-@media screen and (min-width: 320px){
+@media screen and (min-width: 520px){
 	.main {
-		table{	margin-top: 3%;	}
-		ul{
-			width: 95%;
-			margin-left: 4%;
-			li{
-				margin-right: 2%;
-			}
-		}
-	}	
-}
-
-@media screen and (min-width: 360px){
-	.main {
-		ul{
-			width: 93%;
-			margin-left: 5%;				
-		}		
-	}	
-}
-
-@media screen and (min-width: 420px){
-	.main {
-		ul{ 
-			width: 90%;
-			margin: 2% 0% 0% 8%;
-			li{
-				margin-right: 2%;
-				span{
-					font-size: 270%;
-					p{font-size: 35%;}
-				}
-				margin-bottom: 2%;
-			}
-		}
 		table {	
 			margin-bottom: 3%;
-			margin-left: 2%; 
-		}
-	}	
-}
-
-@media screen and (min-width: 480px){
-	.main {
-		ul{ 
-			width: 85%;
-			margin-left: 13%;
-			li{	margin-right: 3%; }
-		}
-	}	
-}
-
-@media screen and (min-width: 550px){
-	.main {
-		table {	
-			margin: 3%;
-			margin-top: 2%;
+			margin-top: 0%;
+			.title-tb{
+				font-size: 105%;
+			}
 		}
 	}
-}
-
-@media screen and (min-width: 620px){
-	.main {
-		ul{	
-			margin-left: 15%; 
-			li{	
-				margin-right: 4%;
-				span{ font-size:270%;}	}
-		}
-		table{
-			margin-top: 1%;
-			th{ font-size:115%; } 
-			a{ font-size:110%; }
-		}
-	}
+	.btn-share{margin-top: 1%;}
 }
 
 @media screen and (min-width: 720px){
 	.main {
-		ul{	
-			margin-left: 15%;
-			li{	
-				margin-right: 5%;
-				span{ 
-					font-size:350%;
-					p{font-size:30%;}
-				}	
-			}
+		table{
+			.title-tb{font-size: 125%;}
+			a, td{ font-size: 115%; }
 		}
 	}
 }

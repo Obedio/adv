@@ -14,3 +14,8 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+window.onload = function () {
+	document.getElementById("menu").onclick = function () {
+		document.getElementById("btn-menu").style.visibility = "hidden";
+	}
+}

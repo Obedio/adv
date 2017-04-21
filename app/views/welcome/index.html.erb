@@ -1,11 +1,12 @@
+<%= link_to 'Compartilhado Comigo', shares_index_path , class: 'btn btn-share'%>
 <div class="main">
 	<strong id="notice"><%= notice %></strong>
 	<table>
 		<thead>
 			<tr>
 				<th class="title-tb">Processo</th>
-		    	<th class="title-tb">Cliente</th>
-		    </tr>
+		    <th class="title-tb">Cliente</th>
+		  </tr>
 		</thead>
 
 		<tbody>
@@ -17,5 +18,4 @@
 		</tbody>
 	</table>
 	<div class="paginate"><%= will_paginate @lawsuits %></div>
-	<%= link_to 'Compartilhado Comigo', shares_index_path %>
 </div>

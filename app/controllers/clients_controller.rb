@@ -1,18 +1,19 @@
 class ClientsController < ApplicationController
   before_action :set_client, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, :profile_test
-  # GET /clients
-  # GET /clients.json
+
   def index
-    if params[:search]
-      @clients = policy_scope(Client).where(cpf: params[:search])
+    @q = Client.ransack(params[:q])
+    if params[:q]
+      @clients = @q.result
+      @clients = policy_scope(@clients).paginate(page: params[:page], per_page: 10)
       if @clients == []
         respond_to do |format|
             format.html { redirect_to clients_url, notice: 'Não foi encontrado.' }
         end
       end
     else
-    @clients = policy_scope(Client).paginate(page: params[:page], per_page: 4)
+    @clients = policy_scope(Client).paginate(page: params[:page], per_page: 10)
     end
   end
 
