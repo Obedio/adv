@@ -77,10 +77,10 @@ class LawsuitsController < ApplicationController
 
   private
     def load_payment
-      @payment = Payment.where(lawsuit_id: params[:id]).order("created_at DESC").paginate(page: params[:page], per_page: 1)
+      @payment = Payment.where(lawsuit_id: params[:id]).order("created_at DESC").paginate(page: params[:page], per_page: 5)
     end
     def load_observation
-      @observation = Observation.where(lawsuit_id: params[:id]).order("created_at DESC").paginate(page: params[:param_name], per_page: 2)
+      @observation = Observation.where(lawsuit_id: params[:id]).order("created_at DESC").paginate(page: params[:param_name], per_page: 5)
     end
 
     def load_annex

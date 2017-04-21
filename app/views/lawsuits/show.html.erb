@@ -38,9 +38,9 @@
 
   <strong>Natureza - </strong>
   <%= @lawsuit.kind.name %>
-  </br>
+  
 
-  <strong>Status - </strong>
+  <strong>| Status - </strong>
   <%= @lawsuit.status.name %>
   </br>
   <hr>
@@ -53,95 +53,102 @@
 </div>
 
 <div class="share">
-  <h3>Compartilhado com</h3>
-  <%= link_to 'Compartilhar', new_lawsuit_share_path(lawsuit_id: @lawsuit.id), class: 'btn btn-novo' %>
-  <table>
-    <thead>
-      <tr>
-        <td>Email</td>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @share.each do |share| %>
+  <strong>Compartilhado com</strong>
+  <div class="main">
+    <table>
+      <thead>
         <tr>
-          <td><%= share.email %></td>
-          <td><%= link_to 'Excluir', share, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
+          <th class="title-tb">Usuário</th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
+      </thead>
+  
+      <tbody>
+        <% @share.each do |share| %>
+          <tr>
+            <td><%= share.email %></td>
+            <td><%= link_to 'Excluir', share, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <%= link_to 'Compartilhar', new_lawsuit_share_path(lawsuit_id: @lawsuit.id), class: 'btn btn-novo' %>
+  </div>
   <div class="paginate"><%= will_paginate @share, param_name: 'share'  %></div>
 </div>
-
 <div class="comentario">
-  <h3>Comentários</h3>
-  <%= link_to 'Comentar', new_lawsuit_observation_path(lawsuit_id: @lawsuit.id), class:'btn btn-novo' %>
-  <table>
-    <thead>
-      <tr>
-
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @observation.each do |observation| %>
+  <strong>Comentários</strong>
+  <div class="main">
+    <table>
+      <thead>
         <tr>
-          <td><%= observation.description %></td>
-          <td><%= observation.lawsuit_id %></td>
-          <td><%= link_to 'Editar', edit_observation_path(observation) %></td>
+          <th class="title-tb">Texto</th>
+          <th class="title-tb">Escrito por</th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
-  <div class="paginate"><%= will_paginate @observation, param_name: 'observation'  %></div>
+      </thead>
+  
+      <tbody>
+        <% @observation.each do |observation| %>
+          <tr>
+            <td><%= observation.description %></td>
+            <td><%= observation.user.email %></td>
+            <td><%= link_to 'Editar', edit_observation_path(observation) %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <%= link_to 'Comentar', new_lawsuit_observation_path(lawsuit_id: @lawsuit.id), class:'btn btn-novo' %>
+    <div class="paginate"><%= will_paginate @observation, param_name: 'observation'  %></div>
+  </div>
 </div>
 
 <div class="anexo">
-  <h3>Arquivos</h3>
-  <%= link_to 'Adicionar Arquivo', new_lawsuit_annex_path(lawsuit_id: @lawsuit.id), class: 'btn btn-novo' %>
-  <table>
-    <thead>
-      <tr>
-      <td>Descrição</td>
-      <td>Responsável</td>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @annex.each do |annex| %>
+  <strong>Arquivos</strong>
+  <div class="main">
+    <table>
+      <thead>
         <tr>
-          <td><%= annex.description %></td>
-          <td><%= annex.user.email %></td>
-          <td><%= link_to 'Visualizar Arquivo', annex.document.url, :target => "_blank"%></td>
-          <td><%= link_to 'Editar Descrição', edit_annex_path(annex) %></td>
-          <td><%= link_to 'Excluir Arquivo', annex, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
+          <th class="title-tb">Descrição</th>
+          <th class="title-tb">Responsável</th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
+      </thead>
+  
+      <tbody>
+        <% @annex.each do |annex| %>
+          <tr>
+            <td><%= link_to annex.description, annex.document.url, :target => "_blank"%></td>
+            <td><%= annex.user.email %></td>
+            <td><%= link_to 'Editar', edit_annex_path(annex) %></td>
+            <td><%= link_to 'Excluir', annex, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <%= link_to 'Adicionar Arquivo', new_lawsuit_annex_path(lawsuit_id: @lawsuit.id), class: 'btn btn-novo' %>
+  </div>
   <div class="paginate"><%= will_paginate @annex, param_name: 'annex'  %></div>
 </div>
 
 <div class="pagamento">
-  <h3>Pagamentos</h3>
-  <%= link_to 'Pagamento', new_lawsuit_payment_path(lawsuit_id: @lawsuit.id), class: 'btn btn-novo' %>
-  <table>
-    <thead>
-      <tr>
-        <th>Valor Pago</th>
-        <th>Data</th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @payment.each do |payment| %>
+  <strong>Pagamentos</strong>
+  <div class="main">
+    <table>
+      <thead>
         <tr>
-          <td><%= payment.amount %></td>
-          <td><%= payment.created_at%></td>
+          <th class="title-tb">Valor Pago</th>
+          <th class="title-tb">Data</th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
+      </thead>
+  
+      <tbody>
+        <% @payment.each do |payment| %>
+          <tr>
+            <td><%= payment.amount %></td>
+            <td><%= "#{l(payment.created_at)}" %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <%= link_to 'Pagamento', new_lawsuit_payment_path(lawsuit_id: @lawsuit.id), class: 'btn btn-novo' %>
   <div class="paginate"><%= will_paginate @payment %></div>
 </div>

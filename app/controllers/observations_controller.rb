@@ -4,7 +4,7 @@ class ObservationsController < ApplicationController
   before_action :load_lawsuit, only: [:new, :create]
 
   def index
-    @observations = Observation.all.paginate(page: params[:page], per_page: 2)
+    @observations = Observation.all.paginate(page: params[:page], per_page: 5)
   end
 
   def show
@@ -19,7 +19,7 @@ class ObservationsController < ApplicationController
 
   def create
     @observation = @lawsuit.observations.new(observation_params)
-
+    @observation.user_id = current_user.id
     respond_to do |format|
       if @observation.save
         format.html { redirect_to @lawsuit, notice: 'Comentário Realizado.' }
@@ -32,7 +32,8 @@ class ObservationsController < ApplicationController
   end
 
   def update
-    authorize @observation
+    
+    @observation.user_id = current_user.id
     respond_to do |format|
     if @observation.update(observation_params)
       format.html { redirect_to lawsuit_path(Lawsuit.find(@observation.lawsuit_id)), notice: 'Comentário Atualizado.' }

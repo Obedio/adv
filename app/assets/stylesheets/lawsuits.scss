@@ -45,21 +45,21 @@
 	}
 	li:first-child{margin-left: 20%;}
 }
-.comentario{
+.share{
+	margin-top: 1%;
+}
+.share, .comentario, .anexo, .pagamento{
 	float: left;
-	margin: 1% 2%;
-	width: 95%;
-	h3{padding-left: 2%;}
-	table{
-		th{background-color: rgba(255, 255, 255, 0.0);}
+	width: 100%;
+	.btn{
+		margin-top: 0;
+		float: right;
 	}
 }
 .pagamento{
-	float: left;
-	margin: 1% 2% 15% 2%;
-	width: 95%;
-	h3{padding-left: 2%;}
+	margin-bottom: 10%;
 }
+/*******************RESPONSIVIDADE*********************************************/
 @media screen and (min-width: 320px){
 	.dv-busca{margin-left: 3%;}
 	table{
@@ -68,19 +68,11 @@
 		width: 94%;
   }
 }
-@media screen and (min-width: 580px){
-	table{th{font-size: 110%;}}
-	.dv-busca{
-		span{
-			margin-top: 1%;
-			margin-bottom: 1%;
-			strong{margin-left: 1%;}
-		}
-	}
+@media screen and (min-width: 520px){
+	.share, .comentario, .anexo, .pagamento{strong{font-size: 115%;}}
 }
-@media screen and (min-width: 780px){
-	table{
-		td{font-size: 115%;}
-		th{font-size: 115%;}
-	}
+@media screen and (min-width: 720px){
+	.share, .comentario, .anexo, .pagamento{strong{font-size: 125%;}}
+	.info-processo{font-size: 110%;}
+	.option{li{font-size: 110%;}}
 }

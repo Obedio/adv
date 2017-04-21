@@ -4,7 +4,7 @@ class User < ApplicationRecord
   has_many :annexes
   has_one :profile
   has_many :lawsuits
-  has_many :comments
+  has_many :observations
   has_many :accounts
 
   # Include default devise modules. Others available are:
