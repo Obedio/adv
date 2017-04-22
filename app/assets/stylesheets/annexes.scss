@@ -1,3 +1,34 @@
-// Place all the styles related to the Annexes controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.new-annex{
+	color: #003300;
+	float: left;
+	width: 90%;
+	margin-left: 5%;
+	margin-right: 5%;
+	textarea{
+		float: left;
+		width: 100%;
+		height: 60px;
+		border-radius: 5px;
+		margin-bottom: 2%;
+	}
+	.btn{
+		float: left;
+		margin-top: 2%;
+		margin-right: 2%;}
+}
+@media screen and (min-width: 520px){
+	.new-annex{
+		textarea{width: 90%;}
+		.btn-block{margin-top: 1%;}
+	}
+}
+@media screen and (min-width: 820px){
+	.new-annex{
+		textarea{margin-right: 3%;}
+	}
+}
+@media screen and (min-width: 1020px){
+	.new-annex{
+		textarea{width: 100%;}
+	}
+}

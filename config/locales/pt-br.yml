@@ -37,3 +37,8 @@
                 state: "Estado"
                 country: "País"
                 zipcode: "CEP"
+            annex:
+                description: "Descrição"
+                document: "Arquivo"
+            payment:
+                amount: "Valor"

@@ -1,22 +1,21 @@
-<%= form_for([@lawsuit, @lawsuit.observations.new]) do |f| %>
-  <% if observation.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(observation.errors.count, "error") %> prohibited this observation from being saved:</h2>
+<div class='new-observation'>
+  <strong>Novo comentário: </strong>
+  <%= form_for([@lawsuit, @lawsuit.observations.new]) do |f| %>
+    <% if observation.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(observation.errors.count, "error") %> prohibited this observation from being saved:</h2>
+  
+        <ul>
+        <% observation.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
 
-      <ul>
-      <% observation.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
+    <%= f.text_area :description, placeholder: 'Digite aqui seu comentário...' %>
+      
+    <%= f.submit 'Salvar', class:'btn' %>
+    <%= link_to 'Voltar', @lawsuit, class:'btn'%>
   <% end %>
-
-  <div class="field">
-    <%= f.label :description %>
-    <%= f.text_area :description %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>

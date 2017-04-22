@@ -1,3 +1,45 @@
-// Place all the styles related to the Observations controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.new-observation{
+	color: #003300;
+	float: left;
+	width: 90%;
+	margin-left: 5%;
+	margin-right: 5%;
+	textarea{
+		float: left;
+		width: 100%;
+		height: 60px;
+		border-radius: 5px;
+		margin-bottom: 2%;
+	}
+	.btn{
+		margin-right: 2%;}
+	#btn-new-share{
+		float: left;
+		width: 40%;}
+}
+@media screen and (min-width: 520px){
+	.new-observation{
+		textarea{
+			margin-right: 2%;
+			width: 75%;}
+		#btn-new-share{width: 25%;}
+		.btn{margin-bottom: 1%;}
+		
+	}
+}
+@media screen and (min-width: 820px){
+	.new-observation{
+		textarea{
+			margin-right: 3%;
+		}
+		.btn{padding-top: 1%;
+			padding-bottom: 0%;
+		}
+		#btn-new-share{width: 20%;}
+	}
+}
+@media screen and (min-width: 1020px){
+	.new-observation{
+		.btn{padding-bottom: 1%;}
+	}
+}

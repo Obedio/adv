@@ -1,24 +1,23 @@
-<%= form_for([@lawsuit, @lawsuit.shares.new]) do |f| %>
-  <% if share.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(share.errors.count, "error") %> prohibited this share from being saved:</h2>
-
-      <ul>
-      <% share.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <strong id="notice"><%= notice %></strong>
+<div class='new-share'>
+  <strong>Compartilhar com: </strong>
+  <%= form_for([@lawsuit, @lawsuit.shares.new]) do |f| %>
+    <% if share.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(share.errors.count, "error") %> prohibited this share from being saved:</h2>
   
-  <div class="field">
-    <%= f.label :email %>
-    <%= f.text_field :email %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit 'Compartilhar' %>
-  </div>
-<% end %>
+        <ul>
+        <% share.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+  
+    <strong id="notice"><%= notice %></strong>
+    
+    <%= f.text_field :email, placeholder: 'Email' %>
+  
+    <%= f.submit 'Compartilhar', class: 'btn', :id => 'btn-new-share'%>
+  <% end %>
+  <%= link_to 'Voltar', @lawsuit, class:'btn'%>
+</div>

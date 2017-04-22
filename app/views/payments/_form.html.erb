@@ -1,26 +1,25 @@
-<%= form_for([@lawsuit, @lawsuit.payments.new]) do |f| %>
-  <% if payment.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(payment.errors.count, "error") %> prohibited this payment from being saved:</h2>
-
-      <ul>
-      <% payment.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<div class='new-payment'>
+  <strong>Pagamento </strong>
+  <%= form_for([@lawsuit, @lawsuit.payments.new]) do |f| %>
+    <% if payment.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(payment.errors.count, "error") %> prohibited this payment from being saved:</h2>
+  
+        <ul>
+        <% payment.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+  
+    
+    <%= f.label :amount %>
+    <%= f.text_field :amount, placeholder: 'Ex: 12.50' %>
+    
+    <div class='btn-block'>
+      <%= f.submit 'Realizar Pagamento', class:'btn' %>
+      <%= link_to 'Voltar', @lawsuit, class:'btn'%>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :amount %>
-    <%= f.text_field :amount %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
-<!-- 
-
-
--->
+</div>

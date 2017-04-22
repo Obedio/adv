@@ -1,3 +1,36 @@
-// Place all the styles related to the Shares controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.new-share{
+	color: #003300;
+	float: left;
+	width: 90%;
+	margin-left: 5%;
+	margin-right: 5%;
+	input{
+		float: left;
+		width: 100%;
+		border-radius: 5px;
+		margin-bottom: 2%;
+	}
+	.btn{
+		margin-right: 2%;}
+	#btn-new-share{
+		float: left;
+		width: 40%;}
+}
+@media screen and (min-width: 520px){
+	.new-share{
+		input{width: 75%;}
+		#btn-new-share{width: 25%;}
+	}
+}
+@media screen and (min-width: 820px){
+	.new-share{
+		input{
+			margin-right: 3%;
+			width: 55%;
+		}
+		.btn{padding-top: 0%;
+			padding-bottom: 0%;
+		}
+		#btn-new-share{width: 20%;}
+	}
+}

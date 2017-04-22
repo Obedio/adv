@@ -1,24 +1,26 @@
-<h1>Editing Annex</h1>
-
-<%= form_for @annex do |f| %>
-  <% if @annex.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@annex.errors.count, "error") %> prohibited this annex from being saved:</h2>
-
-      <ul>
-      <% @annex.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
+<div class='new-annex'>
+  <strong>Editar descrição do arquivo</strong>
+  <%= form_for @annex do |f| %>
+    <% if @annex.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@annex.errors.count, "error") %> prohibited this annex from being saved:</h2>
+  
+        <ul>
+        <% @annex.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+  
+    
     <%= f.label :description %>
     <%= f.text_area :description %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+   
+  
+    <div class='btn-block'>
+      <%= f.submit 'Salvar', class:'btn' %>
+      <%= link_to 'Voltar', request.referer, class:'btn'%>
+    </div>
+  <% end %>
+</div>
