@@ -59,18 +59,64 @@
 .pagamento{
 	margin-bottom: 10%;
 }
-/*******************RESPONSIVIDADE*********************************************/
-@media screen and (min-width: 320px){
-	.dv-busca{margin-left: 3%;}
-	table{
-		margin-left: 3%;
-		margin-right: 3%;
-		width: 94%;
-  }
+/*********************EDITAR***************************************************/
+.editar{
+	float: left;
+	width: 100%;
+	margin-top: 1%;
+	margin-bottom: 5%;
+	text-align: center;
+	color: #003300;
+	strong{text-decoration: underline;}
+	.btn{
+		margin-top: 3%;
+		margin-right: 2%;
+		margin-bottom: 3%;
+		float: left;
+	}
+	input, textarea, .slc-info{
+		select{width: 100%;}
+		width: 100%;
+		border-radius: 5px;
+	}
+	select{border-radius: 5px;}
+	textarea{
+		width: 100%;
+		height: 50px;
+	}
+	.info{
+		width: 86%;
+		float: left;
+		text-align: left;
+		margin: 0 7% 1% 7%;
+	}
+	#btn-save{width: 40%;}
 }
+/*******************RESPONSIVIDADE*********************************************/
 @media screen and (min-width: 520px){
 	.share, .comentario, .anexo, .pagamento{strong{font-size: 115%;}}
 }
+
+@media screen and (min-width: 620px){
+	.editar{ 
+		strong{font-size: 110%;}
+		.info{margin: 1% 0 0 0;}
+		.block-first{
+			width: 47.5%;
+			float: left;
+			margin-right: 2.5%;
+			textarea{height: 60px;}
+		}
+		.block-second{
+			margin-left: 2.5%;
+			margin-bottom: 3%;
+			width: 47.5%;
+			float: right;
+		}
+		#btn-save{width: 25%;}
+	}
+}
+
 @media screen and (min-width: 720px){
 	.share, .comentario, .anexo, .pagamento{strong{font-size: 125%;}}
 	.info-processo{font-size: 110%;}
