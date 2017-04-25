@@ -5,16 +5,16 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Kind.create(name: 'Trabalhista')
-Kind.create(name: 'Publico')
-Kind.create(name: 'Civil')
-Kind.create(name: 'Federal')
-Kind.create(name: 'Juridica')
+#Kind.create(name: 'Trabalhista')
+#Kind.create(name: 'Publico')
+#Kind.create(name: 'Civil')
+#Kind.create(name: 'Federal')
+#Kind.create(name: 'Juridica')
 
 
-Status.create(name: 'Aberto')
-Status.create(name: 'Fechado')
-Status.create(name: 'Cancelado')
+#Status.create(name: 'Aberto')
+#Status.create(name: 'Fechado')
+#Status.create(name: 'Cancelado')
 
-Office.create(name: 'Advogado')
-Office.create(name: 'Secretário (a)')
+#Office.create(name: 'Advogado')
+#Office.create(name: 'Secretário (a)')
