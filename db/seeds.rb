@@ -16,12 +16,5 @@
 #Status.create(name: 'Fechado')
 #Status.create(name: 'Cancelado')
 
-
-#StatusPayment.create(name: 'Adimplente')
-#StatusPayment.create(name: 'Inadimplente')
-
-#AddressType.create(name: 'Residencial')
-#AddressType.create(name: 'Comercial')
-
 #Office.create(name: 'Advogado')
 #Office.create(name: 'Secretário (a)')

@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 20170421225606) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "addresses", force: :cascade do |t|
     t.string   "street"
     t.string   "district"
@@ -19,11 +22,11 @@ ActiveRecord::Schema.define(version: 20170421225606) do
     t.string   "state"
     t.string   "country"
     t.string   "zipcode"
+    t.string   "addresstype"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.integer  "client_id"
-    t.string   "addresstype"
-    t.index ["client_id"], name: "index_addresses_on_client_id"
+    t.index ["client_id"], name: "index_addresses_on_client_id", using: :btree
   end
 
   create_table "annexes", force: :cascade do |t|
@@ -33,8 +36,8 @@ ActiveRecord::Schema.define(version: 20170421225606) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.string   "document"
-    t.index ["lawsuit_id"], name: "index_annexes_on_lawsuit_id"
-    t.index ["user_id"], name: "index_annexes_on_user_id"
+    t.index ["lawsuit_id"], name: "index_annexes_on_lawsuit_id", using: :btree
+    t.index ["user_id"], name: "index_annexes_on_user_id", using: :btree
   end
 
   create_table "clients", force: :cascade do |t|
@@ -50,10 +53,8 @@ ActiveRecord::Schema.define(version: 20170421225606) do
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "address_id"
     t.string   "lastname"
-    t.index ["address_id"], name: "index_clients_on_address_id"
-    t.index ["user_id"], name: "index_clients_on_user_id"
+    t.index ["user_id"], name: "index_clients_on_user_id", using: :btree
   end
 
   create_table "kinds", force: :cascade do |t|
@@ -75,12 +76,13 @@ ActiveRecord::Schema.define(version: 20170421225606) do
     t.datetime "updated_at",  null: false
     t.float    "amount"
     t.float    "amount_paid"
+    t.text     "obs"
     t.float    "amount_rest"
-    t.index ["client_id"], name: "index_lawsuits_on_client_id"
-    t.index ["kind_id"], name: "index_lawsuits_on_kind_id"
-    t.index ["status_id"], name: "index_lawsuits_on_status_id"
-    t.index ["user_id"], name: "index_lawsuits_on_user_id"
-    t.index ["venue_id"], name: "index_lawsuits_on_venue_id"
+    t.index ["client_id"], name: "index_lawsuits_on_client_id", using: :btree
+    t.index ["kind_id"], name: "index_lawsuits_on_kind_id", using: :btree
+    t.index ["status_id"], name: "index_lawsuits_on_status_id", using: :btree
+    t.index ["user_id"], name: "index_lawsuits_on_user_id", using: :btree
+    t.index ["venue_id"], name: "index_lawsuits_on_venue_id", using: :btree
   end
 
   create_table "observations", force: :cascade do |t|
@@ -89,8 +91,8 @@ ActiveRecord::Schema.define(version: 20170421225606) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.integer  "user_id"
-    t.index ["lawsuit_id"], name: "index_observations_on_lawsuit_id"
-    t.index ["user_id"], name: "index_observations_on_user_id"
+    t.index ["lawsuit_id"], name: "index_observations_on_lawsuit_id", using: :btree
+    t.index ["user_id"], name: "index_observations_on_user_id", using: :btree
   end
 
   create_table "offices", force: :cascade do |t|
@@ -103,8 +105,6 @@ ActiveRecord::Schema.define(version: 20170421225606) do
     t.float    "amount"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "lawsuit_id"
-    t.index ["lawsuit_id"], name: "index_payments_on_lawsuit_id"
   end
 
   create_table "profiles", force: :cascade do |t|
@@ -116,8 +116,8 @@ ActiveRecord::Schema.define(version: 20170421225606) do
     t.integer  "office_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["office_id"], name: "index_profiles_on_office_id"
-    t.index ["user_id"], name: "index_profiles_on_user_id"
+    t.index ["office_id"], name: "index_profiles_on_office_id", using: :btree
+    t.index ["user_id"], name: "index_profiles_on_user_id", using: :btree
   end
 
   create_table "shares", force: :cascade do |t|
@@ -125,7 +125,7 @@ ActiveRecord::Schema.define(version: 20170421225606) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "email"
-    t.index ["lawsuit_id"], name: "index_shares_on_lawsuit_id"
+    t.index ["lawsuit_id"], name: "index_shares_on_lawsuit_id", using: :btree
   end
 
   create_table "statuses", force: :cascade do |t|
@@ -148,8 +148,8 @@ ActiveRecord::Schema.define(version: 20170421225606) do
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.integer  "role",                   default: 0
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
   create_table "venues", force: :cascade do |t|
@@ -159,4 +159,18 @@ ActiveRecord::Schema.define(version: 20170421225606) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "addresses", "clients"
+  add_foreign_key "annexes", "lawsuits"
+  add_foreign_key "annexes", "users"
+  add_foreign_key "clients", "users"
+  add_foreign_key "lawsuits", "clients"
+  add_foreign_key "lawsuits", "kinds"
+  add_foreign_key "lawsuits", "statuses"
+  add_foreign_key "lawsuits", "users"
+  add_foreign_key "lawsuits", "venues"
+  add_foreign_key "observations", "lawsuits"
+  add_foreign_key "observations", "users"
+  add_foreign_key "profiles", "offices"
+  add_foreign_key "profiles", "users"
+  add_foreign_key "shares", "lawsuits"
 end
