@@ -1,16 +1,17 @@
-<h2>Reenviar instruções de desbloqueio</h2>
+<div id="login">
+	<strong>Reenviar instruções de desbloqueio</strong>
 
-<%= form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
-  <%= devise_error_messages! %>
+	<%= form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
+	  <%= devise_error_messages! %>
 
-  <div class="field">
-    <%= f.label :email, 'E-mail' %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
+	  <div id="fields">
+	    <%= f.label :email, 'E-mail' %><br />
+	    <%= f.email_field :email, autofocus: true %>
+	  </div>
 
-  <div class="actions">
-    <%= f.submit "Reenviar instruções de desbloqueio" %>
-  </div>
-<% end %>
+	  <%= f.submit "Reenviar instruções de desbloqueio", class: 'btn', :id => 'btn-login' %>
+	  
+	<% end %>
 
-<%= render "users/shared/links" %>
+	<div id='links'><%= render "users/shared/links" %></div>
+</div>

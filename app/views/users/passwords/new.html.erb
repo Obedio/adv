@@ -1,15 +1,15 @@
-<div class="login">
-	<h2>Esqueceu sua senha?</h2>
+<div id="login">
+	<strong>Esqueceu sua senha?</strong>
 
 	<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
   	<%= devise_error_messages! %>
 
-  
-    <%= f.label :email %>
-    <%= f.email_field :email, autofocus: true %>
-  
-    <div class="btn-submit"><%= f.submit "Enviar e-mail" %></div>
-<% end %>
+	  <div id="fields">
+	    <%= f.label :email %>
+	    <%= f.email_field :email, autofocus: true %>
+	  </div>
+  	<%= f.submit "Enviar e-mail", class: 'btn', :id => 'btn-login' %>
+	<% end %>
 
-<%= render "users/shared/links" %>
+	<div id='links'><%= render "users/shared/links" %></div>
 </div>

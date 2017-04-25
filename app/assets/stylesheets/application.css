@@ -1,15 +1,4 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
  *= require_tree .
  *= require_self
  */
@@ -108,74 +97,37 @@ header strong{
 	background: #cccccc;
 }
 /******************LOGIN***********************************************/
-.login { 
-	margin: 0 5%;
-	color: #800000; 
-	float: left; 
-	padding: 0; 
-	border-radius: 7px; 
+#login{
+	color: #009900;
+	float: left;
+	margin: 15% 5%;
+	width: 90%;
 	text-align: center;
 }
-.login h2 {
-	width: 100%; 
-	font-size: 1.5em; 
-	float: left; 
-	margin-top: 20%; 
-	margin-bottom: 7%;
-}
-.login label { 
-	text-align: left; 
-	padding-left: 1%; 
-	margin: 0; 
-}
-.login input{ 
-	width: 100%;	
-	color: #800000; 
-	margin: 0; 
-	border-radius: 7px;
-}
-#check {
-	margin: 0;
-	float: left;
-	width: 100%; 
-	padding: 0;
-}
-#check input {
-	margin: 1% 0 0 0%;
-	border-style: solid; 
-	width:  2%;
-	padding: 0;
-}
-#check label { 
-	width: 40%; 
-	margin: 1% 0 0 8%;
-}
-.login div input { 
-	font-size: 1.1em; 
-	padding: 0.5%; 
-	width: 60%; 
-	margin-bottom: 3%; 
-	color: #f5f5f5;
-	float: left; 
-	background-color: #800000; 
-}
-.login a:hover { 
-	background-color: #F5F5F5; 
-	color: #800000;
-}
-.login em { float: right; }
-.btn-submit{
+#login > strong{font-size: 110%}
+#fields{
 	width: 100%;
+	margin-top: 3%;
 	float: left;
-	margin:5% 0 0 0;
+	text-align: left;
 }
-.btn-submit input {
-	float: left;
-	margin: 0 0 5% 20%;
+#lembrar-me{float: left;}
+#lembrar-me > label{
+width: 70%;
+float: left;
 }
-.link-helper{
+#links{
 	float: left;
-	margin: 0% 0 10% 25%;
+	width: 100%;
+	margin-top: 4%;
+}
+#btn-login{
+	margin-top: 2%;
+	background-color: #00b300;
+	color: #F2F2F2;
+	text-align: center;
+	font-size: 120%;
+	float: none;
 }
 /***************************OUTROS****************************************************/
 .btn{
@@ -225,15 +177,15 @@ footer {
 }
 /*****************************RESPONSIVIDADE MIN-WIDTH**************************************/
 @media screen and (min-width: 360px){
-	.login {
+	#login {
 		margin: 0 10%;
 		width: 80%;
 	}
-	.login form {
+	#login form {
 		float: left; 
 		margin-top: 3%;
 	}
-	.login label, input, a{ font-size: 110%; }
+	#login label, input, a{ font-size: 110%; }
 		#check label { 
 		width: 40%; 
 		margin: 1% 0 0 6%;
@@ -248,7 +200,7 @@ footer {
 	header {font-size: 95%;}
 }
 @media screen and (min-width: 520px){
-	.login {
+	#login {
 		font-size: 1.1em;
 		margin: 0 20%;
 		width: 60%;
@@ -267,7 +219,7 @@ footer {
 }
 
 @media screen and (min-width: 620px){
-	.login {
+	#login {
 		margin: 0 25%;
 		width: 50%;
 	}
@@ -275,7 +227,7 @@ footer {
 		width: 40%; 
 		margin: 1% 0 0 6%;
 	}
-	.login label, input{  font-size: 115%; }
+	#login label, input{  font-size: 115%; }
 	.btn-submit input{ font-size: 110%; }
 	header { font-size: 100%; }
 	footer { font-size: 110%; }
@@ -289,7 +241,7 @@ footer {
 }
 
 @media screen and (min-width: 720px){
-	.login {
+	#login {
 		margin: 0 30%;
 		width: 40%;
 	}
@@ -316,7 +268,7 @@ footer {
 }
 
 @media screen and (min-width: 920px){
-	.login {
+	#login {
 		margin: 0 35%;
 		width: 30%;
 	}
@@ -334,7 +286,7 @@ footer {
 }
 
 @media screen and (min-width: 1200px){
-	.login {
+	#login {
 		margin: 0 35%;
 		width: 25%;
 	}
