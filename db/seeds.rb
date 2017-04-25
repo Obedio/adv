@@ -18,3 +18,7 @@
 
 #Office.create(name: 'Advogado')
 #Office.create(name: 'Secretário (a)')
+
+
+Venue.create(name: 'Comarca da Picos')
+Venue.create(name: 'Comarca de Valença')
