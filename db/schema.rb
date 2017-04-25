@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170425220052) do
+ActiveRecord::Schema.define(version: 20170425221628) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -105,6 +105,8 @@ ActiveRecord::Schema.define(version: 20170425220052) do
     t.float    "amount"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "lawsuit_id"
+    t.index ["lawsuit_id"], name: "index_payments_on_lawsuit_id", using: :btree
   end
 
   create_table "profiles", force: :cascade do |t|
@@ -169,6 +171,7 @@ ActiveRecord::Schema.define(version: 20170425220052) do
   add_foreign_key "lawsuits", "venues"
   add_foreign_key "observations", "lawsuits"
   add_foreign_key "observations", "users"
+  add_foreign_key "payments", "lawsuits"
   add_foreign_key "profiles", "offices"
   add_foreign_key "profiles", "users"
   add_foreign_key "shares", "lawsuits"

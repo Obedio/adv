@@ -46,7 +46,5 @@
     <%= f.collection_select(:status_id, Status.all, :id, :name, {include_blank: true})%>
   </div>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <%= f.submit 'Salvar', class:'btn' %>
 <% end %>
