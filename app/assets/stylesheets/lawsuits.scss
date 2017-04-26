@@ -1,19 +1,31 @@
 /****************************Index*****************************************/
-.dv-search{
+#dv-search{
 	width: 100%;
 	float: left;
-	color: #330000;
 	margin: 0%;
-	padding-top: 0;
-	input{
-		color: #330000;
-		border-radius: 5px;
-		height: 30px;
+	padding: 0;
+}
+#fields-search{
+	padding: 0;
+	float: left;
+	color: #330000;
+	border-radius: 5px;
+	width: 70%;
+	input{	
+	float: left;
+	width: 100%;
 	}
-	strong{
-			font-size: 105%;
-			margin: 0 0 2% 3%;
-		}
+}
+#btn-search{
+	margin-top:0.5%;
+	margin-left: 2%;
+	float: left;
+	width: 25%;
+}
+#btn-novo{
+	margin-top:2%;
+	float: left;
+	background: white;
 }
 /*************************Show**********************************************************/
 .info-processo{

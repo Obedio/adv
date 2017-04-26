@@ -1,5 +1,6 @@
 <div id="login">
   <strong>Acesso ao Sistema</strong>
+  <strong id="notice"><%= notice %></strong>
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div id="fields">
       <%= f.label :email, 'E-mail' %>

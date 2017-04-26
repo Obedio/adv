@@ -1,4 +1,3 @@
-.btn-share{margin-top: 2%;}
 .main {
 	margin: 0;
 	text-align: center; 
@@ -9,9 +8,10 @@
 		float: left;
 		margin: 2% 0% 5% 0%;
 		.title-tb{
-			border-radius: 5%;
+			font-style: initial;
+			border-radius: 5px;
 			color: #009900;
-			background-color:  #cccccc;
+			background-color:  #E6E6E6;
 			padding-top: 1%;
 		}
 		a{color: #330000;}
@@ -20,11 +20,11 @@
 		}
 		td {
 			padding: 1.5% 0 0 0;
-			border-bottom-color: #cccccc;
+			border-bottom-color: #E6E6E6;
 			border-bottom: inset;
 			border-bottom-width: thin;
 		}
-		td:hover{background-color:#cccccc; a{ color: #009900;}}
+		td:hover{background-color:#E6E6E6; a{ color: #009900;}}
 	}
 }
 
