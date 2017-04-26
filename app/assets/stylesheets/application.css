@@ -111,7 +111,10 @@ header strong{
 	float: left;
 	text-align: left;
 }
-#fields input {width: 90%;}
+#fields input {
+	border-radius: 5px;
+	width: 90%;
+}
 #lembrar-me{
 	margin-top: 1%;
 	float: left;
@@ -268,6 +271,7 @@ footer {
 	}
 }
 @media screen and (min-width: 1020px){
+	#lembrar-me label{padding-top: 0;}
 	.btn-search {padding: 0 1%;}
 }
 @media screen and (min-width: 1120px){
