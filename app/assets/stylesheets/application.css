@@ -100,21 +100,31 @@ header strong{
 #login{
 	color: #009900;
 	float: left;
-	margin: 15% 5%;
-	width: 90%;
+	margin: 15% 8% 0 10%;
+	width: 82%;
 	text-align: center;
 }
-#login > strong{font-size: 110%}
+#login strong{font-size: 110%}
 #fields{
 	width: 100%;
 	margin-top: 3%;
 	float: left;
 	text-align: left;
 }
-#lembrar-me{float: left;}
-#lembrar-me > label{
-width: 70%;
-float: left;
+#fields input {width: 90%;}
+#lembrar-me{
+	margin-top: 1%;
+	float: left;
+	width: 100%;
+}
+#lembrar-me label{
+	padding-top: 1%;
+	width: 50%;
+	float: left;
+}
+#lembrar-me input{
+	float: left; 
+	width: 5%;
 }
 #links{
 	float: left;
@@ -178,17 +188,8 @@ footer {
 /*****************************RESPONSIVIDADE MIN-WIDTH**************************************/
 @media screen and (min-width: 360px){
 	#login {
-		margin: 0 10%;
+		margin: 5% 10%;
 		width: 80%;
-	}
-	#login form {
-		float: left; 
-		margin-top: 3%;
-	}
-	#login label, input, a{ font-size: 110%; }
-		#check label { 
-		width: 40%; 
-		margin: 1% 0 0 6%;
 	}
 }
 @media screen and (min-width: 420px){
@@ -201,15 +202,10 @@ footer {
 }
 @media screen and (min-width: 520px){
 	#login {
-		font-size: 1.1em;
-		margin: 0 20%;
+		margin: 10% 20%;
 		width: 60%;
 	}
 
-	#check label { 
-		width: 40%; 
-		margin: 1% 0 0 6%;
-	}
 	#dv-main{
 		width: 90%;
 		margin:0 5% 0 5%;
@@ -220,15 +216,11 @@ footer {
 
 @media screen and (min-width: 620px){
 	#login {
-		margin: 0 25%;
+		margin: 10% 25%;
 		width: 50%;
 	}
-	#check label { 
-		width: 40%; 
-		margin: 1% 0 0 6%;
-	}
+
 	#login label, input{  font-size: 115%; }
-	.btn-submit input{ font-size: 110%; }
 	header { font-size: 100%; }
 	footer { font-size: 110%; }
 	#dv-main{
@@ -241,14 +233,8 @@ footer {
 }
 
 @media screen and (min-width: 720px){
-	#login {
-		margin: 0 30%;
-		width: 40%;
-	}
-	#check label { 
-		width: 40%; 
-		margin: 1% 0 0 6%;
-	}
+	#login strong{font-size: 120%}
+
 	.paginate a{font-size: 120%;}
 	#dv-main{
 		width: 80%;
@@ -268,14 +254,6 @@ footer {
 }
 
 @media screen and (min-width: 920px){
-	#login {
-		margin: 0 35%;
-		width: 30%;
-	}
-	#check label { 
-		width: 40%; 
-		margin: 1% 0 0 6%;
-	}
 	#dv-main{
 		width: 70%;
 		margin:0 15% 0 15%;
@@ -283,15 +261,4 @@ footer {
 }
 @media screen and (min-width: 1020px){
 	.btn-search {padding: 0 1%;}
-}
-
-@media screen and (min-width: 1200px){
-	#login {
-		margin: 0 35%;
-		width: 25%;
-	}
-	#check label { 
-		width: 40%; 
-		margin: 1% 0 0 6%;
-	}
 }
