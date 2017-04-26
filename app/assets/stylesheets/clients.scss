@@ -26,38 +26,36 @@
 	text-align: center;
 	width: 25%;
 }
-#cliente-name, #cliente-lname, #cliente-cpf, #cliente-born, #cliente-sex, #cliente-rg, #cliente-email, #cliente-telephone, #cliente-celphone, #cliente-bio, #cliente-addresstype, #cliente-street, #cliente-district, #cliente-city, #cliente-state, #cliente-country, #cliente-zipcode{
+#cliente-name, #cliente-lname, #cliente-cpf, #cliente-born, #cliente-sex, #cliente-rg, #cliente-email, #cliente-telephone, #cliente-celphone, #cliente-bio, #cliente-addresstype, #cliente-street, #cliente-district, #cliente-city, #cliente-state, #cliente-zipcode{
 	float: left;
 	margin-bottom: 2%;
 	input, textarea{
 		border-radius: 5px;
-		width: 100%;
+		width: 99%;
 	}
 }
-#cliente-name{
-	width: 25%; 
-}
+#cliente-name{width: 25%;}
 #cliente-lname{
 	width: 70%;
 	margin-left: 3%;
 }
 #cliente-born{width: 70%;}
-#cliente-sex{
-	width: 18%;
-	
-}
-#cliente-cpf{
-	width: 50%;
-}
+#cliente-sex{width: 18%;}
+#cliente-cpf{width: 50%;}
 #cliente-rg{
 	width: 45%;
 	margin-left: 3%;
 }
-#cliente-email{
-	width: 98%;
-}
-#cliente-telephone, #cliente-celphone{
-	width: 47.5%;
-}
-#cliente-celphone{margin-left: 3%}
+#cliente-email{width: 98%;}
+#cliente-telephone, #cliente-celphone{width: 47.5%;}
+#cliente-celphone{margin-left: 3%;}
 #cliente-bio{width: 98%;}
+#cliente-addresstype{width: 98%;}
+#cliente-street{width: 98%;}
+#cliente-district, #cliente-city{width: 47.5%}
+#cliente-city{margin-left: 3%;}
+#cliente-state{width:20%;}
+#cliente-zipcode{
+	margin-left: 3%;
+	width: 50%;
+}

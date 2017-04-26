@@ -71,11 +71,7 @@
       </div>
       <div id="cliente-state">
         <%= ff.label :state %>
-        <%= ff.text_field :state %>
-      </div>
-      <div id="cliente-country">
-        <%= ff.label :country %>
-        <%= ff.text_field :country %>
+        <%= ff.select(:state, ['AC','AL', 'AP', 'AM','BA','CE','DF','ES','GO', 'MA','MT','MS', 'MG','PA', 'PB','PR','PE','PI','RJ','RN', 'RS','RO','RR','SC','SP','SE','TO'], {include_blank: true}) %>
       </div>
       <div id="cliente-zipcode">
         <%= ff.label :zipcode %>

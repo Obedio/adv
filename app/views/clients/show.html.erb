@@ -1,7 +1,3 @@
-<div class="show-client">
-  <h6 class="show-title-client">Dados do Cliente</h6>
-  <h6 class="show-icon-client"><i class="material-icons">supervisor_account</i><h6>
-</div>
 <ul class="show-client client-dados">
   <li>Nome: <%= "#{@client.name} " " "" #{@client.lastname}" %></li>
   <li>Data de Nascimento: <%= @client.born %></li>  
@@ -11,48 +7,19 @@
   <li>Biografia: <%= @client.bio %></li>
 </ul>
 
-<div class="show-client">
-  <h6 class="show-title-client">Contato</h6>
-  <h6 class="show-icon-client"><i class="material-icons">supervisor_account</i><h6>
-</div>
+
 <ul class="show-client client-dados">
   <li>Email: <%= @client.email %></li>  
   <li>Telefone: <%= @client.telephone %></li>
   <li>Celular: <%= @client.celphone %></li>
 </ul>
 
-<div class="show-client">
-  <h6 class="show-title-client">Endereço</h6>
-  <h6 class="show-icon-client"><i class="material-icons">supervisor_account</i><h6>
-</div>
+
 <ul class="show-client client-dados">
   <li>Tipo de Endereço: <%= @client.address.addresstype %></li>
   <li>Rua: <%= @client.address.street %></li>
   <li>Bairro: <%= @client.address.district %></li>  
   <li>Cidade: <%= @client.address.city %></li>  
-  <li>Estado: <%= @client.address.state %></li>  
-  <li>País: <%= @client.address.country %></li>  
+  <li>Estado: <%= @client.address.state %></li>   
   <li>CEP: <%= @client.address.zipcode %></li>    
-</ul>
-
-<ul class="links-show-client">
-
-  <li>
-    <%= link_to clients_path do %>
-      <span class="material-icons">arrow_back</span><h6>Voltar</h6>
-    <% end %>
-  </li>
-  
-
-  <li>
-    <%= link_to edit_client_path(@client) do %>
-      <span class="material-icons">create</span><h6>Alterar</h6>
-    <% end %>      
-  </li>
-
-  <li>
-    <%= link_to new_client_lawsuit_path(client_id: @client.id)  do %>
-      <span class="material-icons">add_box</span><h6>Novo<br>Processo</h6>
-    <% end %>
-  </li>
 </ul>
