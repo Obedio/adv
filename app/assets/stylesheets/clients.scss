@@ -12,13 +12,17 @@
 	width: 100%;
 }
 #btn-salvar{	
+	float: left;
 	text-align: center;
 	background-color: rgba(0, 153, 0, 0.5);
 	color: white;
 	width: 25%;
 	margin-left: 2%;
+	border: none;
+	padding: 1.25%;
 }
 #btn-voltar{
+	float: left;
 	text-align: center;
 	width: 25%;
 }

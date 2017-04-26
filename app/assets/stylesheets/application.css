@@ -156,9 +156,6 @@ header strong{
 .btn:hover{
 	color: #009900;
 }
-.btn-novo{
-	margin: 2% 2% 0 0;
-}
 .paginate{
 	float: left;
 	margin-left: 3%;
