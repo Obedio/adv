@@ -3,9 +3,9 @@
   <%= search_form_for @q do |f| %>
     <div id="fields-search"><%= f.search_field :cpf_cont, placeholder: 'CPF do Cliente' %></div>
     <%= f.submit 'Pesquisar', class:'btn', :id => 'btn-search'%>
+    <%= link_to 'Novo Cliente', new_client_path, class: 'btn', :id =>'btn-novo' %>
   <% end %>
 </div>
-<%= link_to 'Novo Cliente', new_client_path, class: 'btn', :id =>'btn-novo' %>
 <div class="main">
   <table>
     <thead>

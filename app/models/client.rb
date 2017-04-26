@@ -1,5 +1,5 @@
 class Client < ApplicationRecord
-  belongs_to :address
+  has_one :address
   belongs_to :user
   has_many :lawsuits
   validates :cpf, :rg, uniqueness: true, presence: true, numericality: { only_integer: true }

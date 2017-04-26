@@ -1,0 +1,24 @@
+#novo-cliente{
+	margin: 0 5% 10% 5%;
+	width: 90%;
+	padding: 0;
+	float: left;
+	input, select, textarea{border-radius: 5px;}
+	textarea{width: 80%; height: 50px;}
+}
+#btn-block{
+	float: left;
+	margin: 3% 0;
+	width: 100%;
+}
+#btn-salvar{	
+	text-align: center;
+	background-color: rgba(0, 153, 0, 0.5);
+	color: white;
+	width: 25%;
+	margin-left: 2%;
+}
+#btn-voltar{
+	text-align: center;
+	width: 25%;
+}
