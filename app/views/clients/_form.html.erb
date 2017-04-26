@@ -11,58 +11,76 @@
         </ul>
       </div>
     <% end %>
-
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-    
-    <%= f.label :lastname %>
-    <%= f.text_field :lastname %>
- 
-    <%= f.label :born %>
-    <%= f.date_select :born, :start_year => 2000, :end_year => 1927, include_blank: true %>
-
-    <%= f.label :sex %>
-    <%= f.select(:sex, ['Masculino', 'Feminino'], {include_blank: true})%>
-
-    <%= f.label :cpf %>
-    <%= f.text_field :cpf %>
- 
-    <%= f.label :rg %>
-    <%= f.text_field :rg %>
-
-    <%= f.label :email %>
-    <%= f.text_field :email %>
-
-    <%= f.label :telephone %>
-    <%= f.text_field :telephone %>
-
-    <%= f.label :celphone %>
-    <%= f.text_field :celphone %>
-
-    <%= f.label :bio %>
-    <%= f.text_area :bio %>
+    <div id="cliente-name">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
+    <div id="cliente-lname">
+      <%= f.label :lastname %>
+      <%= f.text_field :lastname %>
+    </div>
+    <div id="cliente-born">
+      <%= f.label :born %>
+      <%= f.date_select :born, :start_year => 2000, :end_year => 1927, include_blank: true %>
+    </div>
+    <div id="cliente-sex">
+      <%= f.label :sex %>
+      <%= f.select(:sex, ['Masculino', 'Feminino'], {include_blank: true})%>
+    </div>
+    <div id="cliente-cpf">
+      <%= f.label :cpf %>
+      <%= f.text_field :cpf %>
+    </div>
+    <div id="cliente-rg">
+      <%= f.label :rg %>
+      <%= f.text_field :rg %>
+    </div>
+    <div id="cliente-email">
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+    </div>
+    <div id="cliente-telephone">
+      <%= f.label :telephone %>
+      <%= f.text_field :telephone %>
+    </div>
+    <div id="cliente-celphone">
+      <%= f.label :celphone %>
+      <%= f.text_field :celphone %>
+    </div>
+    <div id="cliente-bio">
+      <%= f.label :bio %>
+      <%= f.text_area :bio %>
+    </div>
 
     <%= f.fields_for :address do |ff| %>
-      <%= ff.label :addresstype %>
-      <%= ff.select(:addresstype, ['Residencial', 'Comercial'], {include_blank: true})%>
-
-      <%= ff.label :street %>
-      <%= ff.text_field :street %>
-
-      <%= ff.label :district %>
-      <%= ff.text_field :district %>
-
-      <%= ff.label :city %>
-      <%= ff.text_field :city %>
-
-      <%= ff.label :state %>
-      <%= ff.text_field :state %>
-
-      <%= ff.label :country %>
-      <%= ff.text_field :country %>
-
-      <%= ff.label :zipcode %>
-      <%= ff.text_field :zipcode %>
+      <div id="cliente-addresstype">
+        <%= ff.label :addresstype %>
+        <%= ff.select(:addresstype, ['Residencial', 'Comercial'], {include_blank: true})%>
+      </div>
+      <div id="cliente-street">
+        <%= ff.label :street %>
+        <%= ff.text_field :street %>
+      </div>
+      <div id="cliente-district">
+        <%= ff.label :district %>
+        <%= ff.text_field :district %>
+      </div>
+      <div id="cliente-city">
+        <%= ff.label :city %>
+        <%= ff.text_field :city %>
+      </div>
+      <div id="cliente-state">
+        <%= ff.label :state %>
+        <%= ff.text_field :state %>
+      </div>
+      <div id="cliente-country">
+        <%= ff.label :country %>
+        <%= ff.text_field :country %>
+      </div>
+      <div id="cliente-zipcode">
+        <%= ff.label :zipcode %>
+        <%= ff.text_field :zipcode %>
+      </div>
     <% end %>
     <div id="btn-block">
       <%= link_to 'Voltar', clients_path, class: 'btn', :id => 'btn-voltar' %>

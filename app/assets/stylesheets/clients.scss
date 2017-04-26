@@ -1,6 +1,6 @@
 #novo-cliente{
-	margin: 0 5% 10% 5%;
-	width: 90%;
+	margin: 0 2% 10% 2%;
+	width: 96%;
 	padding: 0;
 	float: left;
 	input, select, textarea{border-radius: 5px;}
@@ -16,13 +16,48 @@
 	text-align: center;
 	background-color: rgba(0, 153, 0, 0.5);
 	color: white;
-	width: 25%;
+	width: 30%;
 	margin-left: 2%;
 	border: none;
-	padding: 1.5%;
+	padding: 1.65%;
 }
 #btn-voltar{
 	float: left;
 	text-align: center;
 	width: 25%;
 }
+#cliente-name, #cliente-lname, #cliente-cpf, #cliente-born, #cliente-sex, #cliente-rg, #cliente-email, #cliente-telephone, #cliente-celphone, #cliente-bio, #cliente-addresstype, #cliente-street, #cliente-district, #cliente-city, #cliente-state, #cliente-country, #cliente-zipcode{
+	float: left;
+	margin-bottom: 2%;
+	input, textarea{
+		border-radius: 5px;
+		width: 100%;
+	}
+}
+#cliente-name{
+	width: 25%; 
+}
+#cliente-lname{
+	width: 70%;
+	margin-left: 3%;
+}
+#cliente-born{width: 70%;}
+#cliente-sex{
+	width: 18%;
+	
+}
+#cliente-cpf{
+	width: 50%;
+}
+#cliente-rg{
+	width: 45%;
+	margin-left: 3%;
+}
+#cliente-email{
+	width: 98%;
+}
+#cliente-telephone, #cliente-celphone{
+	width: 47.5%;
+}
+#cliente-celphone{margin-left: 3%}
+#cliente-bio{width: 98%;}
