@@ -20,7 +20,6 @@
 	}
 }
 #btn-search{
-	height: none;
 	margin-left: 1%;
 	margin-right: 1%;
 	width: 25%;
@@ -113,13 +112,19 @@
 /*******************RESPONSIVIDADE*********************************************/
 @media screen and (min-width: 420px){
 	#fields-search{ width: 50%;	}
-	#btn-search{width: 20%;}
-	#btn-novo{width: 20%;}
+	#btn-search, #btn-novo{
+		width: 20%;
+	}
+	#btn-novo{padding: 0.6%;}
+	#btn-search{padding: 0.5%;}
 }
 @media screen and (min-width: 520px){
 	#fields-search{width: 45%}
 	#btn-search{width: 17%}
-	#btn-novo{width: 17%;}
+	#btn-novo{
+		width: 17%;
+		padding: 0.7%;
+	}
 
 	.share, .comentario, .anexo, .pagamento{strong{font-size: 115%;}}
 }
@@ -141,20 +146,28 @@
 			float: right;
 		}
 		#btn-save{width: 25%;}
-		#btn-novo, #btn-search{padding:0; width: 15%;}
 	}
+	#btn-novo, #btn-search{width: 15%;}
+	#btn-novo{padding: 0.6%;}
 }
 
 @media screen and (min-width: 720px){
 	.share, .comentario, .anexo, .pagamento{strong{font-size: 125%;}}
 	.info-processo{font-size: 110%;}
 	.option{li{font-size: 110%;}}
+	#btn-novo{padding: 0.55%;}
 }
 @media screen and (min-width: 820px){
 	#fields-search{width: 35%}
 	#btn-novo, #btn-search{width: 12%;}
 }
+@media screen and (min-width: 1020px){
+	#btn-novo, #btn-search{padding:0.4%;}
+}
 @media screen and (min-width: 1120px){
 	#fields-search{width: 30%}
-	#btn-novo, #btn-search{width: 10%;}
+	#btn-novo, #btn-search{
+		padding: 0.3%;
+		width: 10%;
+	}
 }
