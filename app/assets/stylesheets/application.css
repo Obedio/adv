@@ -219,7 +219,9 @@ footer {
 		margin: 10% 25%;
 		width: 50%;
 	}
-
+	#lembrar-me label{
+	padding-top: 0.5%;
+	}
 	#login label, input{  font-size: 115%; }
 	header { font-size: 100%; }
 	footer { font-size: 110%; }
