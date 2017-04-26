@@ -113,26 +113,14 @@ header strong{
 }
 #fields input {width: 90%;}
 #lembrar-me{
-<<<<<<< HEAD
 	margin-top: 1%;
-=======
->>>>>>> f6f471d1da4fe2636d659188028fead1acc72394
 	float: left;
 	width: 100%;
 }
 #lembrar-me label{
-<<<<<<< HEAD
 	padding-top: 1%;
 	width: 50%;
 	float: left;
-}
-#lembrar-me input{
-	float: left; 
-	width: 5%;
-=======
-width: 50%;
-float: left;
->>>>>>> f6f471d1da4fe2636d659188028fead1acc72394
 }
 #lembrar-me input{
 	float: left; 
