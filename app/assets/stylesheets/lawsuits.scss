@@ -162,12 +162,12 @@
 	#btn-novo, #btn-search{width: 12%;}
 }
 @media screen and (min-width: 1020px){
-	#btn-novo, #btn-search{padding:0.4%;}
+	#btn-novo, #btn-search{padding: 0.4%;}
 }
 @media screen and (min-width: 1120px){
 	#fields-search{width: 30%}
 	#btn-novo, #btn-search{
-		padding: 0.3%;
 		width: 10%;
 	}
+	#btn-search{padding:0.3%;}
 }

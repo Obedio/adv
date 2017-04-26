@@ -7,6 +7,7 @@
 	textarea{width: 80%; height: 50px;}
 }
 #title{
+	color: #003300;
 	float: left;
 	text-align: center;
 	width: 98%;
@@ -64,6 +65,22 @@
 #cliente-zipcode{
 	margin-left: 3%;
 	width: 50%;
+}
+#cliente-info{
+	color: #003300;
+	float: left;
+	width: 100%;
+	margin-bottom: 15%;
+}
+#cliente-action{
+	float: left;
+	width:95%;
+	margin-left: 5%;
+	li{
+		margin-right: 5%;
+		float: left;
+	}
+
 }
 /*****************************RESPONSIVIDADE*******************************************/
 @media screen and (min-width: 420px){
