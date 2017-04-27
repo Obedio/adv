@@ -1,29 +1,56 @@
 <div id="cliente-info">
-  <div id="title"><h3>Informações do Cliente</h3></div>
-  <strong>Cliente - <%= "#{@client.name} " " "" #{@client.lastname}" %></strong></br>
-  <strong>Data de Nascimento - </strong><%= "#{l(@client.born)}" %></br>
-  <strong>Sexo - </strong><%= @client.sex %></br>  
-  <strong>CPF - </strong><%= @client.cpf %></br>  
-  <strong>RG - </strong><%= @client.rg %></br>  
-  <strong>Observações - </strong> <%= @client.bio %></br>
-
-  <div id="title"><h3>Informações de Contato</h3></div>
-  <strong>Email - </strong> <%= @client.email %></br>  
-  <strong>Telefone - </strong> <%= @client.telephone %></br>
-  <strong>Celular - </strong> <%= @client.celphone %></br>
-
-  <div id="title"><h3>Endereço</h3></div>
-  <strong>Tipo de Endereço - </strong> <%= @client.address.addresstype %></br>
-  <strong>Rua - </strong> <%= @client.address.street %></br>
-  <strong>Bairro - </strong> <%= @client.address.district %></br>  
-  <strong>Cidade - </strong> <%= @client.address.city %></br>  
-  <strong>Estado - </strong> <%= @client.address.state %></br>   
-  <strong>CEP - </strong> <%= @client.address.zipcode %></br>    
+  <div id="cliente-block-one">
+    <div id="title"><h3>Informações do Cliente</h3></div>
+    <strong>Cliente - <%= "#{@client.name} " " "" #{@client.lastname}" %></strong></br>
+    <strong>Data de Nascimento - </strong><%= "#{l(@client.born)}" %></br>
+    <strong>Sexo - </strong><%= @client.sex %></br>  
+    <strong>CPF - </strong><%= @client.cpf %></br>  
+    <strong>RG - </strong><%= @client.rg %></br>  
+    <strong>Observações - </strong> <%= @client.bio %></br>
+    <strong>Email - </strong> <%= @client.email %></br>  
+    <strong>Telefone - </strong> <%= @client.telephone %></br>
+    <strong>Celular - </strong> <%= @client.celphone %></br>
+  </div>
+  <div id="cliente-block-two">
+    <div id="title"><h3>Endereço</h3></div>
+    <strong>Tipo de Endereço - </strong> <%= @client.address.addresstype %></br>
+    <strong>Rua - </strong> <%= @client.address.street %></br>
+    <strong>Bairro - </strong> <%= @client.address.district %></br>  
+    <strong>Cidade - </strong> <%= @client.address.city %></br>  
+    <strong>Estado - </strong> <%= @client.address.state %></br>   
+    <strong>CEP - </strong> <%= @client.address.zipcode %></br>    
+  </div>
   <hr>
   <ul id="cliente-action">
     <li><%= link_to 'Voltar', clients_path %></li>
     <li><%= link_to 'Editar', edit_client_path(@client) %></li>
     <li><%= link_to 'Excluir', @client, method: :delete, data: { confirm: 'Você tem certeza?'} %></li>
-    <li><%= link_to 'Novo Cliente', new_client_path %></li>
+    <li><%= link_to 'Novo Processo', new_client_lawsuit_path(client_id: @client.id) %></li>
   </ul>
+  <hr>
+  <div class="comentario">
+    <strong>Processos</strong>
+    <div class="main">
+      <table>
+        <thead>
+          <tr>
+            <th class="title-tb">Número</th>
+            <th class="title-tb">Descrição</th>
+            <th class="title-tb">Situação</th>
+          </tr>
+        </thead>
+  
+        <tbody>
+          <% @lawsuit.each do |lawsuit| %>
+            <tr>
+              <td class="nro-processo"><%= link_to lawsuit.number, lawsuit %></td>
+              <td><%= lawsuit.description %></td>
+              <td><%= lawsuit.status.name %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+       <div class="paginate"><%= will_paginate @lawsuit  %></div>
+    </div>
+  </div>
 </div>

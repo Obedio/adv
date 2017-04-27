@@ -71,11 +71,16 @@
 	float: left;
 	width: 100%;
 	margin-bottom: 15%;
+	hr{
+		color: #003300;
+		width: 100%;
+		float: left;
+	}
 }
 #cliente-action{
 	float: left;
-	width:95%;
-	margin-left: 5%;
+	width:92%;
+	margin-left: 8%;
 	li{
 		margin-right: 5%;
 		float: left;
@@ -86,13 +91,30 @@
 @media screen and (min-width: 420px){
 	#btn-salvar{padding: 1.4%}
 	#btn-salvar, #btn-voltar{width:20%;}
+	#cliente-action{
+		margin-left:14%;
+		width: 86%;
+	}
 }
 @media screen and (min-width: 520px){
 	#btn-voltar{padding: 0.9%;}
 	#btn-salvar{padding: 1.2%;}
+	#cliente-action{
+		margin-left: 16%;
+		width: 84%;
+	}
 }
 @media screen and (min-width: 620px){
 	#btn-salvar, #btn-voltar{width:17%;}
+	#cliente-block-one, #cliente-block-two{
+		margin-bottom: 2%;
+		float: left;
+		width: 50%;
+	}
+	#cliente-action{
+		margin-left: 20%;
+		width: 80%;
+	}
 }
 @media screen and (min-width: 720px){
 	#cliente-born{width:40%}
@@ -122,6 +144,12 @@
 
 @media screen and (min-width: 820px){
 	#btn-salvar, #btn-voltar{width:15%;}
+	#cliente-info{font-size: 110%;}
+	#cliente-action{
+		margin-left: 25%;
+		width: 75%;
+		li{font-size: 115%;}
+	}
 }
 @media screen and (min-width: 920px){
 	#btn-salvar{padding:1%}
@@ -130,6 +158,7 @@
 @media screen and (min-width: 1020px){
 	#btn-voltar{width:14%; font-size: 110%;}
 	#btn-salvar{padding: 0.9%;}
+	#cliente-info{font-size: 110%;}
 }
 @media screen and (min-width: 1120px){
 	#btn-salvar, #btn-voltar{width:10%;}

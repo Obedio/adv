@@ -1,6 +1,7 @@
 class ClientsController < ApplicationController
   before_action :set_client, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, :profile_test
+  before_action :set_lawsuit, only: [:show]
 
   def index
     @q = Client.ransack(params[:q])
@@ -76,7 +77,9 @@ class ClientsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+    def set_lawsuit
+      @lawsuit = Lawsuit.where(client_id: params[:id]).order("status_id ASC").paginate(page: params[:page], per_page: 8)
+    end
     def set_client
       @client = Client.find(params[:id])
     end
