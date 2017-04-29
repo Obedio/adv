@@ -1,42 +1,44 @@
-<%= form_for(profile) do |f| %>
-  <% if profile.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
+<div id="profile">
+  <%= form_for(profile) do |f| %>
+    <% if profile.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
 
-      <ul>
-      <% profile.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+        <ul>
+        <% profile.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <div id="title"><h3>Meus Dados</h3></div>
+    <div id="profile-name">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
+
+    <div id="profile-lname">
+      <%= f.label :last_name %>
+      <%= f.text_field :last_name %>
+    </div>
+
+    <div id="profile-birth">
+      <%= f.label :birth %>
+      <%= f.date_select :birth, :start_year => 2000, :end_year => 1927, include_blank: true %>
+    </div>
+
+    <div id="profile-sex">
+      <%= f.label :sex %>
+      <%= f.select(:sex, ['Masculino', 'Feminino'], {include_blank: true}) %>
+    </div>
+
+    <div id="profile-office">
+      <%= f.label :office_id %>
+      <%= f.collection_select(:office_id, Office.all, :id, :name, {include_blank: true}) %>
+    </div>
+
+    <div id="btn-block">
+      <%= f.submit 'Salvar',class: 'btn'%>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </div>
-
-  <div class="field">
-    <%= f.label :last_name %>
-    <%= f.text_field :last_name %>
-  </div>
-
-  <div class="field">
-    <%= f.label :birth %>
-    <%= f.date_select :birth, :start_year => 2000, :end_year => 1927, include_blank: true %>
-  </div>
-
-  <div class="field">
-    <%= f.label :sex %>
-    <%= f.select(:sex, ['Masculino', 'Feminino'], {include_blank: true}) %>
-  </div>
-
-  <div class="field">
-    <%= f.label :office_id %>
-    <%= f.collection_select(:office_id, Office.all, :id, :name, {include_blank: true}) %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>

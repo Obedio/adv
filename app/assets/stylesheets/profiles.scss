@@ -1,3 +1,26 @@
-// Place all the styles related to the Profiles controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+#profile{
+	float: left;
+	width: 100%;
+}
+#profile-name, #profile-lname, #profile-sex, #profile-birth, #profile-office{
+	float: left;
+	margin-bottom: 2%;
+	input, textarea{
+		border-radius: 5px;
+		width: 99%;
+	}
+}
+#profile-name{width: 25%;}
+#profile-lname{
+	margin-left: 2%;
+	width: 70%;
+}
+#profile-office{margin-left: 2%;}
+
+@media screen and (min-width: 420px){
+	#profile-office{margin-left: 0;}
+	#profile-sex{margin-left: 2%}
+}
+@media screen and (min-width: 620px){
+	#profile-office{margin-left: 2%;}
+}

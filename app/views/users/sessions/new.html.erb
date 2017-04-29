@@ -1,6 +1,10 @@
 <div id="login">
   <strong>Acesso ao Sistema</strong>
-  <strong id="notice"><%= notice %></strong>
+  <strong id="notice">
+  <%= content_tag(:div, flash[:error], :id => "flash_error") if flash[:error] %>
+  <%= content_tag(:div, flash[:notice], :id => "flash_notice") if flash[:notice] %>
+  <%= content_tag(:div, flash[:alert], :id => "flash_alert") if flash[:alert] %>
+</strong>
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div id="fields">
       <%= f.label :email, 'E-mail' %>
