@@ -1,11 +1,10 @@
-<div class="dv-search">
+<div id="dv-search">
   <strong id="notice"><%= notice %></strong>
   <%= search_form_for @q do |f| %>
-    <%= f.search_field :number_cont, placeholder: 'Nº processo' %>
-    <%= f.submit 'Pesquisar', class:'btn btn-search'%>
+    <div id="fields-search"><%= f.search_field :number_cont, placeholder: 'Nº processo' %></div>
+    <%= f.submit 'Pesquisar', class: 'btn', :id => 'btn-searchl'%>
   <% end %>
-  <%= link_to 'Novo Processo', clients_path, class: 'btn btn-novo' %>
-  <%= link_to 'Relatórios', lawsuits_path, class: 'btn btn-novo' %>
+  <%= link_to 'Novo', clients_path, class: 'btn', :id => 'btn-novol' %>
 </div>
 <div class="main">
   <table>

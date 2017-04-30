@@ -102,6 +102,7 @@ header strong{
 	float: left;
 	margin-bottom: 8%;
 }
+#user-name, #user-senha, #user-senhac, #user-senhaa input{border-radius: 5px;}
 #user-name, #user-senha, #user-senhac, #user-senhaa{
 	float: left; 
 	margin-bottom: 2%; 
