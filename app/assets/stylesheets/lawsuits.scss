@@ -83,6 +83,7 @@
 	float: left;
 	width: 100%;
 	color: #003300;
+	margin-bottom: 10%;
 }
 #processo-number, #processo-assessment, #processo-venue, #processo-description, #processo-amount, #processo-kind, #processo-status{
 	float: left;
@@ -102,7 +103,7 @@
 	margin-left: 4%;
 	width: 65%;
 }
-#processo-kind, #processo-status{width: 45%;}
+#processo-kind, #processo-status{width: 25%;}
 #processo-status{margin-left: 2%;}
 /*******************RESPONSIVIDADE*********************************************/
 @media screen and (min-width: 420px){
