@@ -98,12 +98,13 @@
 	textarea{height: 50px;}
 	width: 98%;
 }
-#processo-amount{width: 20%;}
+#processo-amount{width: 25%; float: left;}
 #processo-venue{
 	margin-left: 4%;
-	width: 35%;
+	width: 65%;
 }
-#processo-status{margin-left: 2%;}
+#processo-kind, #processo-status{width: 25%; margin-left:0}
+#processo-status{margin-left: 4%;}
 /*******************RESPONSIVIDADE*********************************************/
 @media screen and (min-width: 420px){
 	#fields-search{ width: 50%;	}
