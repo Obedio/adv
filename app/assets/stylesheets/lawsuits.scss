@@ -33,6 +33,7 @@
 	border: none;
 
 }
+#btn-back{margin-left: 2%;}
 /*************************Show**********************************************************/
 .info-processo{
 	float: left;
@@ -78,44 +79,42 @@
 	margin-bottom: 10%;
 }
 /*********************EDITAR***************************************************/
-.editar{
+#novo-processo{
 	float: left;
 	width: 100%;
-	margin-top: 1%;
-	margin-bottom: 5%;
-	text-align: center;
 	color: #003300;
-	strong{text-decoration: underline;}
-	.btn{
-		margin-top: 3%;
-		margin-right: 2%;
-		margin-bottom: 3%;
-		float: left;
-	}
-	input, textarea, .slc-info{
-		select{width: 100%;}
-		width: 100%;
+}
+#processo-number, #processo-assessment, #processo-venue, #processo-description, #processo-amount, #processo-kind, #processo-status{
+	float: left;
+	margin-bottom: 2%;
+	input, textarea{
 		border-radius: 5px;
+		width: 99%;
 	}
 	select{border-radius: 5px;}
-	textarea{
-		width: 100%;
-		height: 50px;
-	}
-	.info{
-		width: 86%;
-		float: left;
-		text-align: left;
-		margin: 0 7% 1% 7%;
-	}
-	#btn-save{width: 40%;}
 }
+#processo-description{
+	textarea{height: 50px;}
+	width: 98%;
+}
+#processo-amount{width: 27%;}
+#processo-venue{
+	margin-left: 4%;
+	width: 50%;
+}
+#processo-kind, #processo-status{width: 30%;}
+#processo-status{margin-left: 2%;}
 /*******************RESPONSIVIDADE*********************************************/
 @media screen and (min-width: 420px){
 	#fields-search{ width: 50%;	}
 	#btn-searchl, #btn-novol{width: 20%;}
 	#btn-novol{padding: 0.6%;}
 	#btn-searchl{padding: 0.5%;}
+	#processo-number{width: 40%;}
+	#processo-assessment{
+		width: 55%;
+		margin-left: 3%;
+	}
 }
 @media screen and (min-width: 520px){
 	#fields-search{width: 45%}
@@ -125,28 +124,17 @@
 		padding: 0.7%;
 	}
 	.share, .comentario, .anexo, .pagamento{strong{font-size: 115%;}}
+	#processo-amount{width: 25%}
+	#processo-venue{width: 38%;}
+	#processo-status{margin-left:0}
 }
 
 @media screen and (min-width: 620px){
-	.editar{ 
-		strong{font-size: 110%;}
-		.info{margin: 1% 0 0 0;}
-		.block-first{
-			width: 47.5%;
-			float: left;
-			margin-right: 2.5%;
-			textarea{height: 60px;}
-		}
-		.block-second{
-			margin-left: 2.5%;
-			margin-bottom: 3%;
-			width: 47.5%;
-			float: right;
-		}
-		#btn-save{width: 25%;}
-	}
+	#title{margin-bottom:1%}
+	#btn-save{width: 25%;}
 	#btn-novol, #btn-searchl{width: 15%;}
 	#btn-novol{padding: 0.6%;}
+	#processo-amount{width: 22%}
 }
 
 @media screen and (min-width: 720px){
@@ -154,13 +142,28 @@
 	.info-processo{font-size: 110%;}
 	.option{li{font-size: 110%;}}
 	#btn-novol{padding: 0.55%;}
+	#processo-amount{width: 20%}
+	#processo-venue{width: 30%;}
+	#processo-kind{width: 20%;}
+	#processo-status{width:25%}
+	#novo-processo{font-size: 105%}
 }
 @media screen and (min-width: 820px){
+	#novo-processo{
+		margin-left: 8%;
+		margin-right: 8%;
+		width:84%;
+	}
 	#fields-search{width: 35%}
 	#btn-novol, #btn-searchl{width: 12%;}
 }
 @media screen and (min-width: 1020px){
 	#btn-novol, #btn-searchl{padding: 0.4%;}
+	#novo-processo{
+		margin-left: 10%;
+		margin-right: 10%;
+		width:80%;
+	}
 }
 @media screen and (min-width: 1120px){
 	#fields-search{width: 30%}
@@ -168,4 +171,9 @@
 		width: 10%;
 	}
 	#btn-searchl{padding:0.3%;}
+	#novo-processo{
+		margin-left: 12%;
+		margin-right: 12%;
+		width:76%;
+	}
 }

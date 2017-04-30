@@ -1,5 +1,5 @@
-<div class="editar">
-  <strong>Editar Processo</strong>
+<div id="novo-processo">
+  <h3 id="title">Editar Processo</h3>
   <%= form_for(@lawsuit) do |f| %>
     <% if @lawsuit.errors.any? %>
       <div id="error_explanation">
@@ -12,33 +12,44 @@
         </ul>
       </div>
     <% end %>
-    <div class="info">
-      <div class='block-first'>
-        <%= f.label :number %>
-        <%= f.text_field :number %>
-        
-        <%= f.label :assessment %>
-        <%= f.date_select :assessment %>
     
-        <%= f.label :description %>
-        <%= f.text_area :description %>
-      </div>
-      <div class='block-second'>
-        <%= f.label :amount %>
-        <%= f.text_field :amount %>
-        <div class='slc-info'>
-          <%= f.label :venue_id %>
-          <%= f.collection_select(:venue_id, Venue.all, :id, :name, {include_blank: true})%>
-        
-          <%= f.label :kind_id %>
-          <%= f.collection_select(:kind_id, Kind.all, :id, :name, {include_blank: true})%>
-        
-          <%= f.label :status_id %>
-          <%= f.collection_select(:status_id, Status.all, :id, :name, {include_blank: true})%>
-        </div>
-      </div>
-      <%= f.submit 'Salvar Processo', class: 'btn', :id => 'btn-save'%>
-      <%= link_to 'Voltar', @lawsuit, class: 'btn' %>
+    <div id="processo-number">
+      <%= f.label :number %>
+      <%= f.text_field :number %>
+    </div>
+
+    <div id="processo-assessment">
+      <%= f.label :assessment %>
+      <%= f.date_select :assessment %>
+    </div>
+
+    <div id="processo-description">
+      <%= f.label :description %>
+      <%= f.text_area :description %>
+    </div>
+
+    <div id="processo-amount">
+      <%= f.label :amount %>
+      <%= f.text_field :amount %>
+    </div>
+
+    <div id="processo-venue">
+      <%= f.label :venue_id %>
+      <%= f.collection_select(:venue_id, Venue.all, :id, :name, {include_blank: true})%>
+    </div>
+
+    <div id="processo-kind">
+      <%= f.label :kind_id %>
+      <%= f.collection_select(:kind_id, Kind.all, :id, :name, {include_blank: true})%>
+    </div>
+
+    <div id="processo-status">
+      <%= f.label :status_id %>
+      <%= f.collection_select(:status_id, Status.all, :id, :name, {include_blank: true})%>
+    </div>
+    <div id="btn-block">
+      <%= f.submit 'Salvar Processo', class: 'btn'%>
+      <%= link_to 'Voltar', @lawsuit, class: 'btn', :id => 'btn-back'%>
     </div>
   <% end %>
 </div>
