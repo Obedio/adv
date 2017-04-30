@@ -1,34 +1,26 @@
-<p id="notice"><%= notice %></p>
+<div id="profile-show">
+  <strong id="notice"><%= notice %></strong>
 
-<p>
-  <strong>Name:</strong>
+  <strong>Nome - <%= "#{@profile.name} " " "" #{@profile.last_name}" %></strong>
   <%= @profile.name %>
-</p>
+  </br>
 
-<p>
-  <strong>Last name:</strong>
-  <%= @profile.last_name %>
-</p>
+  <strong>Data de Nascimento - </strong>
+    <%= "#{l(@profile.birth)}" %>
+  </br>
 
-<p>
-  <strong>Birth:</strong>
-  <%= "#{l(@profile.birth)}" %>
-</p>
+  <strong>Sex0 - </strong>
+    <%= @profile.sex %>
+  </br>
 
-<p>
-  <strong>Sex:</strong>
-  <%= @profile.sex %>
-</p>
+  <strong>Email - </strong>
+    <%= @profile.user.email %>
+  </br>
 
-<p>
-  <strong>User:</strong>
-  <%= @profile.user.email %>
-</p>
+  <strong>Função - </strong>
+    <%= @profile.office.name %>
+  </br>
 
-<p>
-  <strong>Office:</strong>
-  <%= @profile.office.name %>
-</p>
-
-<%= link_to 'Editar', edit_profile_path(@profile) , class: 'btn'%>
-<%= link_to 'Voltar', profiles_path, class: 'btn' %>
+  <%= link_to 'Editar', edit_profile_path(@profile) , class: 'btn'%>
+  <%= link_to 'Voltar', profiles_path, class: 'btn' %>
+</div>

@@ -97,6 +97,16 @@ header strong{
 	background: #cccccc;
 }
 /******************LOGIN***********************************************/
+#usuario{
+	width: 100%;
+	float: left;
+	margin-bottom: 8%;
+}
+#user-name, #user-senha, #user-senhac, #user-senhaa{
+	float: left; 
+	margin-bottom: 2%; 
+	width: 99%;
+}
 #login{
 	color: #009900;
 	float: left;
@@ -272,4 +282,5 @@ footer {
 @media screen and (min-width: 1120px){
 	
 	#login strong{font-size: 135%;}
+	#btn-login{font-size: 100%;}
 }

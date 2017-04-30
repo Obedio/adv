@@ -1,6 +1,7 @@
 #profile{
 	float: left;
 	width: 100%;
+	color: #003300;
 }
 #profile-name, #profile-lname, #profile-sex, #profile-birth, #profile-office{
 	float: left;
@@ -15,6 +16,9 @@
 	margin-left: 2%;
 	width: 70%;
 }
+#btn-profile{
+	float: left;
+	margin-right: 2%;}
 #profile-office{margin-left: 2%;}
 
 @media screen and (min-width: 420px){
@@ -23,4 +27,7 @@
 }
 @media screen and (min-width: 620px){
 	#profile-office{margin-left: 2%;}
+}
+@media screen and (min-width: 720px){
+	#profile{font-size: 105%;}
 }

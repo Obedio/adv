@@ -1,37 +1,31 @@
-<p id="notice"><%= notice %></p>
+<div id="profile">
+  <p id="notice"><%= notice %></p>
 
-<h1>Meus Dados</h1>
-<% @profiles.each do |profile| %>
-  
-  <p>
-    <strong>Nome:</strong>
-    <%= profile.name %>
-  </p>
+  <h3 id="title">Meus Dados</h3>
+  <% @profiles.each do |profile| %>
+    
+    <strong>Nome - <%= "#{profile.name} " " "" #{profile.last_name}" %></strong>
+    </br>
 
-  <p>
-    <strong>Sobrenome:</strong>
-    <%= profile.last_name %>
-  </p>
-  
-  <p>
-    <strong>Data de Nascimento:</strong>
-    <%= "#{l(profile.birth)}" %>
-  </p>
-  
-  <p>
-    <strong>Sexo:</strong>
-    <%= profile.sex %>
-  </p>
-  
-  <p>
-    <strong>Email:</strong>
-    <%= profile.user.email %>
-  </p>
-  
-  <p>
-    <strong>Função:</strong>
-    <%= profile.office.name %>
-  </p>
-  <%= link_to 'Alterar Dados', edit_profile_path(profile) %>
-</br></br></br></br>
-<% end %>
+    <strong>Data de Nascimento - </strong>
+      <%= "#{l(profile.birth)}" %>
+    </br>
+
+    <strong>Sexo - </strong>
+      <%= profile.sex %>
+    </br>
+
+    <strong>Email - </strong>
+      <%= profile.user.email %>
+    </br>
+
+    <strong>Função - </strong>
+      <%= profile.office.name %>
+    </br>
+    <div id="btn-block">
+      <%= link_to 'Alterar Dados', edit_profile_path(profile), class: 'btn', :id => 'btn-profile'%>
+      <%= link_to 'Voltar', request.referer, class: 'btn', :id => 'btn-profile' %>
+      <%= link_to "Trocar Senha", edit_user_registration_path, class: 'btn', :id => 'btn-profile' %>
+    </div>
+  <% end %>
+</div>
