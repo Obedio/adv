@@ -14,7 +14,15 @@ class ClientsController < ApplicationController
         end
       end
     else
-    @clients = policy_scope(Client).paginate(page: params[:page], per_page: 10)
+      @clients = policy_scope(Client).paginate(page: params[:page], per_page: 10)
+
+      respond_to do |format|
+        format.html
+        format.pdf do
+          pdf = ClientPdf.new(@clients, "Meus Clientes")
+          send_data pdf.render, filename: "lista.pdf", type: "application/pdf", disposition: "inline"
+        end
+      end
     end
   end
 

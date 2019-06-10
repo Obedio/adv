@@ -6,9 +6,11 @@
     <%= link_to 'Novo Cliente', new_client_path, class: 'btn', :id =>'btn-novo' %>
   <% end %>
 </div>
+<%= link_to  'Imprimir', clients_path(@clients, format: "pdf"), class: "btn bg-flix-secondary text-white", target: "_blank" %>
+
 <div class="main">
-  <table>
-    <thead>
+  <table class="table">
+    <thead class="bg-dark text-light">
       <tr>
         <th class="title-tb">Nome</th>
         <th class="title-tb">CPF</th>
