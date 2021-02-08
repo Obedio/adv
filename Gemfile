@@ -8,7 +8,7 @@ gem 'ransack'
 #anexar arquivos
 gem "paperclip", git: "https://github.com/thoughtbot/paperclip.git"
 gem 'aws-sdk', '~> 2'
-gem 'carrierwave', '~> 1.0'
+gem 'carrierwave', '~> 1.3'
 #paginação
 gem 'will_paginate', '~> 3.0'
 #authenticate
